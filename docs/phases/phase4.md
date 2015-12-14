@@ -1,14 +1,21 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
+# Phase 4: Followers/Followees (1 day)
 
 ## Rails
 ### Models
+* FollowersFollowees
+* Users
 
 ### Controllers
+
 
 ### Views
 
 ## Flux
 ### Views (React Components)
+*FollowersIndex
+  *FollowersIndexItem
+*FolloweesIndex
+  *FolloweesIndexItem
 
 ### Stores
 
