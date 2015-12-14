@@ -1,24 +1,28 @@
-# FresherNote
-
-[Heroku link][heroku] **NB:** This should be a link to your production site
+# AdventurerCollective
 
 [heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+AdventurerCollective is a web application inspired by OutBoundCollective built using Ruby on Rails
+and React.js. AdventurerCollective allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags and search notes by tag
-- [ ] Search through notes for blocks of text
-- [ ] Apply complex styling to notes while editing
-- [ ] Set reminders on notes
+- [ ] Create, read, edit, mark completed and delete adventures
+- [ ] Organize adventures within lists (e.g. Southwest Utah Hikes)
+- [ ] Tag adventures with multiple tags and search adventures by tag (e.g. Biking, Running, Backpacking)
+- [ ] Follow other adventurers/have others follow you
+- [ ] Can leave reviews of adventure
+- [ ] Adventures will show location on map using Google Maps API
+
+AdventurerCollective doesn't have functionality (i.e. where the inspiration departs from the original)
+
+- [ ] No articles
+- [ ] No sharing via external social media APIs (twitter, FB)
+- [ ] No explorers (sponsored athletes/vagabonds)
 
 ## Design Docs
 * [View Wireframes][view]
