@@ -45,30 +45,30 @@ index page). This index page will be seeded with several adventures.
 
 Phase 2 is focused on setting up Flux, the React Router, and the React view
 structure for the main application. After the basic Flux architecture has been
-set up, a Note store will be implemented and a set of actions corresponding to
+set up, a Adventure store will be implemented and a set of actions corresponding to
 the needed CRUD functionality created. Once this is done, I will create React
-views for the Notes `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Notes can be created, read, edited and destroyed in the browser. Notes should
+views for the Adventures `Index`, `IndexItem` and `Form`. At the end of Phase 2,
+Adventures can be created, read, edited and destroyed in the browser. Adventures should
 save to the database when the form loses focus or is left idle after editing.
 Lastly, while constructing the views I will start using basic bootstrap for
 styling.
 
 [Details][phase-two]
 
-### Phase 3: Notebooks and Tags (2 days)
+### Phase 3: Lists/Activities (2 days)
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook, which has
-its own `Index` view. Create JSON API for Notebooks. Notes can also now be
-tagged with multiple tags. Users can bring up notes in a separate `SearchIndex`
-view by searching for their tags. Once the tag search is implemented, I will
-extend this to a fuzzy search through every Note's content.
+Phase 3 adds organization to the Adventures. Adventures can belong to a List, which has
+its own `Index` view. Create JSON API for Lists. Adventures can also now be
+tagged with multiple activities. Users can bring up adventures in a separate `SearchIndex`
+view by searching for their tags. 
 
 [Details][phase-three]
 
-### Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: Reviews (1.5 days)
 
-Using the react-quill library (based on Quill.js), allow for complex styling of
-notes.
+Phase 4 allows for Adventures to be reviewed by other users. A review form will be available
+at the bottom of each Adventures `IndexItem` page. A review store will be implemented and the
+corresponding CRUD functionality created.
 
 [Details][phase-four]
 
