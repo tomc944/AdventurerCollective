@@ -64,36 +64,31 @@ view by searching for their tags.
 
 [Details][phase-three]
 
-### Phase 4: Reviews (1.5 days)
+### Phase 4: Followers/Followees (1 day)
 
-Phase 4 allows for Adventures to be reviewed by other users. A review form will be available
-at the bottom of each Adventures `IndexItem` page. A review store will be implemented and the
-corresponding CRUD functionality created.
+Phase 4 adds a social element to 
+
 
 [Details][phase-four]
 
-### Phase 5: Reminders and Garbage Collection (1 day)
+### Phase 5: Reviews (1.5 days)
 
-Phase 5 introduces two new features. First, users can set reminders on notes
-which will at the time they are set for prompt the user to review and edit the
-given note. In addition, I will implement a feature that asks users to review
-notes once they reach a certain age and ask whether they should be kept,
-archived, or deleted.
+Phase 5 allows for Adventures to be reviewed by other users. A review form will be available
+at the bottom of each Adventures `IndexItem` page. A review store will be implemented and the
+corresponding CRUD functionality created.
 
 [Details][phase-five]
 
-### Phase 6: Styling Cleanup and Seeding (1 day)
+### Phase 6: User profile (2 days)
 
-Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
+Phase 6 shows a user profile which links all of the functionality together. 
 
-### Bonus Features (TBD)
-- [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Changelogs for Notes
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Multiple sessions
+
+
+[Details][phase-six]
+
+
+### Bonus-features
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
