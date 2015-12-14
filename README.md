@@ -11,7 +11,7 @@ and React.js. AdventurerCollective allows users to:
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, mark completed and delete adventures
+- [ ] Create, read, edit, save and delete adventures
 - [ ] Organize adventures within lists (e.g. Southwest Utah Hikes)
 - [ ] Tag adventures with multiple tags and search adventures by tag (e.g. Biking, Running, Backpacking)
 - [ ] Follow other adventurers/have others follow you
@@ -47,11 +47,11 @@ Phase 2 is focused on setting up Flux, the React Router, and the React view
 structure for the main application. After the basic Flux architecture has been
 set up, a Adventure store will be implemented and a set of actions corresponding to
 the needed CRUD functionality created. Once this is done, I will create React
-views for the Adventures `Index`, `IndexItem` and `Form`. At the end of Phase 2,
+views for the Adventures `AdventureIndex`, `AdventureIndexItem` and `AdventureForm`. At the end of Phase 2,
 Adventures can be created, read, edited and destroyed in the browser. Adventures should
 save to the database when the form loses focus or is left idle after editing.
 Lastly, while constructing the views I will start using basic bootstrap for
-styling.
+styling. (Copied most of this from Charles example - very applicable to my design)
 
 [Details][phase-two]
 
@@ -66,7 +66,8 @@ view by searching for their tags.
 
 ### Phase 4: Followers/Followees (1 day)
 
-Phase 4 adds a social element to 
+Phase 4 adds a social element to AdventurerCollective. Users can follow or be followed by
+other participants of the website. 
 
 
 [Details][phase-four]
@@ -81,14 +82,18 @@ corresponding CRUD functionality created.
 
 ### Phase 6: User profile (2 days)
 
-Phase 6 shows a user profile which links all of the functionality together. 
-
-
+Phase 6 shows a user profile which links all of the functionality together. React components will
+be on the user profile. 
 
 [Details][phase-six]
 
 
 ### Bonus-features
+
+- Implement Google Maps API to show where the adventures are
+- Have a completed button on all adventures. (Toggle between having an adventure completed or not)
+- Have CSS transitions on each `AdventureIndexItem` to have a sidebar pop out with different actions
+- Drag and drop options to move adventures into different lists
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
