@@ -1,20 +1,20 @@
-# Phase 1: User Authentication, Note Model and JSON API
+# Phase 1: User Authentication, Adventure Model and JSON API
 
 ## Rails
 ### Models
 * User
-* Note
+* Adventure (inclusion validations for seasons, activities)
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::Adventures (create, destroy, index, show, update)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* adventures/index.json.jbuilder
+* adventures/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
