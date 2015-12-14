@@ -28,7 +28,7 @@ AdventurerCollective doesn't have following functionality (i.e. where the inspir
 * [View Wireframes][view]
 * [DB schema][schema]
 
-[view]: ./docs/views.md
+[view]: ./docs/wireframes
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
