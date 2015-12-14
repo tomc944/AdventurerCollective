@@ -13,9 +13,9 @@
 ## Flux
 ### Views (React Components)
 *FollowersIndex
-  *FollowersIndexItem
+*FollowersIndexItem
 *FolloweesIndex
-  *FolloweesIndexItem
+*FolloweesIndexItem
 
 ### Stores
 
