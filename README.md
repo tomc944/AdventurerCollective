@@ -37,7 +37,9 @@ AdventurerCollective doesn't have following functionality (i.e. where the inspir
 
 In Phase 1, I will begin by implementing user signup and authentication (using
 BCrypt). There will be a basic landing page after signup (which will be the Adventures
-index page). This index page will be seeded with several adventures.
+index page). This index page will be seeded with several adventures. There will also be a barebones
+User show page which will be added with new React components as their corresponding 
+backends are completed. In this phase the view will be blank.
 
 [Details][phase-one]
 
@@ -67,7 +69,8 @@ view by searching for their tags.
 ### Phase 4: Followers/Followees (1 day)
 
 Phase 4 adds a social element to AdventurerCollective. Users can follow or be followed by
-other participants of the website. 
+other participants of the website. Backend will be set up so queries can be made to
+find users that can be followed.
 
 
 [Details][phase-four]
@@ -83,7 +86,8 @@ corresponding CRUD functionality created.
 ### Phase 6: User profile (2 days)
 
 Phase 6 shows a user profile which links all of the functionality together. React components will
-be on the user profile. 
+be on the user profile. A large part of thhis stage will be focused on making sure the displayed react component
+is the that was clicked on in the User profile (i.e. User show page)
 
 [Details][phase-six]
 
