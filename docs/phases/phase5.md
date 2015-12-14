@@ -22,8 +22,6 @@ Same as last two phases - just additionally functionality with the same flux pat
 
 ### Actions
 
-* ReminderActions.destroyReminder
-
 ### ApiUtil
 
 
