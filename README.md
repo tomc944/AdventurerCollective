@@ -33,7 +33,7 @@ AdventurerCollective doesn't have following functionality (i.e. where the inspir
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)
+### Phase 1: User Authentication, Adventure Model and JSON API (1.5 days)
 
 In Phase 1, I will begin by implementing user signup and authentication (using
 BCrypt). There will be a basic landing page after signup (which will be the Adventures
@@ -70,7 +70,8 @@ view by searching for their tags.
 
 Phase 4 adds a social element to AdventurerCollective. Users can follow or be followed by
 other participants of the website. Backend will be set up so queries can be made to
-find users that can be followed.
+find users that can be followed. Search bar will be a react component that is available in all
+views except for new user/new sessions.
 
 
 [Details][phase-four]
@@ -104,3 +105,4 @@ is the that was clicked on in the User profile (i.e. User show page)
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
