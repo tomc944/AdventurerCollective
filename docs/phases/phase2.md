@@ -9,30 +9,29 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* AdventuresIndex
+  - AdventuresIndexItem
+* AdventureForm
 
 ### Stores
-* Note
+* Adventures
 
 ### Actions
-* ApiActions.receiveAllNotes -> triggered by ApiUtil
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
-* NoteActions.fetchAllNotes -> triggers ApiUtil
-* NoteActions.fetchSingleNote 
-* NoteActions.createNote
-* NoteActions.editNote 
-* NoteActions.destroyNote
+* ApiActions.receiveAllAdventures -> triggered by ApiUtil
+* ApiActions.receiveSingleAdventure
+* ApiActions.deleteAdventure
+* AdventureActions.fetchAllAdentures -> triggers ApiUtil
+* AdventureActions.fetchSingleAdventure
+* AdventureActions.createAdventure
+* AdventureActions.editAdventure 
+* AdventureActions.destroyAdventure
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllAdventures
+* ApiUtil.fetchOneAdventure
+* ApiUtil.createAdventure
+* ApiUtil.editAdventure
+* ApiUtil.destroyAdventure
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)
-* Twitter Bootstrap
