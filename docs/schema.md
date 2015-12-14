@@ -1,11 +1,11 @@
 # Schema Information
 
-## notes
+## Adventures
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-body        | text      | not null
+description_id        | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 notebook_id | integer   | not null, foreign key (references notebooks), indexed
 archived    | boolean   | not null, default: false
