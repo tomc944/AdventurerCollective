@@ -2,27 +2,26 @@
 
 ## Rails
 ### Models
-* Notebook
-* Tag
+* Lists
+* AdventuresList
 * Tagging
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::ListsController (create, destroy, index, show, update)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
-* tags/show.json.jbuilder
+* lists/index.json.jbuilder
+* lists/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
+* ListsIndex
+  - ListsIndexItem
+* ListsForm
 * SearchIndex
 
 ### Stores
-* Notebook
+* Lists
 
 ### Actions
 * ApiActions.receiveAllNotebooks -> triggered by ApiUtil
