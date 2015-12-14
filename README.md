@@ -18,7 +18,7 @@ and React.js. AdventurerCollective allows users to:
 - [ ] Can leave reviews of adventure
 - [ ] Adventures will show location on map using Google Maps API
 
-AdventurerCollective doesn't have functionality (i.e. where the inspiration departs from the original)
+AdventurerCollective doesn't have following functionality (i.e. where the inspiration departs from the original)
 
 - [ ] No articles
 - [ ] No sharing via external social media APIs (twitter, FB)
