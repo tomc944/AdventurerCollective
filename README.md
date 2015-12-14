@@ -60,9 +60,10 @@ styling. (Copied most of this from Charles example - very applicable to my desig
 ### Phase 3: Lists/Activities (2 days)
 
 Phase 3 adds organization to the Adventures. Adventures can belong to a List, which has
-its own `Index` view. Create JSON API for Lists. Adventures can also now be
-tagged with multiple activities. Users can bring up adventures in a separate `SearchIndex`
-view by searching for their tags. 
+its own `ListIndex` view. Within the `ListInded` view there will be `ListIndexItem`s which
+contain all of the functionality of an individual list.vCreate JSON API for Lists. 
+Adventures can also now be tagged with multiple activities. Users can bring up adventures in a separate 
+`SearchIndex` view by searching for their tags. 
 
 [Details][phase-three]
 
@@ -87,8 +88,8 @@ corresponding CRUD functionality created.
 ### Phase 6: User profile (2 days)
 
 Phase 6 shows a user profile which links all of the functionality together. React components will
-be on the user profile. A large part of thhis stage will be focused on making sure the displayed react component
-is the that was clicked on in the User profile (i.e. User show page)
+be on the user profile. A large part of this stage will be focused on making sure the displayed react component
+is the that was clicked on in the User profile (i.e. User show page).
 
 [Details][phase-six]
 
