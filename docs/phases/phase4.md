@@ -9,6 +9,8 @@
 
 
 ### Views
+* Followers (show)
+* Followees (show)
 
 ## Flux
 ### Views (React Components)
@@ -20,6 +22,6 @@
 ### Stores
 
 ### Actions
+* Similar action setup as previous two phases but with reviews.
 
 ## Gems/Libraries
-* react-quill (npm)
