@@ -55,7 +55,7 @@ body        | text      | not null
 
 ## followersfollowees (join table - joins followers and followees)
 column name | data type | details
-----------------------------------------
+------------|-----------|---------------
 id          | integer   | not null, primary key
 follower_id | integer   | not null, foreign key (references users), indexed
 followee_id | integer   | not null, foreign key (references users), indexed 
