@@ -1,10 +1,11 @@
-# Phase 3: Notebooks and Tags (2 days)
+# Phase 3: Lists and Activities (2 days)
 
 ## Rails
 ### Models
 * Lists
 * AdventuresList
-* Tagging
+* Adventures
+
 
 ### Controllers
 * Api::ListsController (create, destroy, index, show, update)
@@ -24,20 +25,20 @@
 * Lists
 
 ### Actions
-* ApiActions.receiveAllNotebooks -> triggered by ApiUtil
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
-* NotebookActions.fetchAllNotebooks -> triggers ApiUtil
-* NotebookActions.fetchSingleNotebook
-* NotebookActions.createNotebook
-* NotebookActions.editNotebook
-* NotebookActions.destroyNotebook
+* ApiActions.receiveAllLists -> triggered by ApiUtil
+* ApiActions.receiveLists
+* ApiActions.deleteLists
+* ListsActions.fetchAllLists -> triggers ApiUtil
+* ListActions.fetchSingleList
+* ListActions.createList
+* ListActions.editList
+* ListActions.destroyList
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* ApiUtil.fetchAllLists
+* ApiUtil.fetchOneList
+* ApiUtil.createList
+* ApiUtil.editList
+* ApiUtil.destroyList
 
 ## Gems/Libraries
