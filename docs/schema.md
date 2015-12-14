@@ -5,12 +5,15 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-description_id        | text      | not null
+description | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+list_id     | integer   | foreign key (references lists), indexed
+draw        | text      | not null
+skill       | string    | not null
+season      | string    | not null
+activities  | string    | not null
 
-## notebooks
+## Lists
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -18,29 +21,20 @@ author_id   | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 description | string    | 
 
-## reminders
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+## AdventureLists (join table - joins lists with their contained adventures)
 
-## tags
 column name | data type | details
-------------|-----------|-----------------------
+------------|-----------|----------------
 id          | integer   | not null, primary key
-name        | string    | not null
+adventure_id| integer   | not null, foreign key (references adventures), indexed
+list_id     | integer   | not null, foreign key (references lists), indexed
 
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
+## UserAdventures (join table - joins users with their liked adventures / seperate from adventure authorship)
+column name | data type | detais
+------------|-----------|----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
+adventuree_id| integer   | not null, foreign key (references user), indexed
+adventure_id| integer   | not null, foreign key (references adventures), indexed
 
 ## users
 column name     | data type | details
