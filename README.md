@@ -61,29 +61,27 @@ styling. (Copied most of this from Charles example - very applicable to my desig
 
 Phase 3 adds organization to the Adventures. Adventures can belong to a List, which has
 its own `ListIndex` view. Within the `ListInded` view there will be `ListIndexItem`s which
-contain all of the functionality of an individual list.vCreate JSON API for Lists. 
+contain all of the functionality of an individual list. Create JSON API for Lists. 
 Adventures can also now be tagged with multiple activities. Users can bring up adventures in a separate 
 `SearchIndex` view by searching for their tags. 
 
 [Details][phase-three]
 
-### Phase 4: Followers/Followees (1 day)
+### Phase 4: Google Maps API (2 days)
 
-Phase 4 adds a social element to AdventurerCollective. Users can follow or be followed by
+Phase 4 will be implementing the Google Maps API. The bare bones of the user profile will be made
+in order to show activities that are either completed or planning to be done. Markers will be shown 
+on the users profile "adventure map". Red markers are in progress adventures and green markers are 
+completed adventures. The Map will be a react component. Bonus: possibly add adventure stats. 
+
+### Phase 5: Followers/Followees (1 day)
+
+Phase 5 adds a social element to AdventurerCollective. Users can follow or be followed by
 other participants of the website. Backend will be set up so queries can be made to
 find users that can be followed. Search bar will be a react component that is available in all
 views except for new user/new sessions.
 
-
 [Details][phase-four]
-
-### Phase 5: Reviews (1.5 days)
-
-Phase 5 allows for Adventures to be reviewed by other users. A review form will be available
-at the bottom of each Adventures `IndexItem` page. A review store will be implemented and the
-corresponding CRUD functionality created.
-
-[Details][phase-five]
 
 ### Phase 6: User profile (2 days)
 
@@ -93,10 +91,14 @@ is the that was clicked on in the User profile (i.e. User show page).
 
 [Details][phase-six]
 
+### Phase 7/Bonus: Reviews (1.5 days)
+
+Phase 5 allows for Adventures to be reviewed by other users. A review form will be available
+at the bottom of each Adventures `IndexItem` page. A review store will be implemented and the
+corresponding CRUD functionality created.
 
 ### Bonus-features
 
-- Implement Google Maps API to show where the adventures are
 - Have a completed button on all adventures. (Toggle between having an adventure completed or not)
 - Have CSS transitions on each `AdventureIndexItem` to have a sidebar pop out with different actions
 - Drag and drop options to move adventures into different lists
