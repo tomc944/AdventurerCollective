@@ -13,14 +13,14 @@ season      | string    | not null
 
 ## Activities
 column name | data type | details
-------------------------------------------
+------------|-----------|----------------
 id          | integer   | not null, primary key
 type        | string    | 
 
 ## Activity Taggings
 
 column name | data type | details
----------------------------------------
+------------|-----------|--------------
 id          | integer   | not null, primary key
 activity_id | integer   | not null, foreign key
 adventure_id| integer   | not null, foreign key
