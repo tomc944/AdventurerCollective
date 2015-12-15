@@ -17,10 +17,19 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+// .picture {
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+//   background-color: #eee;
+//   background-image: url(goatrocks.jpg);
+//   background-position: center center;
+//   background-size: cover;
+// }
+
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-image: url(goatrocks.jpg);
 }
 
 .adventure-header {
@@ -34,6 +43,7 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  background-color: #eee;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
