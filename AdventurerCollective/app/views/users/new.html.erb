@@ -1,8 +1,8 @@
-<h1 class="adventure-header">Adventurer Collective</h1>
 
 
 <form class="form-signin" action="<%= users_url %>" method="post">
-  <!-- <h4 class="form-signin-heading">Please sign in</h4> -->
+  <h3 class="adventure-header">Sign Up</h1>
+
   <input
     type="hidden"
     name="authenticity_token"
@@ -28,7 +28,8 @@
     placeholder="Password"
     value="<%= @user.password %>"
     required>
-  <br>
 
+    <%= link_to "Already have an account?", new_session_url %>
+  <br>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
 </form>

@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   # before_action :require_no_user!, only: [:new, :create]
 
   def new
-    @user = User.new
     render :new
   end
 
@@ -15,6 +14,7 @@ class SessionsController < ApplicationController
 
     if user
       login_user!(user)
+      redirect_to user_url(user)
     else
       flash.now[:errors] = ["Incorrect username and/or password"]
       render :new
