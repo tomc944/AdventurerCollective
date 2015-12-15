@@ -7,7 +7,6 @@ id          | integer   | not null, primary key
 title       | string    | not null
 description | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
-list_id     | integer   | foreign key (references lists), indexed
 draw        | text      | not null
 skill       | string    | not null
 season      | string    | not null
