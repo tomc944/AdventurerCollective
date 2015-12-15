@@ -1,26 +1,34 @@
-<h1>Login!</h1>
+<h1 class="adventure-header">Adventurer Collective</h1>
 
-<form action="<%= users_url %>" method="post">
+
+<form class="form-signin" action="<%= users_url %>" method="post">
+  <!-- <h4 class="form-signin-heading">Please sign in</h4> -->
   <input
     type="hidden"
     name="authenticity_token"
     value="<%= form_authenticity_token %>">
 
-  <label for="user_username">User Name:</label>
+  <label for="inputUsername" class="sr-only">User Name</label>
     <input
-      type="text"
+      type="username"
       name="user[username]"
-      id="user_username"
-      value="<%= @user.username %>">
+      id="inputUsername"
+      class="form-control"
+      placeholder="Username"
+      value="<%= @user.username %>"
+      required autofocus>
   <br>
 
-  <label for="user_password">Password:</label>
+  <label for="inputPassword" class="sr-only">Password</label>
   <input
     type="password"
     name="user[password]"
-    id="user_password"
-    value="<%= @user.password %>">
+    id="inputPassword"
+    class="form-control"
+    placeholder="Password"
+    value="<%= @user.password %>"
+    required>
   <br>
 
-  <input type="submit">
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>
