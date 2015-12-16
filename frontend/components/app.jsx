@@ -1,10 +1,12 @@
-var React = require('react');
+var React = require('react'),
+    Index = require('./index');
 
 var App = React.createClass({
   render: function() {
     return(
       <div>
-      
+        {this.props.children}
+        <Index />
       </div>
     );
   }

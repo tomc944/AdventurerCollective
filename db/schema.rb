@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20151215181406) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "adventures", ["author_id"], name: "index_adventures_on_author_id", unique: true, using: :btree
+  add_index "adventures", ["author_id"], name: "index_adventures_on_author_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

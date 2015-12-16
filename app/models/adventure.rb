@@ -8,5 +8,5 @@ class Adventure < ActiveRecord::Base
     presence: true
   )
 
-  validates :author_id, uniqueness: true
+  # validates :author_id, uniqueness: true
 end

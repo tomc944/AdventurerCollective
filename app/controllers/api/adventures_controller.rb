@@ -1,7 +1,6 @@
 class Api::AdventuresController < ApplicationController
   def index
     @adventures = Adventure.all
-    debugger
   end
 
   def create
@@ -18,7 +17,6 @@ class Api::AdventuresController < ApplicationController
   end
 
   def show
-    debugger
     @adventure = Adventure.find(params[:id])
   end
 

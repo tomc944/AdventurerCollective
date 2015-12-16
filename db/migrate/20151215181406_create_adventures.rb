@@ -8,6 +8,6 @@ class CreateAdventures < ActiveRecord::Migration
       t.float :lng, null: false
       t.timestamps null: false
     end
-    add_index :adventures, :author_id, unique: true
+    add_index :adventures, :author_id
   end
 end
