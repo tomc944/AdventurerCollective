@@ -1,1 +1,1 @@
-json.array! @adventures, :title, :description, :author_id, :draw, :skill, :season
+json.array! @adventures, :title, :description, :lat, :lng, :author_id

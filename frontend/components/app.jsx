@@ -4,7 +4,7 @@ var App = React.createClass({
   render: function() {
     return(
       <div>
-        More testing
+      
       </div>
     );
   }
