@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  # before_action :require_no_user!, only: [:new, :create]
+  before_action :require_no_user!, only: [:new, :create]
 
   def new
     render :new
@@ -13,8 +13,9 @@ class SessionsController < ApplicationController
     )
 
     if user
+      debugger
       login_user!(user)
-      redirect_to user_url(user)
+      redirect_to root_url
     else
       flash.now[:errors] = ["Incorrect username and/or password"]
       render :new
@@ -22,6 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    debugger
     logout_user!
     redirect_to new_session_url
   end

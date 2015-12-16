@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :adventures
   end
 
-  root to: 'sessions#new'
+  root 'static_pages#root'
 end

@@ -1,36 +1,37 @@
 
+<body class=sign-in-body>
+  <form class="form-signin" action="<%= session_url %>" method="post">
+    <h3 class="adventure-header">Sign In</h3>
 
-<form class="form-signin" action="<%= session_url %>" method="post">
-  <h3 class="adventure-header">Sign In</h3>
-  
-  <!-- <h4 class="form-signin-heading">Please sign in</h4> -->
-  <input
-    type="hidden"
-    name="authenticity_token"
-    value="<%= form_authenticity_token %>">
-
-  <label for="inputUsername" class="sr-only">User Name</label>
+    <!-- <h4 class="form-signin-heading">Please sign in</h4> -->
     <input
-      type="username"
-      name="user[username]"
-      id="inputUsername"
+      type="hidden"
+      name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+
+    <label for="inputUsername" class="sr-only">User Name</label>
+      <input
+        type="username"
+        name="user[username]"
+        id="inputUsername"
+        class="form-control"
+        placeholder="Username"
+        required autofocus>
+    <br>
+
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input
+      type="password"
+      name="user[password]"
+      id="inputPassword"
       class="form-control"
-      placeholder="Username"
-      required autofocus>
-  <br>
+      placeholder="Password"
+      required>
 
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input
-    type="password"
-    name="user[password]"
-    id="inputPassword"
-    class="form-control"
-    placeholder="Password"
-    required>
+      <%=link_to "Create a new account!", new_user_url %>
+    <br>
 
-    <%=link_to "Create a new account!", new_user_url %>
-  <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-
-</form>
+  </form>
+</body>
