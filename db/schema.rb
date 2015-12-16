@@ -20,9 +20,8 @@ ActiveRecord::Schema.define(version: 20151215181406) do
     t.string   "title",       null: false
     t.text     "description", null: false
     t.integer  "author_id",   null: false
-    t.text     "draw",        null: false
-    t.string   "skill",       null: false
-    t.string   "season",      null: false
+    t.float    "lat",         null: false
+    t.float    "lng",         null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

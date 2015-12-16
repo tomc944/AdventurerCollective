@@ -8,3 +8,17 @@
 
 Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
                 author_id: 1, draw: 'stuff', skill: 'expert', season: 'summer')
+Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
+                author_id: 1, draw: 'stuff', skill: 'expert', season: 'summer')
+Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
+                author_id: 1, draw: 'stuff', skill: 'expert', season: 'summer')
+Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
+                author_id: 1, draw: 'stuff', skill: 'expert', season: 'summer')
+Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
+                author_id: 1, draw: 'stuff', skill: 'expert', season: 'summer')
+Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
+                author_id: 1, draw: 'stuff', skill: 'expert', season: 'summer')
+Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
+                author_id: 1, draw: 'stuff', skill: 'expert', season: 'summer')
+Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
+                author_id: 1, draw: 'stuff', skill: 'expert', season: 'summer')
