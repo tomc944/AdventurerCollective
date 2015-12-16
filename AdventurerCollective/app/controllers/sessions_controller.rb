@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
     )
 
     if user
-      debugger
       login_user!(user)
       redirect_to root_url
     else
@@ -23,7 +22,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    debugger
     logout_user!
     redirect_to new_session_url
   end
