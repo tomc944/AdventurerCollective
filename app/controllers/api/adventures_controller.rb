@@ -1,6 +1,7 @@
 class Api::AdventuresController < ApplicationController
   def index
     @adventures = Adventure.all
+    debugger
   end
 
   def create
@@ -14,6 +15,11 @@ class Api::AdventuresController < ApplicationController
 
   def new
     render :new
+  end
+
+  def show
+    debugger
+    @adventure = Adventure.find(params[:id])
   end
 
   private

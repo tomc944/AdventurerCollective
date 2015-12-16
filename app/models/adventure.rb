@@ -3,9 +3,8 @@ class Adventure < ActiveRecord::Base
     :title,
     :description,
     :author_id,
-    :draw,
-    :skill,
-    :season,
+    :lat,
+    :lng,
     presence: true
   )
 

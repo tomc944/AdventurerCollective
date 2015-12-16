@@ -15,13 +15,3 @@ Adventure.create(title: "Mt. Whitney",
 Adventure.create(title: "Mt. Shasta",
                  description: "A great mountain to learn mountaineering",
                  author_id: 1, lat: 41.409791, lng: -122.194700)
-# Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
-#                 author_id: 1, )
-# Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
-#                 author_id: 1, )
-# Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
-#                 author_id: 1, )
-# Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
-#                 author_id: 1, )
-# Adventure.create(title: "JMT", description: "Strenuous hike through the Sierras",
-#                 author_id: 1, )
