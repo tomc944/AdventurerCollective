@@ -9,7 +9,6 @@ AdventureStore.all = function() {
 }
 
 AdventureStore.__onDispatch = function(payload) {
-  debugger;
   switch(payload.actionType) {
     case AdventureConstants.ADVENTURES_RECEIVED:
       this._resetAdventures(payload.adventures);

@@ -1,11 +1,12 @@
 var React = require('react'),
-    Index = require('./index');
+    Index = require('./index'),
+    Map = require('./map');
 
 var App = React.createClass({
   render: function() {
     return(
       <div>
-        {this.props.children}
+        <Map />
         <Index />
       </div>
     );

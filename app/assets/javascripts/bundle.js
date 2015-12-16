@@ -24434,7 +24434,6 @@
 	    this.setState({ adventures: AdventureStore.all() });
 	  },
 	  componentDidMount: function () {
-	    debugger;
 	    this.adventureToken = AdventureStore.addListener(this._onChange);
 	    apiUtil.fetchAdventures();
 	  },
@@ -24473,7 +24472,6 @@
 	};
 
 	AdventureStore.__onDispatch = function (payload) {
-	  debugger;
 	  switch (payload.actionType) {
 	    case AdventureConstants.ADVENTURES_RECEIVED:
 	      this._resetAdventures(payload.adventures);
@@ -31279,7 +31277,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    Index = __webpack_require__(210);
+	    Index = __webpack_require__(210),
+	    Map = __webpack_require__(237);
 
 	var App = React.createClass({
 	  displayName: 'App',
@@ -31288,13 +31287,76 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      this.props.children,
+	      React.createElement(Map, null),
 	      React.createElement(Index, null)
 	    );
 	  }
 	});
 
 	module.exports = App;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1),
+	    apiUtil = __webpack_require__(234),
+	    AdventureStore = __webpack_require__(211);
+
+	var Map = React.createClass({
+	  displayName: 'Map',
+
+	  getInitialState: function () {
+	    return { adventures: AdventureStore.all() };
+	  },
+	  _onChange: function () {
+	    this.setState({ adventures: AdventureStore.all() });
+	    this._placeAdventures();
+	  },
+	  _placeAdventures: function () {
+	    var that = this;
+
+	    this.state.adventures.map(function (adventure) {
+	      adventure = new google.maps.Marker({
+	        position: { lat: adventure.lat, lng: adventure.lng },
+	        animation: google.maps.Animation.DROP
+	      });
+	      return adventure.setMap(that.map);
+	    });
+	  },
+	  componentDidMount: function () {
+	    var map = React.findDOMNode(this.refs.map);
+
+	    var mapOptions = {
+	      center: { lat: 37.7758, lng: -122.435 },
+	      zoom: 6
+	    };
+	    this.map = new google.maps.Map(map, mapOptions);
+	    this.token = AdventureStore.addListener(this._onChange);
+	    this.listenForMove();
+	  },
+	  listenForMove: function () {
+	    var that = this;
+
+	    google.maps.event.addListener(this.map, 'idle', function () {
+	      debugger;
+	      var bounds = that.map.getBounds();
+	      var northEast = bounds.getNorthEast();
+	      var southWest = bounds.getSouthWest();
+	      that.newBounds = { "northEast": { "lat": northEast.lat(), "lng": northEast.lng() },
+	        "southWest": { "lat": southWest.lat(), "lng": southWest.lng() } };
+	      apiUtil.fetchAdventures(that.newBounds);
+	    });
+	  },
+	  componentWillUnmmount: function () {
+	    this.token.remove();
+	  },
+	  render: function () {
+	    return React.createElement('div', { className: 'map', ref: 'map' });
+	  }
+	});
+
+	module.exports = Map;
 
 /***/ }
 /******/ ]);

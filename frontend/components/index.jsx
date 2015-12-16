@@ -10,7 +10,6 @@ var Index = React.createClass({
     this.setState({ adventures: AdventureStore.all() });
   },
   componentDidMount: function() {
-    debugger;
     this.adventureToken = AdventureStore.addListener(this._onChange)
     apiUtil.fetchAdventures();
   },
