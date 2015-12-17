@@ -1,6 +1,10 @@
 class Api::AdventuresController < ApplicationController
   def index
-    @adventures = Adventure.all
+    if (params[:params])
+      @adventures = Adventure.in_bounds(params[:params])
+    else
+      @adventures = []
+    end
   end
 
   def create
