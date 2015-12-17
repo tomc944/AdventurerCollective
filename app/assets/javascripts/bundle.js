@@ -49,7 +49,7 @@
 	    Router = __webpack_require__(159).Router,
 	    Route = __webpack_require__(159).Route,
 	    IndexRoute = __webpack_require__(159).IndexRoute,
-	    Index = __webpack_require__(210),
+	    AdventureIndex = __webpack_require__(210),
 	    App = __webpack_require__(236);
 
 	var routes = React.createElement(Route, { path: '/', component: App });
@@ -24424,8 +24424,8 @@
 	    AdventureStore = __webpack_require__(211),
 	    apiUtil = __webpack_require__(234);
 
-	var Index = React.createClass({
-	  displayName: 'Index',
+	var AdventureIndex = React.createClass({
+	  displayName: 'AdventureIndex',
 
 	  getInitialState: function () {
 	    return { adventures: AdventureStore.all() };
@@ -24455,7 +24455,7 @@
 	  }
 	});
 
-	module.exports = Index;
+	module.exports = AdventureIndex;
 
 /***/ },
 /* 211 */
@@ -31277,8 +31277,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    Index = __webpack_require__(210),
-	    Map = __webpack_require__(237);
+	    AdventureIndex = __webpack_require__(210),
+	    Map = __webpack_require__(237),
+	    Navbar = __webpack_require__(238);
 
 	var App = React.createClass({
 	  displayName: 'App',
@@ -31287,8 +31288,9 @@
 	    return React.createElement(
 	      'div',
 	      null,
+	      React.createElement(Navbar, null),
 	      React.createElement(Map, null),
-	      React.createElement(Index, null)
+	      React.createElement(AdventureIndex, null)
 	    );
 	  }
 	});
@@ -31320,7 +31322,8 @@
 
 	      adventure = new google.maps.Marker({
 	        position: { lat: adventure.lat, lng: adventure.lng },
-	        description: adventure.description
+	        description: adventure.title
+
 	      });
 	      that.attachDescription(adventure);
 	      return adventure.setMap(that.map);
@@ -31367,6 +31370,70 @@
 	});
 
 	module.exports = Map;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	var Navbar = React.createClass({
+	  displayName: "Navbar",
+
+	  render: function () {
+	    return React.createElement(
+	      "nav",
+	      { className: "navbar navbar-default navbar-fixed-top" },
+	      React.createElement(
+	        "div",
+	        { className: "container" },
+	        React.createElement(
+	          "div",
+	          { className: "navbar-header" },
+	          React.createElement(
+	            "button",
+	            { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
+	            React.createElement(
+	              "span",
+	              { className: "sr-only" },
+	              "Toggle navigation"
+	            ),
+	            React.createElement("span", { className: "icon-bar" }),
+	            React.createElement("span", { className: "icon-bar" }),
+	            React.createElement("span", { className: "icon-bar" })
+	          ),
+	          React.createElement(
+	            "a",
+	            { className: "navbar-brand", href: "#" },
+	            "Adventurer Collective"
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { id: "navbar", className: "navbar-collapse collapse" },
+	          React.createElement("ul", { className: "nav navbar-nav" }),
+	          React.createElement(
+	            "ul",
+	            { className: "nav navbar-nav navbar-right" },
+	            React.createElement(
+	              "li",
+	              null,
+	              React.createElement(
+	                "form",
+	                { className: "button_to", method: "post", action: "http://localhost:3000/session" },
+	                React.createElement("input", { type: "hidden", name: "_method", value: "delete" }),
+	                React.createElement("input", { type: "submit", value: "Sign Out" }),
+	                React.createElement("input", { type: "hidden", name: "authenticity_token", value: $('meta[name="csrf-token"]').attr('content') })
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Navbar;
 
 /***/ }
 /******/ ]);

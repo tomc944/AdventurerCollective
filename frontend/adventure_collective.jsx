@@ -3,7 +3,7 @@ var React = require('react'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
-    Index = require('./components/index.jsx'),
+    AdventureIndex = require('./components/adventure_index.jsx'),
     App = require('./components/app.jsx');
 
 var routes = (

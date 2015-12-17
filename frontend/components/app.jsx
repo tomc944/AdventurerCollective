@@ -1,13 +1,15 @@
 var React = require('react'),
-    Index = require('./index'),
-    Map = require('./map');
+    AdventureIndex = require('./adventure_index'),
+    Map = require('./map'),
+    Navbar = require('./navbar');
 
 var App = React.createClass({
   render: function() {
     return(
       <div>
+        <Navbar />
         <Map />
-        <Index />
+        <AdventureIndex />
       </div>
     );
   }

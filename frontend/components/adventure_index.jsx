@@ -2,7 +2,7 @@ var React = require('react'),
     AdventureStore = require('../stores/adventure'),
     apiUtil = require('../util/api_util.js');
 
-var Index = React.createClass({
+var AdventureIndex = React.createClass({
   getInitialState: function() {
     return ({ adventures: AdventureStore.all() });
   },
@@ -27,4 +27,4 @@ var Index = React.createClass({
   }
 })
 
-module.exports = Index;
+module.exports = AdventureIndex;
