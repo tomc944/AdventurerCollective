@@ -5,6 +5,7 @@ var React = require('react'),
     IndexRoute = require('react-router').IndexRoute,
     Search = require('./components/search.jsx'),
     AdventureForm = require('./components/adventure_form.jsx'),
+    AdventureDetail = require('./components/adventure_detail.jsx'),
     AdventureIndex = require('./components/adventure_index.jsx');
 
 var App = React.createClass({
@@ -22,6 +23,7 @@ var routes = (
     <IndexRoute component={Search} />
     <Route path="adventures/new" component={AdventureForm} />
   </Route>
+    // <Route path="adventures/:adventureId" component={AdventureDetail} />
 )
 
 window.addEventListener('DOMContentLoaded', function() {

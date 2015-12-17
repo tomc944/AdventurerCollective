@@ -1,6 +1,17 @@
 var React = require('react');
 
 var Navbar = React.createClass({
+  signOut: function(e) {
+    e.preventDefault();
+    $.ajax({
+      method: "DELETE",
+      url: "/session",
+      success: function(){
+        window.location = '/'
+      }
+    })
+  },
+
   render: function() {
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
@@ -21,11 +32,7 @@ var Navbar = React.createClass({
               </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <form className="button_to" method="post" action="http://localhost:3000/session">
-                    <input type="hidden" name="_method" value="delete" />
-                    <input type="submit" value="Sign Out" />
-                    <input type="hidden" name="authenticity_token" value={$('meta[name="csrf-token"]').attr('content')} />
-                  </form>
+                  <a className="navbar-brand" onClick={this.signOut}>Sign Out</a>
                 </li>
               </ul>
             </div>
