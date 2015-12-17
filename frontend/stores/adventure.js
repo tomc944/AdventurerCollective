@@ -13,11 +13,19 @@ AdventureStore.__onDispatch = function(payload) {
     case AdventureConstants.ADVENTURES_RECEIVED:
       this._resetAdventures(payload.adventures);
       break;
+    case AdventureConstants.ADVENTURE_RECEIVED:
+      this._resetAdventure(payload.adventure);
+      break;
   }
 }
 
 AdventureStore._resetAdventures = function(adventures) {
   _adventures = adventures;
+  this.__emitChange();
+}
+
+AdventureStore._resetAdventure = function(adventure) {
+  _adventures.concat(adventure);
   this.__emitChange();
 }
 

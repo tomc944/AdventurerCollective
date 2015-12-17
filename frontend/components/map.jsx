@@ -17,8 +17,7 @@ var Map = React.createClass({
 
       adventure = new google.maps.Marker({
         position: { lat: adventure.lat, lng: adventure.lng },
-        description: adventure.title
-
+        description: adventure.title,
       })
       that.attachDescription(adventure)
       return(adventure.setMap(that.map))

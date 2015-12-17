@@ -7,6 +7,12 @@ var ApiActions = {
       actionType: AdventureConstants.ADVENTURES_RECEIVED,
       adventures: adventures
     });
+  },
+  receiveAdventure: function(adventure) {
+    AppDispatcher.dispatch({
+      actionType: AdventureConstants.ADVENTURE_RECEIVED,
+      adventure: adventure
+    })
   }
 }
 

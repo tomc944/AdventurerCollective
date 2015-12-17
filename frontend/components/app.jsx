@@ -7,9 +7,7 @@ var App = React.createClass({
   render: function() {
     return(
       <div>
-        <Navbar />
-        <Map />
-        <AdventureIndex />
+        {this.props.children}
       </div>
     );
   }

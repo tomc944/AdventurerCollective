@@ -9,6 +9,8 @@ class Api::AdventuresController < ApplicationController
 
   def create
     @adventure = Adventure.new(adventure_params)
+    @adventure[:author_id] = current_user.id
+    
     if @adventure.save
       render json: @adventure
     else

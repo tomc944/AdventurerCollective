@@ -11,6 +11,17 @@ var apiUtil = {
         ApiActions.receiveAll(resp);
       }
     })
+  },
+  createAdventure: function(adventure) {
+    var adventure = adventure[0];
+    $.ajax({
+      method: 'POST',
+      url: "api/adventures",
+      data: {adventure: adventure},
+      success: function(adventure) {
+        ApiActions.receiveAdventure(adventure)
+      }
+    })
   }
 }
 
