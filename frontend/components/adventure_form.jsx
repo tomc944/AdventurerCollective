@@ -33,27 +33,39 @@ var AdventureForm = React.createClass({
   render: function() {
     return (
       <form onSubmit={this.createAdventure}>
-        <div>
+        <fieldset className="form-group">
           <label>Title:</label>
-          <input type='text' valueLink={this.linkState('title')} />
-        </div>
+          <input
+            type='text'
+            className="form-control"
+            valueLink={this.linkState('title')} />
+        </fieldset>
 
         <div>
           <label>Description:</label>
-          <input type="text" valueLink={this.linkState('description')} />
+          <input
+            type="text"
+            className="form-control"
+            valueLink={this.linkState('description')} />
         </div>
 
         <div>
           <label>Lat:</label>
-          <input type='text' valueLink={this.linkState('lat')} />
+          <input
+            type='text'
+            className="form-control"
+            valueLink={this.linkState('lat')} />
         </div>
 
         <div>
           <label>Lng:</label>
-          <input type='text' valueLink={this.linkState('lng')} />
+          <input
+            type='text'
+            className="form-control"
+            valueLink={this.linkState('lng')} />
         </div>
-
-        <button>Create an Adventure!</button>
+        <br />
+        <button className="btn btn-primary">Create an Adventure!</button>
         <br/>
       </form>
     )
