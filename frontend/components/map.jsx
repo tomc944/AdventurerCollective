@@ -14,13 +14,23 @@ var Map = React.createClass({
     var that = this;
 
     this.state.adventures.map(function(adventure) {
+
       adventure = new google.maps.Marker({
         position: { lat: adventure.lat, lng: adventure.lng },
-        animation: google.maps.Animation.DROP
+        description: adventure.description
       })
+      that.attachDescription(adventure)
       return(adventure.setMap(that.map))
     });
+  },
+  attachDescription: function(adventure) {
+    var infowindow = new google.maps.InfoWindow({
+      content: adventure.description
+    });
 
+    adventure.addListener('click', function() {
+      infowindow.open(adventure.get('map'), adventure)
+    })
   },
   componentDidMount: function() {
     var map = React.findDOMNode(this.refs.map);
@@ -37,7 +47,6 @@ var Map = React.createClass({
     var that = this;
 
     google.maps.event.addListener(this.map, 'idle', function() {
-      debugger;
       var bounds = that.map.getBounds();
       var northEast = bounds.getNorthEast();
       var southWest = bounds.getSouthWest();
