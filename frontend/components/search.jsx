@@ -2,6 +2,7 @@ var React = require('react');
 var Map = require('./map');
 var Navbar = require("./navbar");
 var AdventureIndex = require('./adventure_index');
+var User = require('./user');
 
 var Search = React.createClass({
   render: function() {
@@ -10,6 +11,7 @@ var Search = React.createClass({
         <Navbar />
         <Map />
         <AdventureIndex />
+        <User />
       </div>
     );
   }

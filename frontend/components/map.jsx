@@ -14,7 +14,7 @@ var Map = React.createClass({
     var that = this;
     var adventureKeys = Object.keys(this.state.adventures);
     if (this.props.adventure) {adventureKeys = [this.props.adventure.id];}
-    
+
     adventureKeys.map(function(adventureId) {
       var adventure = that.state.adventures[parseInt(adventureId)];
       adventure = new google.maps.Marker({
@@ -43,7 +43,8 @@ var Map = React.createClass({
     };
     this.map = new google.maps.Map(map, mapOptions);
     this.token = AdventureStore.addListener(this._onChange);
-    this.listenForMove();
+
+    if (!this.props.adventure){this.listenForMove();}
   },
   listenForMove: function() {
     var that = this;

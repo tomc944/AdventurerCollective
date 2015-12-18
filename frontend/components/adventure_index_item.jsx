@@ -15,7 +15,7 @@ var AdventureIndexItem = React.createClass({
   render: function() {
     return (
       <tr key={this.props.id} onClick={this.showAdventure}>
-        <td>{this.props.description}</td>
+        <td>{this.props.title}</td>
       </tr>
     );
   }

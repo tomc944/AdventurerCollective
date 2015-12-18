@@ -26,10 +26,17 @@ var AdventureDetail = React.createClass({
       return (
         <div>
           <Navbar />
-          {this.state.adventure.title}
           <Map
             key={this.state.adventure.id}
             adventure={this.state.adventure}/>
+          <div className="panel panel-default">
+            <div className="panel-heading">
+              <h3 className="panel-title">{this.state.adventure.title}</h3>
+            </div>
+            <div className="panel-body">
+              {this.state.adventure.description}
+            </div>
+          </div>
         </div>
       );
     }
