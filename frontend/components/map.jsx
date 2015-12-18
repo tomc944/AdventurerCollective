@@ -12,8 +12,10 @@ var Map = React.createClass({
   },
   _placeAdventures: function() {
     var that = this;
+    var adventureKeys = Object.keys(this.state.adventures);
 
-    this.state.adventures.map(function(adventure) {
+    adventureKeys.map(function(adventureId) {
+      var adventure = that.state.adventures[parseInt(adventureId)];
       adventure = new google.maps.Marker({
         position: {lat: adventure.lat, lng: adventure.lng},
         description: adventure.title

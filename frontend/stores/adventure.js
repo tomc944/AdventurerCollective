@@ -39,12 +39,8 @@ AdventureStore._addAdventure = function(adventure) {
   this.__emitChange();
 };
 
-AdventureStore._receiveAdventure = function(id) {
-  var index = _adventures.indexOf(id);
-
-  if (index === -1) {
-    _adventures.splice(index, 1);
-  }
+AdventureStore._receiveAdventure = function(adventure) {
+  _adventures = adventure;
 
   this.__emitChange();
 };
