@@ -15,13 +15,13 @@ var AdventureIndex = React.createClass({
     this.adventureToken = AdventureStore.addListener(this._onChange);
     apiUtil.fetchAdventures();
   },
-  componentWillUnmmount: function() {
+  componentWillUnmount: function() {
     this.adventureToken.remove();
   },
   render: function() {
     var that = this;
     var adventureKeys = Object.keys(this.state.adventures);
-    
+
     var adventureList = adventureKeys.map(function(adventureKey) {
       var adventure = that.state.adventures[adventureKey];
       return (
@@ -36,10 +36,13 @@ var AdventureIndex = React.createClass({
     });
 
     return (
-      <div>
-        <ul>
-          {adventureList}
-        </ul>
+      <div className="table-responsive">
+        <h2 className="sub-header">Adventures Near You!</h2>
+        <table className="table table-striped">
+          <tbody>
+            {adventureList}
+          </tbody>
+        </table>
       </div>
     );
   }

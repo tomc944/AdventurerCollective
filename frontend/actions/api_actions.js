@@ -8,16 +8,10 @@ var ApiActions = {
       adventures: adventures
     });
   },
-  addAdventure: function(adventure) {
-    AppDispatcher.dispatch({
-      actionType: AdventureConstants.ADVENTURE_ADDED,
-      adventure: adventure
-    });
-  },
-  receiveAdventure: function(id) {
+  receiveAdventure: function(adventure) {
     AppDispatcher.dispatch({
       actionType: AdventureConstants.ADVENTURE_RECEIVED,
-      id: id
+      adventure: adventure
     });
   }
 };

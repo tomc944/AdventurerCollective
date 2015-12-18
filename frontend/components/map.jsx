@@ -58,7 +58,7 @@ var Map = React.createClass({
       apiUtil.fetchAdventures(that.newBounds);
     });
   },
-  componentWillUnmmount: function() {
+  componentWillUnmount: function() {
     this.token.remove();
   },
   render: function() {

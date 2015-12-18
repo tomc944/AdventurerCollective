@@ -13,11 +13,8 @@ AdventureStore.__onDispatch = function(payload) {
     case AdventureConstants.ADVENTURES_RECEIVED:
       this._resetAdventures(payload.adventures);
       break;
-    case AdventureConstants.ADVENTURE_ADDED:
-      this._addAdventure(payload.adventure);
-      break;
     case AdventureConstants.ADVENTURE_RECEIVED:
-      this._receiveAdventure(payload.id);
+      this._receiveAdventure(payload.adventure);
       break;
   }
 };
@@ -34,14 +31,8 @@ AdventureStore._resetAdventures = function(adventures) {
   this.__emitChange();
 };
 
-AdventureStore._addAdventure = function(adventure) {
-  _adventures[adventure.id] = adventure;
-  this.__emitChange();
-};
-
 AdventureStore._receiveAdventure = function(adventure) {
-  _adventures = adventure;
-
+  _adventures[adventure.id] = adventure;
   this.__emitChange();
 };
 

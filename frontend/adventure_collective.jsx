@@ -23,7 +23,6 @@ var routes = (
     <Route path="adventures/new" component={AdventureForm} />
     <Route path="adventures/:adventureId" component={AdventureDetail} />
   </Route>
-    // <Route path="adventures/:adventureId" component={AdventureDetail} />
 );
 
 window.addEventListener('DOMContentLoaded', function() {

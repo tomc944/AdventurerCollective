@@ -13,6 +13,7 @@ var Navbar = React.createClass({
   },
 
   render: function() {
+    var src = "assets/logo.png"
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container">
@@ -23,8 +24,9 @@ var Navbar = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#">Adventurer Collective</a>
+              <a href="/"><img src={src} className="logo"></img></a>
               <a className="navbar-brand" href="#adventures/new">Create Adventure!</a>
+
             </div>
             <div id="navbar" className="navbar-collapse collapse">
               <ul className="nav navbar-nav">

@@ -17,8 +17,8 @@ var apiUtil = {
       method: 'GET',
       url: 'api/adventures/' + id,
       dataType: 'json',
-      success: function(id) {
-        ApiActions.receiveAdventure(id);
+      success: function(adventure) {
+        ApiActions.receiveAdventure(adventure);
       }
     });
   },
@@ -26,9 +26,9 @@ var apiUtil = {
     $.ajax({
       method: 'POST',
       url: 'api/adventures',
-      data: {adventure: adventure[0]},
-      success: function(adventure) {
-        ApiActions.addAdventure(adventure);
+      data: {adventure: adventure},
+      success: function() {
+        ApiActions.receiveAdventure(adventure);
       }
     });
   }

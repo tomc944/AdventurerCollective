@@ -9,7 +9,7 @@ var AdventureDetail = React.createClass({
     return AdventureStore.find(parseInt(this.props.params.adventureId, 10));
   },
   componentDidMount: function() {
-    this.token = AdventureStore.addListener(this._onChage);
+    this.token = AdventureStore.addListener(this._onChange);
   },
   _onChange: function() {
     this.setState({adventure: this.getStateFromStore()});
@@ -18,7 +18,7 @@ var AdventureDetail = React.createClass({
     this.token.remove();
   },
   render: function() {
-    if (this.state.adventure.id === 'undefined') {
+    if (typeof this.state.adventure === 'undefined') {
       return (<div></div>);
     } else {
       return (
