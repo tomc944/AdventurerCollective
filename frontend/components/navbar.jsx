@@ -35,6 +35,9 @@ var Navbar = React.createClass({
                   <a className="navbar-brand" onClick={this.signOut}>Sign Out</a>
                 </li>
               </ul>
+              <form className="navbar-form navbar-right">
+                <input type="text" className="form-control" placeholder="Search..." />
+              </form>
             </div>
           </div>
         </nav>
