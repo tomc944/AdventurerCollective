@@ -27,5 +27,5 @@ var routes = (
 
 window.addEventListener('DOMContentLoaded', function() {
   var root = document.getElementById('content');
-  ReactDOM.render(<Router>{routes}</Router>, root);
+  if (root) {ReactDOM.render(<Router>{routes}</Router>, root);}
 });

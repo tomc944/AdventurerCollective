@@ -27,7 +27,9 @@ var AdventureDetail = React.createClass({
         <div>
           <Navbar />
           {this.state.adventure.title}
-          <Map />
+          <Map
+            key={this.state.adventure.id}
+            adventure={this.state.adventure}/>
         </div>
       );
     }
