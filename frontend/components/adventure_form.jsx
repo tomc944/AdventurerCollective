@@ -2,6 +2,7 @@ var React = require('react');
 var History = require('react-router').History;
 var ApiUtil = require('../util/api_util');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var Navbar = require('./navbar.jsx');
 
 var AdventureForm = React.createClass({
   mixins: [LinkedStateMixin, History],
@@ -32,42 +33,45 @@ var AdventureForm = React.createClass({
 
   render: function() {
     return (
-      <form onSubmit={this.createAdventure}>
-        <fieldset className="form-group">
-          <label>Title:</label>
-          <input
-            type="text"
-            className="form-control"
-            valueLink={this.linkState('title')} />
-        </fieldset>
+      <div>
+        <Navbar />
+        <form onSubmit={this.createAdventure}>
+          <fieldset className="form-group">
+            <label>Title:</label>
+            <input
+              type="text"
+              className="form-control"
+              valueLink={this.linkState('title')} />
+          </fieldset>
 
-        <div>
-          <label>Description:</label>
-          <input
-            type="text"
-            className="form-control"
-            valueLink={this.linkState('description')} />
-        </div>
+          <div>
+            <label>Description:</label>
+            <input
+              type="text"
+              className="form-control"
+              valueLink={this.linkState('description')} />
+          </div>
 
-        <div>
-          <label>Lat:</label>
-          <input
-            type="text"
-            className="form-control"
-            valueLink={this.linkState('lat')} />
-        </div>
+          <div>
+            <label>Lat:</label>
+            <input
+              type="text"
+              className="form-control"
+              valueLink={this.linkState('lat')} />
+          </div>
 
-        <div>
-          <label>Lng:</label>
-          <input
-            type="text"
-            className="form-control"
-            valueLink={this.linkState('lng')} />
-        </div>
-        <br />
-        <button className="btn btn-primary">Create an Adventure!</button>
-        <br/>
-      </form>
+          <div>
+            <label>Lng:</label>
+            <input
+              type="text"
+              className="form-control"
+              valueLink={this.linkState('lng')} />
+          </div>
+          <br />
+          <button className="btn btn-primary">Create an Adventure!</button>
+          <br/>
+        </form>
+      </div>
     );
   }
 });

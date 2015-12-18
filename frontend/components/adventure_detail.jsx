@@ -1,5 +1,7 @@
 var React = require('react');
 var AdventureStore = require('../stores/adventure');
+var Navbar = require('./navbar');
+var Map = require('./map');
 
 var AdventureDetail = React.createClass({
   getInitialState: function() {
@@ -23,7 +25,9 @@ var AdventureDetail = React.createClass({
     } else {
       return (
         <div>
+          <Navbar />
           {this.state.adventure.title}
+          <Map />
         </div>
       );
     }
