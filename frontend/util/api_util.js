@@ -1,4 +1,4 @@
-var ApiActions = require("../actions/api_actions");
+var ApiActions = require('../actions/api_actions');
 
 var apiUtil = {
   fetchAdventures: function(bounds) {
@@ -10,19 +10,28 @@ var apiUtil = {
       success: function(resp) {
         ApiActions.receiveAll(resp);
       }
-    })
+    });
+  },
+  fetchAdventure: function(id) {
+    $.ajax({
+      method: 'GET',
+      url: 'api/adventures/' + id,
+      dataType: 'json',
+      success: function(id) {
+        ApiActions.receiveAdventure(id);
+      }
+    });
   },
   createAdventure: function(adventure) {
-    var adventure = adventure[0];
     $.ajax({
       method: 'POST',
-      url: "api/adventures",
-      data: {adventure: adventure},
+      url: 'api/adventures',
+      data: {adventure: adventure[0]},
       success: function(adventure) {
-        ApiActions.receiveAdventure(adventure)
+        ApiActions.addAdventure(adventure);
       }
-    })
+    });
   }
-}
+};
 
 module.exports = apiUtil;

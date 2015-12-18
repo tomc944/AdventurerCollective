@@ -1,11 +1,11 @@
-var React = require('react'),
-    Map = require('./map'),
-    Navbar = require("./navbar"),
-    AdventureIndex = require('./adventure_index');
+var React = require('react');
+var Map = require('./map');
+var Navbar = require("./navbar");
+var AdventureIndex = require('./adventure_index');
 
 var Search = React.createClass({
   render: function() {
-    return(
+    return (
       <div>
         <Navbar />
         <Map />

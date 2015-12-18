@@ -4,12 +4,12 @@ var Navbar = React.createClass({
   signOut: function(e) {
     e.preventDefault();
     $.ajax({
-      method: "DELETE",
-      url: "/session",
-      success: function(){
-        window.location = '/'
+      method: 'DELETE',
+      url: '/session',
+      success: function() {
+        window.location = '/';
       }
-    })
+    });
   },
 
   render: function() {
@@ -39,8 +39,8 @@ var Navbar = React.createClass({
           </div>
         </nav>
 
-    )
+    );
   }
-})
+});
 
 module.exports = Navbar;

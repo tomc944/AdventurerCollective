@@ -1,5 +1,5 @@
-var AppDispatcher = require('../dispatcher/dispatcher'),
-    AdventureConstants = require('../constants/adventure_constants');
+var AppDispatcher = require('../dispatcher/dispatcher');
+var AdventureConstants = require('../constants/adventure_constants');
 
 var ApiActions = {
   receiveAll: function(adventures) {
@@ -8,12 +8,18 @@ var ApiActions = {
       adventures: adventures
     });
   },
-  receiveAdventure: function(adventure) {
+  addAdventure: function(adventure) {
+    AppDispatcher.dispatch({
+      actionType: AdventureConstants.ADVENTURE_ADDED,
+      adventure: adventure
+    });
+  },
+  receiveAdventure: function(id) {
     AppDispatcher.dispatch({
       actionType: AdventureConstants.ADVENTURE_RECEIVED,
-      adventure: adventure
-    })
+      id: id
+    });
   }
-}
+};
 
 module.exports = ApiActions;

@@ -1,26 +1,25 @@
-var React = require('react'),
-    apiUtil = require('../util/api_util'),
-    AdventureStore = require('../stores/adventure');
+var React = require('react');
+var apiUtil = require('../util/api_util');
+var AdventureStore = require('../stores/adventure');
 
 var Map = React.createClass({
   getInitialState: function() {
-    return({ adventures: AdventureStore.all() })
+    return ({adventures: AdventureStore.all()})
   },
   _onChange: function() {
-    this.setState({ adventures: AdventureStore.all() })
+    this.setState({adventures: AdventureStore.all()});
     this._placeAdventures();
   },
   _placeAdventures: function() {
     var that = this;
 
     this.state.adventures.map(function(adventure) {
-
       adventure = new google.maps.Marker({
-        position: { lat: adventure.lat, lng: adventure.lng },
-        description: adventure.title,
-      })
-      that.attachDescription(adventure)
-      return(adventure.setMap(that.map))
+        position: {lat: adventure.lat, lng: adventure.lng},
+        description: adventure.title
+      });
+      that.attachDescription(adventure);
+      return (adventure.setMap(that.map));
     });
   },
   attachDescription: function(adventure) {
@@ -29,8 +28,8 @@ var Map = React.createClass({
     });
 
     adventure.addListener('click', function() {
-      infowindow.open(adventure.get('map'), adventure)
-    })
+      infowindow.open(adventure.get('map'), adventure);
+    });
   },
   componentDidMount: function() {
     var map = React.findDOMNode(this.refs.map);
@@ -61,10 +60,10 @@ var Map = React.createClass({
     this.token.remove();
   },
   render: function() {
-    return(
+    return (
       <div className="map" ref="map"></div>
-    )
+    );
   }
-})
+});
 
 module.exports = Map;
