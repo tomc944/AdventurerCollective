@@ -19,8 +19,11 @@ var AdventureIndex = React.createClass({
     this.adventureToken.remove();
   },
   render: function() {
-
-    var adventureList = this.state.adventures.map(function(adventure) {
+    var that = this;
+    var adventureKeys = Object.keys(this.state.adventures);
+    debugger;
+    var adventureList = adventureKeys.map(function(adventureKey) {
+      var adventure = that.state.adventures[adventureKey];
       return (
         <AdventureIndexItem
           key={adventure.id}

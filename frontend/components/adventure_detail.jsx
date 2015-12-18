@@ -18,6 +18,7 @@ var AdventureDetail = React.createClass({
     this.token.remove();
   },
   render: function() {
+    debugger
     if (this.state.adventure.id === 'undefined') {
       return (<div></div>);
     } else {

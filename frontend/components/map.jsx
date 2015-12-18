@@ -4,7 +4,7 @@ var AdventureStore = require('../stores/adventure');
 
 var Map = React.createClass({
   getInitialState: function() {
-    return ({adventures: AdventureStore.all()})
+    return ({adventures: AdventureStore.all()});
   },
   _onChange: function() {
     this.setState({adventures: AdventureStore.all()});
@@ -52,7 +52,7 @@ var Map = React.createClass({
       that.newBounds = {"northEast":
                        {"lat": northEast.lat(), "lng": northEast.lng()},
                         "southWest":
-                       {"lat": southWest.lat(), "lng": southWest.lng()}}
+                       {"lat": southWest.lat(), "lng": southWest.lng()}};
       apiUtil.fetchAdventures(that.newBounds);
     });
   },
