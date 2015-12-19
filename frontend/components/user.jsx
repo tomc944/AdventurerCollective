@@ -2,6 +2,8 @@ var React = require('react');
 var UserStore = require('../stores/user');
 var userUtil = require('../util/user_api_util.js');
 var Navbar = require('./navbar');
+var AuthoredAdventures = require('./adventures/authored_adventures');
+var StarredAdventures = require('./adventures/starred_adventures');
 
 var User = React.createClass({
   getInitialState: function() {
@@ -21,6 +23,8 @@ var User = React.createClass({
     return (
       <div>
         <Navbar />
+        <AuthoredAdventures />
+        <StarredAdventures />
       </div>
     );
   }
