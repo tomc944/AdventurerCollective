@@ -15,3 +15,6 @@ Adventure.create!(title: "Mt. Whitney",
 Adventure.create!(title: "Mt. Shasta",
                  description: "A great mountain to learn mountaineering",
                  author_id: 1, lat: 41.409791, lng: -122.194700)
+User.create!(username: 'tomc945',
+             password_digest: "$2a$10$puRhlGJ7/3BRHcN.dzJH6ut4jNUL0H5bB008U9Yzi33y0rQWJsoKK",
+             session_token: "2Fr_CaToNgmqMJbI8hDrIA")
