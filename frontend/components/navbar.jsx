@@ -37,8 +37,7 @@ var Navbar = React.createClass({
                   <ul className="dropdown-menu">
                     <li><a onClick={this.signOut}>Sign Out</a></li>
                     <li><a href="#">Starred Adventures</a></li>
-                    <li role="separator" className="divider"></li>
-                    <li className="dropdown-header">Nav header</li>
+
                   </ul>
                 </li>
               </ul>

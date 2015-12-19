@@ -9,9 +9,6 @@ var AdventureIndexItem = React.createClass({
     apiUtil.fetchAdventure(this.props.id);
     this.history.push(adventureUrl);
   },
-  componentWillReceiveProps: function(newProps) {
-    var adventureId = parseInt(newProps.id, 10);
-  },
   render: function() {
     return (
       <tr key={this.props.id} onClick={this.showAdventure}>
