@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
 
-  has_many :adventures, foreign_key: :author_id
-
+  has_many :authored_adventures, foreign_key: :author_id, class_name: "Adventure"
   has_many :user_adventures, foreign_key: :adventuree_id
   has_many :starred_adventures, through: :user_adventures, source: :adventure
 
