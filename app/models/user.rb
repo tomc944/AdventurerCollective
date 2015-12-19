@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :adventures, foreign_key: :author_id
 
+  has_many :user_adventures, foreign_key: :adventuree_id
+  has_many :starred_adventures, through: :user_adventures, source: :adventure
+
   attr_reader :password
 
   def self.generate_session_token

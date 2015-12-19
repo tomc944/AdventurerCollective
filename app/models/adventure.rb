@@ -8,6 +8,8 @@ class Adventure < ActiveRecord::Base
     presence: true
   )
 
+  belongs_to :user, foreign_key: :author_id
+
   def self.in_bounds(bounds)
     lat_bounds = bounds["southWest"]["lat"]..bounds['northEast']['lat']
     lng_bounds = bounds["southWest"]["lng"]..bounds['northEast']['lng']
