@@ -12,7 +12,6 @@ var User = React.createClass({
   componentDidMount: function() {
     this.userToken = UserStore.addListener(this._onChange);
     userUtil.fetchUser();
-    debugger;
   },
   componentWillUnmount: function() {
     this.userToken.remove();

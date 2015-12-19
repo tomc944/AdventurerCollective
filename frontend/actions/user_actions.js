@@ -3,7 +3,6 @@ var UserConstants = require('../constants/user_constants');
 
 var UserActions = {
   receiveUser: function(user) {
-    debugger;
     AppDispatcher.dispatch({
       actionType: UserConstants.RECEIVED_USER,
       user: user

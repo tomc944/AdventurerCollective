@@ -9,7 +9,6 @@ UserStore.all = function() {
 };
 
 UserStore.__onDispatch = function (payload) {
-  debugger
   switch(payload.actionType) {
     case UserConstants.RECEIVED_USER:
       this._receiveUser(payload.user);
@@ -18,7 +17,6 @@ UserStore.__onDispatch = function (payload) {
 };
 
 UserStore._receiveUser = function(user) {
-  debugger;
   _users = user;
   this.__emitChange();
 };

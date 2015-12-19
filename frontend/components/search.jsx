@@ -11,7 +11,6 @@ var Search = React.createClass({
         <Navbar />
         <Map />
         <AdventureIndex />
-        <User />
       </div>
     );
   }

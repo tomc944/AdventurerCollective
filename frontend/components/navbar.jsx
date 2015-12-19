@@ -30,11 +30,16 @@ var Navbar = React.createClass({
             </div>
             <div id="navbar" className="navbar-collapse collapse">
               <ul className="nav navbar-nav">
-
               </ul>
               <ul className="nav navbar-nav navbar-right">
-                <li>
-                  <a className="navbar-brand" onClick={this.signOut}>Sign Out</a>
+                <li className="dropdown">
+                  <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span className="caret"></span></a>
+                  <ul className="dropdown-menu">
+                    <li><a onClick={this.signOut}>Sign Out</a></li>
+                    <li><a href="#">Starred Adventures</a></li>
+                    <li role="separator" className="divider"></li>
+                    <li className="dropdown-header">Nav header</li>
+                  </ul>
                 </li>
               </ul>
               <form className="navbar-form navbar-right">
