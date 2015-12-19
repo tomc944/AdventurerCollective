@@ -1,8 +1,8 @@
 var React = require('react');
 var History = require('react-router').History;
-var ApiUtil = require('../util/api_util');
+var ApiUtil = require('../../util/api_util');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var Navbar = require('./navbar.jsx');
+var Navbar = require('../navbar.jsx');
 
 var AdventureForm = React.createClass({
   mixins: [LinkedStateMixin, History],

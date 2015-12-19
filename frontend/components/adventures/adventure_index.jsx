@@ -1,6 +1,6 @@
 var React = require('react');
-var AdventureStore = require('../stores/adventure');
-var apiUtil = require('../util/api_util.js');
+var AdventureStore = require('../../stores/adventure');
+var apiUtil = require('../../util/api_util.js');
 var Link = require('react-router').Link;
 var AdventureIndexItem = require('./adventure_index_item');
 

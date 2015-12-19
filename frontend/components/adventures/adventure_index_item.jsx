@@ -1,5 +1,5 @@
 var React = require('react');
-var apiUtil = require('../util/api_util');
+var apiUtil = require('../../util/api_util');
 var History = require('react-router').History;
 
 var AdventureIndexItem = React.createClass({

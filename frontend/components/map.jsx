@@ -1,6 +1,7 @@
 var React = require('react');
 var apiUtil = require('../util/api_util');
 var AdventureStore = require('../stores/adventure');
+var ReactDOM = require('react-dom');
 
 var Map = React.createClass({
   getInitialState: function() {
@@ -35,7 +36,7 @@ var Map = React.createClass({
     });
   },
   componentDidMount: function() {
-    var map = React.findDOMNode(this.refs.map);
+    var map = ReactDOM.findDOMNode(this.refs.map);
 
     var mapOptions = {
       center: {lat: 37.7758, lng: -122.435},

@@ -1,6 +1,7 @@
 var React = require('react');
 var UserStore = require('../stores/user');
 var userUtil = require('../util/user_api_util.js');
+var Navbar = require('./navbar');
 
 var User = React.createClass({
   getInitialState: function() {
@@ -19,7 +20,7 @@ var User = React.createClass({
   render: function() {
     return (
       <div>
-        {this.state.user.id}
+        <Navbar />
       </div>
     );
   }
