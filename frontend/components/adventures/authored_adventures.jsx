@@ -4,7 +4,7 @@ var AuthoredAdventures = React.createClass({
   render: function() {
     return (
       <div>
-        authored
+        {this.props.title}
       </div>
     );
   }

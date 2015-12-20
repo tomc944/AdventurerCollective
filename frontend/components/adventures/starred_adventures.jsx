@@ -4,7 +4,7 @@ var StarredAdventures = React.createClass({
   render: function() {
     return (
       <div>
-        starred
+        {this.props.title}
       </div>
     );
   }
