@@ -13,7 +13,7 @@ var AdventureIndex = React.createClass({
   },
   componentDidMount: function() {
     this.adventureToken = AdventureStore.addListener(this._onChange);
-    apiUtil.fetchAdventures();
+    // apiUtil.fetchAdventures();
   },
   componentWillUnmount: function() {
     this.adventureToken.remove();
@@ -21,7 +21,7 @@ var AdventureIndex = React.createClass({
   render: function() {
     var that = this;
     var adventureKeys = Object.keys(this.state.adventures);
-    
+
     var adventureList = adventureKeys.map(function(adventureKey) {
       var adventure = that.state.adventures[adventureKey];
       return (

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :authored_adventures, foreign_key: :author_id, class_name: "Adventure"
-  has_many :user_adventures, foreign_key: :adventuree_id
+  has_many :user_adventures, foreign_key: :adventuree_id, dependent: :destroy
   has_many :starred_adventures, through: :user_adventures, source: :adventure
 
   attr_reader :password

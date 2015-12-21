@@ -2,10 +2,15 @@ var Store = require('flux/utils').Store,
     AppDispatcher = require('../dispatcher/dispatcher'),
     AdventureConstants = require('../constants/adventure_constants'),
     _adventures = {},
+    _adventureAll = {},
     AdventureStore = new Store(AppDispatcher);
 
 AdventureStore.all = function() {
   return $.extend({}, _adventures);
+};
+
+AdventureStore.unbounded = function () {
+  return $.extend({}, _adventureAll);
 };
 
 AdventureStore.__onDispatch = function(payload) {
@@ -15,6 +20,9 @@ AdventureStore.__onDispatch = function(payload) {
       break;
     case AdventureConstants.ADVENTURE_RECEIVED:
       this._receiveAdventure(payload.adventure);
+      break;
+    case AdventureConstants.UNBOUNDED_RECEIEVD:
+      this._receiveUnbounded(payload.adventures);
       break;
   }
 };
@@ -33,6 +41,14 @@ AdventureStore._resetAdventures = function(adventures) {
 
 AdventureStore._receiveAdventure = function(adventure) {
   _adventures[adventure.id] = adventure;
+  this.__emitChange();
+};
+
+AdventureStore._receiveUnbounded = function(adventures) {
+  _adventureAll = {};
+  adventures.forEach(function(adventure) {
+    _adventureAll[adventure.id] = adventure;
+  });
   this.__emitChange();
 };
 

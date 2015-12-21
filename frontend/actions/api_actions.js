@@ -13,6 +13,12 @@ var ApiActions = {
       actionType: AdventureConstants.ADVENTURE_RECEIVED,
       adventure: adventure
     });
+  },
+  receiveUnbounded: function(adventures) {
+    AppDispatcher.dispatch({
+      actionType: AdventureConstants.UNBOUNDED_RECEIEVD,
+      adventures: adventures
+    });
   }
 };
 

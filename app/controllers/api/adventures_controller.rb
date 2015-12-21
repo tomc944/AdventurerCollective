@@ -3,14 +3,18 @@ class Api::AdventuresController < ApplicationController
     if (params[:params])
       @adventures = Adventure.in_bounds(params[:params])
     else
-      @adventures = []
+      @adventures = Adventure.all
     end
   end
 
   def create
     @adventure = Adventure.new(adventure_params)
     @adventure[:author_id] = current_user.id
-    
+
+    @adventure.activity_ids.each do |activity_id|
+      @adventure.activity_taggings.create(activity_id: activity_id)
+    end
+
     if @adventure.save
       render json: @adventure
     else
@@ -28,6 +32,10 @@ class Api::AdventuresController < ApplicationController
 
   private
   def adventure_params
-    params.require(:adventure).permit(:title, :description, :lat, :lng)
+    # activiy ids in a hash : []
+    # look at 99 cats solutions
+    # look at reddit solution
+    params.require(:adventure).permit(:title, :description, :lat, :lng,
+                                      {activity_ids: []})
   end
 end

@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20151221013904) do
     t.integer "adventure_id", null: false
   end
 
+  add_index "activity_taggings", ["activity_id", "adventure_id"], name: "index_activity_taggings_on_activity_id_and_adventure_id", unique: true, using: :btree
   add_index "activity_taggings", ["activity_id"], name: "index_activity_taggings_on_activity_id", using: :btree
   add_index "activity_taggings", ["adventure_id"], name: "index_activity_taggings_on_adventure_id", using: :btree
 

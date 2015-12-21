@@ -10,11 +10,11 @@ var SearchBar = React.createClass({
     return {inputVal: '', adventures: []};
   },
   _onChange: function() {
-    this.setState({adventures: AdventureStore.all()});
+    this.setState({adventures: AdventureStore.unbounded()});
   },
   componentWillMount: function() {
     this.searhBarToken = AdventureStore.addListener(this._onChange);
-    apiUtil.fetchAdventures();
+    apiUtil.fetchAll();
   },
   componentWillUnmount: function() {
     this.searhBarToken.remove();
@@ -23,7 +23,7 @@ var SearchBar = React.createClass({
     this.setState({inputVal: e.currentTarget.value});
   },
   enterSearchbox: function() {
-    this.setState({adventures: AdventureStore.all()});
+    this.setState({adventures: AdventureStore.unbounded()});
     this.inSearchbox = true;
   },
   leaveSearchbox: function() {

@@ -13,6 +13,7 @@ var AdventureForm = React.createClass({
     author_id: '',
     lat: '',
     lng: '',
+    activity_ids: []
   },
 
   getInitialState: function() {
@@ -39,7 +40,7 @@ var AdventureForm = React.createClass({
       return (
       <div key={i} className="checkbox">
         <label>
-          <input type="checkbox" value=""></input>
+          <input type="checkbox" checkedLink={this.linkState('activity_ids[i]')}></input>
           {activity}
         </label>
       </div>);

@@ -26,6 +26,14 @@ UserAdventure.create!(adventure_id: 1, adventuree_id: 1)
 UserAdventure.create!(adventure_id: 2, adventuree_id: 1)
 
 Activity.create!(pursuit: "Hiking")
+Activity.create!(pursuit: "Biking")
+Activity.create!(pursuit: "Running")
+Activity.create!(pursuit: "Swimming")
+Activity.create!(pursuit: "Backpacking")
+Activity.create!(pursuit: "Climbing")
 Activity.create!(pursuit: 'Surfing')
+Activity.create!(pursuit: "Relaxation")
+Activity.create!(pursuit: "Other")
+
 
 ActivityTagging.create!(adventure_id: 1, activity_id: 1)

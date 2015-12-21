@@ -12,6 +12,16 @@ var apiUtil = {
       }
     });
   },
+  fetchAll: function() {
+    $.ajax({
+      method: 'GET',
+      url: 'api/adventures',
+      dataType: 'json',
+      success: function(allAdventures) {
+        ApiActions.receiveUnbounded(allAdventures);
+      }
+    });
+  },
   fetchAdventure: function(id) {
     $.ajax({
       method: 'GET',

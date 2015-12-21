@@ -6,5 +6,6 @@ class CreateActivityTaggings < ActiveRecord::Migration
     end
     add_index :activity_taggings, :activity_id
     add_index :activity_taggings, :adventure_id
+    add_index :activity_taggings, [:activity_id, :adventure_id], unique: true
   end
 end
