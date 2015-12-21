@@ -28,6 +28,7 @@ var User = React.createClass({
             key={adventure.id}
             id={adventure.id}
             title={adventure.title}
+            taggings={adventure.taggings}
             />
         );
       });
@@ -35,11 +36,13 @@ var User = React.createClass({
     if (this.state.user.authored_adventures) {
       var AuthorList = this.state.user
                        .authored_adventures.map(function (adventure){
+
         return (
           <AuthoredAdventures
             key={adventure.id}
             id={adventure.id}
             title={adventure.title}
+            taggings={adventure.taggings}
             />
         );
       });

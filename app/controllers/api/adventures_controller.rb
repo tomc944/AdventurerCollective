@@ -11,10 +11,6 @@ class Api::AdventuresController < ApplicationController
     @adventure = Adventure.new(adventure_params)
     @adventure[:author_id] = current_user.id
 
-    @adventure.activity_ids.each do |activity_id|
-      @adventure.activity_taggings.create(activity_id: activity_id)
-    end
-
     if @adventure.save
       render json: @adventure
     else
@@ -35,7 +31,7 @@ class Api::AdventuresController < ApplicationController
     # activiy ids in a hash : []
     # look at 99 cats solutions
     # look at reddit solution
-    params.require(:adventure).permit(:title, :description, :lat, :lng,
-                                      {activity_ids: []})
+    params.require(:adventure).permit(
+      :title, :description, :lat, :lng, activity_ids: [])
   end
 end

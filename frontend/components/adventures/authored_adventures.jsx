@@ -10,9 +10,15 @@ var AuthoredAdventures = React.createClass({
     this.history.push(adventureUrl);
   },
   render: function() {
+    var allTags = this.props.taggings.map(function(tag, i) {
+      return (<li key={i} onClick={this.showAuthored}>{tag.pursuit}</li>);
+    });
+
     return (
       <div>
-        <li onClick={this.showAuthored}>{this.props.title}</li>
+        <h5>{this.props.title}</h5>
+        <h6>Activities Availables</h6>
+        {allTags}
       </div>
     );
   }

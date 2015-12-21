@@ -31,16 +31,22 @@ var AdventureForm = React.createClass({
     }.bind(this));
     this.setState(this.blankAttrs);
   },
+  checkBox: function(id, e) {
+    var boxIds = this.state.activity_ids;
+    boxIds.push(id);
+    this.setState({activity_ids: boxIds});
+  },
 
   render: function() {
     var activities = ['Hiking', 'Biking', 'Running', 'Swimming','Backpacking',
                       'Climbing', 'Surfing', 'Relaxation', 'Other'];
 
-    var checkboxes = activities.map(function(activity, i) {
+    var that = this;
+    var checkboxes = activities.map(function(activity, id) {
       return (
-      <div key={i} className="checkbox">
+      <div key={id} className="checkbox">
         <label>
-          <input type="checkbox" checkedLink={this.linkState('activity_ids[i]')}></input>
+          <input type="checkbox" onClick={that.checkBox.bind(null, id)}></input>
           {activity}
         </label>
       </div>);
