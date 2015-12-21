@@ -67,6 +67,19 @@ var AdventureForm = React.createClass({
               className="form-control"
               valueLink={this.linkState('lng')} />
           </div>
+
+          <div className="checkbox">
+            <label>
+              <input type="checkbox" value=""></input>
+              Hiking
+            </label>
+          </div>
+          <div className="checkbox">
+            <label>
+              <input type="checkbox" value=""></input>
+              Swimming
+            </label>
+          </div>
           <br />
           <button className="btn btn-primary">Create an Adventure!</button>
           <br/>

@@ -24,3 +24,8 @@ User.create!(username: 'tomc945',
 # Add the necessary user_adventure join table (this corresponds to starred_adventures)
 UserAdventure.create!(adventure_id: 1, adventuree_id: 1)
 UserAdventure.create!(adventure_id: 2, adventuree_id: 1)
+
+Activity.create!(pursuit: "Hiking")
+Activity.create!(pursuit: 'Surfing')
+
+ActivityTagging.create!(adventure_id: 1, activity_id: 1)

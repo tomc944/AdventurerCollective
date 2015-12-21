@@ -9,6 +9,8 @@ class Adventure < ActiveRecord::Base
   )
 
   belongs_to :user, foreign_key: :author_id
+  has_many :activity_taggings
+  has_many :activities, through: :activity_taggings
 
   def self.in_bounds(bounds)
     lat_bounds = bounds["southWest"]["lat"]..bounds['northEast']['lat']
