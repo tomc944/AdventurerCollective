@@ -29,10 +29,11 @@ ActiveRecord::Schema.define(version: 20151219010911) do
   add_index "adventures", ["author_id"], name: "index_adventures_on_author_id", using: :btree
 
   create_table "user_adventures", force: :cascade do |t|
-    t.integer  "adventure_id",  null: false
-    t.integer  "adventuree_id", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "adventure_id",                  null: false
+    t.integer  "adventuree_id",                 null: false
+    t.boolean  "completed",     default: false, null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "user_adventures", ["adventure_id"], name: "index_user_adventures_on_adventure_id", using: :btree

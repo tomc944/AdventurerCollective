@@ -25,6 +25,7 @@ var User = React.createClass({
         return (
           <StarredAdventures
             key={adventure.id}
+            id={adventure.id}
             title={adventure.title}
             />
         );
@@ -35,6 +36,7 @@ var User = React.createClass({
         return (
           <AuthoredAdventures
             key={adventure.id}
+            id={adventure.id}
             title={adventure.title}
             />
         );
