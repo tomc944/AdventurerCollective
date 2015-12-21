@@ -32,6 +32,19 @@ var AdventureForm = React.createClass({
   },
 
   render: function() {
+    var activities = ['Hiking', 'Biking', 'Running', 'Swimming','Backpacking',
+                      'Climbing', 'Surfing', 'Relaxation', 'Other'];
+
+    var checkboxes = activities.map(function(activity, i) {
+      return (
+      <div key={i} className="checkbox">
+        <label>
+          <input type="checkbox" value=""></input>
+          {activity}
+        </label>
+      </div>);
+    });
+
     return (
       <div>
         <Navbar />
@@ -44,42 +57,34 @@ var AdventureForm = React.createClass({
               valueLink={this.linkState('title')} />
           </fieldset>
 
-          <div>
+          <fieldset className="form-group">
             <label>Description:</label>
             <input
               type="text"
               className="form-control"
               valueLink={this.linkState('description')} />
-          </div>
+          </fieldset>
 
-          <div>
+          <fieldset className="form-group">
             <label>Lat:</label>
             <input
               type="text"
               className="form-control"
               valueLink={this.linkState('lat')} />
-          </div>
+          </fieldset>
 
-          <div>
+          <fieldset className="form-group">
             <label>Lng:</label>
             <input
               type="text"
               className="form-control"
               valueLink={this.linkState('lng')} />
+          </fieldset>
+          <div>
+            <label>Type of Adventure:</label>
+            {checkboxes}
           </div>
 
-          <div className="checkbox">
-            <label>
-              <input type="checkbox" value=""></input>
-              Hiking
-            </label>
-          </div>
-          <div className="checkbox">
-            <label>
-              <input type="checkbox" value=""></input>
-              Swimming
-            </label>
-          </div>
           <br />
           <button className="btn btn-primary">Create an Adventure!</button>
           <br/>
