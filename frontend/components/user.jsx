@@ -21,7 +21,8 @@ var User = React.createClass({
   },
   render: function() {
     if (this.state.user.starred_adventures) {
-      var StarList = this.state.user.starred_adventures.map(function (adventure){
+      var StarList = this.state.user
+                     .starred_adventures.map(function (adventure){
         return (
           <StarredAdventures
             key={adventure.id}
@@ -32,7 +33,8 @@ var User = React.createClass({
       });
     }
     if (this.state.user.authored_adventures) {
-      var AuthorList = this.state.user.starred_adventures.map(function (adventure){
+      var AuthorList = this.state.user
+                       .authored_adventures.map(function (adventure){
         return (
           <AuthoredAdventures
             key={adventure.id}

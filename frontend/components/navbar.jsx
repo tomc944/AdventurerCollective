@@ -1,4 +1,5 @@
 var React = require('react');
+var SearchBar = require('./searchbar');
 
 var Navbar = React.createClass({
   signOut: function(e) {
@@ -40,9 +41,7 @@ var Navbar = React.createClass({
                   </ul>
                 </li>
               </ul>
-              <form className="navbar-form navbar-right">
-                <input type="text" className="form-control" placeholder="Search..." />
-              </form>
+                <SearchBar />
             </div>
           </div>
         </nav>

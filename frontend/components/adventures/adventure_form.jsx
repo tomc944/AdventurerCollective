@@ -12,7 +12,7 @@ var AdventureForm = React.createClass({
     description: '',
     author_id: '',
     lat: '',
-    lng: ''
+    lng: '',
   },
 
   getInitialState: function() {
@@ -80,6 +80,7 @@ var AdventureForm = React.createClass({
               className="form-control"
               valueLink={this.linkState('lng')} />
           </fieldset>
+
           <div>
             <label>Type of Adventure:</label>
             {checkboxes}
