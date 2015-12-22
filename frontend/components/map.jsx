@@ -1,5 +1,6 @@
 var React = require('react');
 var apiUtil = require('../util/api_util');
+var FormActions = require('../actions/form_actions');
 var AdventureStore = require('../stores/adventure');
 var ReactDOM = require('react-dom');
 
@@ -47,14 +48,18 @@ var Map = React.createClass({
 
     if (!this.props.adventure){this.listenForMove();}
     if (this.props.check){this.listenForClick();}
+
   },
   listenForClick: function() {
+
     this.map.addListener('click', function(e) {
-      this.props.handler({
+
+      this.attrs ={
         "lat": e.latLng.lat(),
         "lng": e.latLng.lng()
-      });
-    }.bind(this));
+      };
+      FormActions.receiveAttrs(this.attrs);
+    });
   },
   listenForMove: function() {
     var that = this;

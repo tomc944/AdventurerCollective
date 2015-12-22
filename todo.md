@@ -1,10 +1,17 @@
 Immediately: make sure all activity tags display accordingly
-  -Maybe have a drop down that appears below when hovered over
+  -Maybe have a drop down that appears below when hovered over (x)
 
-Immediately: fix form so that when the map is pressed the corresponding
-  lat and lng will be filled in
+  -Sort of done - may need to overhaul how the adventures are displayed
+    -i.e. not in a table
+    -Just have a div with an ul and lis for each adventure
+    -Bootstrap these elements somehow...
+    -I would ideally like an index show page:
+        -photo
+        -star button
+        -hover off
+            -displays activities as glphys
 
-For tonight:
+For tomorrow:
   -Be able to star an adventure from either the show or the index page
   -Add a completed element for the starred Adventures
     -Green market for completed

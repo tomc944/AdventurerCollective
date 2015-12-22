@@ -3,6 +3,7 @@ var Store = require('flux/utils').Store,
     AdventureConstants = require('../constants/adventure_constants'),
     _adventures = {},
     _adventureAll = {},
+    _blankAttrs = {"lat": '', "lng": ''},
     AdventureStore = new Store(AppDispatcher);
 
 AdventureStore.all = function() {
@@ -11,6 +12,10 @@ AdventureStore.all = function() {
 
 AdventureStore.unbounded = function () {
   return $.extend({}, _adventureAll);
+};
+
+AdventureStore.takeAttrs = function() {
+  return $.extend({}, _blankAttrs);
 };
 
 AdventureStore.__onDispatch = function(payload) {
@@ -42,6 +47,11 @@ AdventureStore._resetAdventures = function(adventures) {
 AdventureStore._receiveAdventure = function(adventure) {
   _adventures[adventure.id] = adventure;
   this.__emitChange();
+};
+
+AdventureStore._setAttrs = function(attrs) {
+  _blankAttrs["lat"] = attrs["lat"];
+  _blankAttrs["lng"] = attrs["lng"];
 };
 
 AdventureStore._receiveUnbounded = function(adventures) {

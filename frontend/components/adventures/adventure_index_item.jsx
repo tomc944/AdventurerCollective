@@ -20,26 +20,27 @@ var AdventureIndexItem = React.createClass({
   },
   getInfo: function(){
     if(this.state.showActivities){
-      return  <td>Activities: {this.getAllTags()}</td>;
+      return  ("Activities: " + this.getAllTags());
     }
   },
   getAllTags: function() {
     // change to glyphs later...
     var allTags = [];
+    
     this.props.tagging.map(function (tag){
-      allTags.push(tag.pursuit + " ");
+      allTags.push(tag.pursuit);
     });
-    return allTags;
+    return allTags.join(", ");
   },
   render: function() {
     return (
 
       <tr key={this.props.id} onClick={this.showAdventure}
           onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-        <td>
+        <td className="setFixed">
           {this.props.title}
         </td>
-        {this.getInfo() }
+        <td className="aligned">{this.getInfo()}</td>
       </tr>
 
     );

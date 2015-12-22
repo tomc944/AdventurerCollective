@@ -4,19 +4,7 @@ var ApiUtil = require('../../util/api_util');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var Navbar = require('../navbar.jsx');
 var Map = require('../map');
-
-// need to figure out a way to only handle onclick requests for map, when
-// map is loaded in the AdventureForm
-// maybe pass props from the form to the Map
-// check boolean whether or not we need to addListener based on check
-// need to add a componentwillupdate method to account for onclick of Map
-
-// bonus:
-// needs to update if the map is clicked again...
-// need to redirect to either the index page or the adventure show page
-// once the form is completed and submitted
-
-
+var AttrStore = require('../../stores/attrs');
 
 var AdventureForm = React.createClass({
   mixins: [LinkedStateMixin, History],
@@ -44,13 +32,24 @@ var AdventureForm = React.createClass({
       this.history.pushState(null, '/adventure/' + id, {});
     }.bind(this));
     this.setState(this.blankAttrs);
+    this.history.pushState(null, '/', {});
   },
   checkBox: function(id, e) {
     var boxIds = this.state.activity_ids;
     boxIds.push(id);
     this.setState({activity_ids: boxIds});
   },
-
+  _onChange: function() {
+    debugger
+    var newAttrs = AttrStore.all();
+    this.setState({"lat": newAttrs.lat, "lng": newAttrs.lng });
+  },
+  componentDidMount: function() {
+    this.adventureToken = AttrStore.addListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    this.adventureToken.remove();
+  },
   render: function() {
     var activities = ['Hiking', 'Biking', 'Running', 'Swimming','Backpacking',
                       'Climbing', 'Surfing', 'Relaxation', 'Other'];
