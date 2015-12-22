@@ -17,7 +17,6 @@ AttrStore.__onDispatch = function(payload) {
 };
 
 AttrStore._receiveAttrs = function(attrs) {
-  debugger;
   _attrs = attrs;
   this.__emitChange();
 };

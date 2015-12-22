@@ -40,7 +40,6 @@ var AdventureForm = React.createClass({
     this.setState({activity_ids: boxIds});
   },
   _onChange: function() {
-    debugger
     var newAttrs = AttrStore.all();
     this.setState({"lat": newAttrs.lat, "lng": newAttrs.lng });
   },
@@ -68,7 +67,7 @@ var AdventureForm = React.createClass({
     return (
       <div>
         <Navbar />
-        <form onSubmit={this.createAdventure}>
+        <form onSubmit={this.createAdventure} className="outerForm">
           <fieldset className="form-group">
             <label>Title:</label>
             <input

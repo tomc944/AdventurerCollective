@@ -8,15 +8,15 @@ var Map = React.createClass({
   getInitialState: function() {
     return ({adventures: AdventureStore.all()});
   },
-  _onChange: function() {
+  _onChange: function(){
     this.setState({adventures: AdventureStore.all()});
     this._placeAdventures();
   },
   _placeAdventures: function() {
     var that = this;
     var adventureKeys = Object.keys(this.state.adventures);
-    if (this.props.adventure) {adventureKeys = [this.props.adventure.id];}
 
+    debugger;
     adventureKeys.map(function(adventureId) {
       var adventure = that.state.adventures[parseInt(adventureId)];
       adventure = new google.maps.Marker({
@@ -44,6 +44,7 @@ var Map = React.createClass({
       zoom: 6
     };
     this.map = new google.maps.Map(map, mapOptions);
+    debugger;
     this.token = AdventureStore.addListener(this._onChange);
 
     if (!this.props.adventure){this.listenForMove();}
@@ -61,6 +62,7 @@ var Map = React.createClass({
       FormActions.receiveAttrs(this.attrs);
     });
   },
+
   listenForMove: function() {
     var that = this;
 
