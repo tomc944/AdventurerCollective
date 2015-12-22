@@ -6,32 +6,38 @@ var apiUtil = require('../../util/api_util');
 
 var AdventureDetail = React.createClass({
   getInitialState: function() {
-    return ({adventure: AdventureStore.all()});
+    return ({adventure: this.findFromStore()});
+  },
+  findFromStore: function() {
+    return (AdventureStore.find(parseInt(this.props.params.adventureId)));
   },
   componentDidMount: function() {
     this.token = AdventureStore.addListener(this._onChange);
-    apiUtil.fetchAdventure(parseInt(this.props.params.adventureId));
   },
   _onChange: function() {
-    this.setState({adventure: AdventureStore.all()});
+    this.setState({adventure: this.findFromStore()});
   },
   componentWillUnmount: function() {
     this.token.remove();
   },
   componentWillReceiveProps: function(newProps) {
-    this.props = newProps;
-    this.setState({adventure: this.AdventureStore.all()});
+    apiUtil.fetchAdventure(parseInt(newProps.params.adventureId));
   },
   render: function() {
     if (typeof this.state.adventure === 'undefined') {
       return (<div></div>);
     } else {
+      var id = this.state.adventure.id;
+      var adventureObject = {};
+      adventureObject[id] = this.state.adventure;
       return (
         <div>
           <Navbar />
           <Map
             key={this.state.adventure.id}
-            adventure={this.state.adventure}/>
+            adventures={adventureObject}
+            onIndex={false}
+            />
           <div className="panel panel-default">
             <div className="panel-heading">
               <h3 className="panel-title">{this.state.adventure.title}</h3>

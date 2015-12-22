@@ -17,3 +17,7 @@ For tomorrow:
     -Green market for completed
     -Red marker for TODO
   -Start basic cloudinary debugging/setup
+
+
+-Fix map flickering
+  -Potentially add parent component...

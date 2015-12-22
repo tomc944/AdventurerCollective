@@ -5,20 +5,15 @@ var AdventureStore = require('../stores/adventure');
 var ReactDOM = require('react-dom');
 
 var Map = React.createClass({
-  getInitialState: function() {
-    return ({adventures: AdventureStore.all()});
-  },
-  _onChange: function(){
-    this.setState({adventures: AdventureStore.all()});
+  componentDidUpdate: function() {
     this._placeAdventures();
   },
   _placeAdventures: function() {
     var that = this;
-    var adventureKeys = Object.keys(this.state.adventures);
+    var adventureKeys = Object.keys(this.props.adventures);
 
-    debugger;
     adventureKeys.map(function(adventureId) {
-      var adventure = that.state.adventures[parseInt(adventureId)];
+      var adventure = that.props.adventures[parseInt(adventureId)];
       adventure = new google.maps.Marker({
         position: {lat: adventure.lat, lng: adventure.lng},
         description: adventure.title
@@ -44,10 +39,9 @@ var Map = React.createClass({
       zoom: 6
     };
     this.map = new google.maps.Map(map, mapOptions);
-    debugger;
-    this.token = AdventureStore.addListener(this._onChange);
 
-    if (!this.props.adventure){this.listenForMove();}
+    this._placeAdventures();
+    if (this.props.onIndex){this.listenForMove();}
     if (this.props.check){this.listenForClick();}
 
   },
@@ -77,9 +71,9 @@ var Map = React.createClass({
       apiUtil.fetchAdventures(that.newBounds);
     });
   },
-  componentWillUnmount: function() {
-    this.token.remove();
-  },
+  // componentWillUnmount: function() {
+  //   this.token.remove();
+  // },
   render: function() {
     return (
       <div className="map" ref="map"></div>

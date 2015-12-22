@@ -5,24 +5,12 @@ var Link = require('react-router').Link;
 var AdventureIndexItem = require('./adventure_index_item');
 
 var AdventureIndex = React.createClass({
-  getInitialState: function() {
-    return ({adventures: AdventureStore.all()});
-  },
-  _onChange: function() {
-    this.setState({adventures: AdventureStore.all()});
-  },
-  componentDidMount: function() {
-    this.adventureToken = AdventureStore.addListener(this._onChange);
-  },
-  componentWillUnmount: function() {
-    this.adventureToken.remove();
-  },
   render: function() {
     var that = this;
-    var adventureKeys = Object.keys(this.state.adventures);
+    var adventureKeys = Object.keys(this.props.adventures);
 
     var adventureList = adventureKeys.map(function(adventureKey) {
-      var adventure = that.state.adventures[adventureKey];
+      var adventure = that.props.adventures[adventureKey];
       return (
         <AdventureIndexItem
           key={adventure.id}

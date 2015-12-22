@@ -109,7 +109,8 @@ var AdventureForm = React.createClass({
           <button className="btn btn-primary">Create an Adventure!</button>
           <br/>
         </form>
-        <Map check={true} />
+        <Map check={true}
+             adventures={{}}/>
       </div>
     );
   }
