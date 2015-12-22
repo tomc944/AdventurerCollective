@@ -46,6 +46,15 @@ var Map = React.createClass({
     this.token = AdventureStore.addListener(this._onChange);
 
     if (!this.props.adventure){this.listenForMove();}
+    if (this.props.check){this.listenForClick();}
+  },
+  listenForClick: function() {
+    this.map.addListener('click', function(e) {
+      this.props.handler({
+        "lat": e.latLng.lat(),
+        "lng": e.latLng.lng()
+      });
+    }.bind(this));
   },
   listenForMove: function() {
     var that = this;

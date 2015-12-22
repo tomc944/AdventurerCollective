@@ -3,6 +3,20 @@ var History = require('react-router').History;
 var ApiUtil = require('../../util/api_util');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var Navbar = require('../navbar.jsx');
+var Map = require('../map');
+
+// need to figure out a way to only handle onclick requests for map, when
+// map is loaded in the AdventureForm
+// maybe pass props from the form to the Map
+// check boolean whether or not we need to addListener based on check
+// need to add a componentwillupdate method to account for onclick of Map
+
+// bonus:
+// needs to update if the map is clicked again...
+// need to redirect to either the index page or the adventure show page
+// once the form is completed and submitted
+
+
 
 var AdventureForm = React.createClass({
   mixins: [LinkedStateMixin, History],
@@ -97,6 +111,7 @@ var AdventureForm = React.createClass({
           <button className="btn btn-primary">Create an Adventure!</button>
           <br/>
         </form>
+        <Map check={true} />
       </div>
     );
   }
