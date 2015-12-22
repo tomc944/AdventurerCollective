@@ -28,7 +28,6 @@ var apiUtil = {
       url: 'api/adventures/' + id,
       dataType: 'json',
       success: function(adventure) {
-        debugger;
         ApiActions.receiveAdventure(adventure);
       }
     });
