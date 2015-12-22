@@ -20,7 +20,8 @@ var AdventureDetail = React.createClass({
     this.token.remove();
   },
   componentWillReceiveProps: function(newProps) {
-    this.setState({adventure: AdventureStore.find(parseInt(newProps.params.adventureId))})
+    this.props = newProps;
+    this.setState({adventure: this.getStateFromStore()});
   },
   render: function() {
     if (typeof this.state.adventure === 'undefined') {
