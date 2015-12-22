@@ -86,7 +86,8 @@ var SearchBar = React.createClass({
         <input type="text"
                className="form-control"
                onChange={this.handleInput}
-               value={this.state.inputVal}/>
+               value={this.state.inputVal}
+               placeholder="Find adventure..."/>
         <div className="list-group">
           {adventures}
         </div>

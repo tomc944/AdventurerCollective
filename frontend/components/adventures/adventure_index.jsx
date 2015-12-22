@@ -30,7 +30,9 @@ var AdventureIndex = React.createClass({
           title={adventure.title}
           description={adventure.description}
           lat={adventure.lat}
-          lng={adventure.lng} />
+          lng={adventure.lng}
+          tagging={adventure.activities} />
+
       );
     });
 

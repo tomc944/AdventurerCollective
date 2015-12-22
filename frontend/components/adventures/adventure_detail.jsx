@@ -19,6 +19,9 @@ var AdventureDetail = React.createClass({
   componentWillUnmount: function() {
     this.token.remove();
   },
+  componentWillReceiveProps: function(newProps) {
+    this.setState({adventure: AdventureStore.find(parseInt(newProps.params.adventureId))})
+  },
   render: function() {
     if (typeof this.state.adventure === 'undefined') {
       return (<div></div>);
