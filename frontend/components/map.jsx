@@ -11,16 +11,16 @@ var Map = React.createClass({
   _placeAdventures: function() {
     var that = this;
     var adventureKeys = Object.keys(this.props.adventures);
-
-    adventureKeys.map(function(adventureId) {
-      var adventure = that.props.adventures[parseInt(adventureId)];
-      adventure = new google.maps.Marker({
-        position: {lat: adventure.lat, lng: adventure.lng},
-        description: adventure.title
+      adventureKeys.map(function(adventureId) {
+        var adventure = that.props.adventures[parseInt(adventureId)];
+        adventure = new google.maps.Marker({
+          position: {lat: adventure.lat, lng: adventure.lng},
+          description: adventure.title
+        });
+        that.attachDescription(adventure);
+        return (adventure.setMap(that.map));
       });
-      that.attachDescription(adventure);
-      return (adventure.setMap(that.map));
-    });
+
   },
   attachDescription: function(adventure) {
     var infowindow = new google.maps.InfoWindow({

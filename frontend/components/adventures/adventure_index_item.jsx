@@ -20,17 +20,22 @@ var AdventureIndexItem = React.createClass({
   },
   getInfo: function(){
     if(this.state.showActivities){
-      return  ("Activities: " + this.getAllTags());
+      return  ("Activities: " + this.getAllTags() + this.getStar());
     }
   },
   getAllTags: function() {
     // change to glyphs later...
     var allTags = [];
-    
+
     this.props.tagging.map(function (tag){
       allTags.push(tag.pursuit);
     });
     return allTags.join(", ");
+  },
+  getStar: function() {
+    if(this.state.showActivities){
+      return (' \u2606');
+    }
   },
   render: function() {
     return (

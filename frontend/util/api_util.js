@@ -37,8 +37,8 @@ var apiUtil = {
       method: 'POST',
       url: 'api/adventures',
       data: {adventure: adventure},
-      success: function() {
-        ApiActions.receiveAdventure(adventure);
+      success: function(newAdventure) {
+        ApiActions.receiveAdventure(newAdventure);
       }
     });
   }

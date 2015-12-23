@@ -14,7 +14,7 @@ class Api::AdventuresController < ApplicationController
     if @adventure.save
       render json: @adventure
     else
-      render json: @advevnture.errors.full_messages, status: 422
+      render json: @adventure.errors.full_messages, status: 422
     end
   end
 
@@ -28,9 +28,6 @@ class Api::AdventuresController < ApplicationController
 
   private
   def adventure_params
-    # activiy ids in a hash : []
-    # look at 99 cats solutions
-    # look at reddit solution
     params.require(:adventure).permit(
       :title, :description, :lat, :lng, activity_ids: [])
   end

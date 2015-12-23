@@ -36,7 +36,7 @@ var AdventureForm = React.createClass({
   },
   checkBox: function(id, e) {
     var boxIds = this.state.activity_ids;
-    boxIds.push(id);
+    boxIds.concat([id+1])
     this.setState({activity_ids: boxIds});
   },
   _onChange: function() {
