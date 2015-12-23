@@ -1,4 +1,5 @@
 var ApiActions = require('../actions/api_actions');
+var ImageActions = require('../action/image_actions');
 
 var apiUtil = {
   fetchAdventures: function(bounds) {
@@ -39,6 +40,16 @@ var apiUtil = {
       data: {adventure: adventure},
       success: function(newAdventure) {
         ApiActions.receiveAdventure(newAdventure);
+      }
+    });
+  },
+  grabImage: function(id) {
+    $.ajax({
+      method: 'GET',
+      url: 'api/images/' + id,
+      dataType: 'json',
+      success: function(image) {
+        ImageActions.receiveImage(image);
       }
     });
   }
