@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221013904) do
+ActiveRecord::Schema.define(version: 20151223184829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,23 @@ ActiveRecord::Schema.define(version: 20151221013904) do
   end
 
   add_index "adventures", ["author_id"], name: "index_adventures_on_author_id", using: :btree
+
+  create_table "image_taggings", force: :cascade do |t|
+    t.integer  "adventure_id", null: false
+    t.integer  "image_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "image_taggings", ["adventure_id", "image_id"], name: "index_image_taggings_on_adventure_id_and_image_id", unique: true, using: :btree
+  add_index "image_taggings", ["adventure_id"], name: "index_image_taggings_on_adventure_id", using: :btree
+  add_index "image_taggings", ["image_id"], name: "index_image_taggings_on_image_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "url",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_adventures", force: :cascade do |t|
     t.integer  "adventure_id",                  null: false

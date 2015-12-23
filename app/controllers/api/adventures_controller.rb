@@ -29,6 +29,7 @@ class Api::AdventuresController < ApplicationController
   private
   def adventure_params
     params.require(:adventure).permit(
-      :title, :description, :lat, :lng, activity_ids: [])
+      :title, :description, :lat, :lng, activity_ids: []
+      :image_ids: [])
   end
 end

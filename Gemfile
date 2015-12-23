@@ -29,6 +29,8 @@ gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass'
 
+gem 'figaro'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

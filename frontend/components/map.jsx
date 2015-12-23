@@ -38,6 +38,7 @@ var Map = React.createClass({
       center: {lat: 37.7758, lng: -122.435},
       zoom: 6
     };
+
     this.map = new google.maps.Map(map, mapOptions);
 
     this._placeAdventures();
@@ -71,9 +72,6 @@ var Map = React.createClass({
       apiUtil.fetchAdventures(that.newBounds);
     });
   },
-  // componentWillUnmount: function() {
-  //   this.token.remove();
-  // },
   render: function() {
     return (
       <div className="map" ref="map"></div>

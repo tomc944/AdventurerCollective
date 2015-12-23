@@ -25,9 +25,12 @@ var AdventureDetail = React.createClass({
   },
   allActivities: function() {
     var activities = this.state.adventure.activities;
-    activities.map(function(activity, i){
-      return (<li key={i}>activity</li>);
+
+    var pursuits = activities.map(function(activity, i){
+      return (<li key={i}>{activity.pursuit}</li>);
     });
+
+    return (pursuits);
   },
   render: function() {
     if (typeof this.state.adventure === 'undefined') {
@@ -51,6 +54,7 @@ var AdventureDetail = React.createClass({
             <div className="panel-body">
               {this.state.adventure.description}
               <ul>
+                <h4>Activites:</h4>
                 {this.allActivities()}
               </ul>
             </div>
