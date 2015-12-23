@@ -23,6 +23,12 @@ var AdventureDetail = React.createClass({
   componentWillReceiveProps: function(newProps) {
     apiUtil.fetchAdventure(parseInt(newProps.params.adventureId));
   },
+  allActivities: function() {
+    var activities = this.state.adventure.activities;
+    activities.map(function(activity, i){
+      return (<li key={i}>activity</li>);
+    });
+  },
   render: function() {
     if (typeof this.state.adventure === 'undefined') {
       return (<div></div>);
@@ -44,6 +50,9 @@ var AdventureDetail = React.createClass({
             </div>
             <div className="panel-body">
               {this.state.adventure.description}
+              <ul>
+                {this.allActivities()}
+              </ul>
             </div>
           </div>
         </div>
