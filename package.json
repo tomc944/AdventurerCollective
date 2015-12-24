@@ -23,6 +23,7 @@
     "babel-preset-react": "^6.1.4",
     "flux": "^2.1.1",
     "history": "1.13.x",
+    "nuka-carousel": "^1.0.1",
     "react": "^0.14.2",
     "react-addons-linked-state-mixin": "^0.14.2",
     "react-component-gallery": "^1.2.1",

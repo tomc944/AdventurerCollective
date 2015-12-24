@@ -4,7 +4,6 @@ var UploadButton = React.createClass({
   upload: function (e) {
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results) {
-      debugger
       if (!error) {
         this.props.postImage(results[0]);
       }

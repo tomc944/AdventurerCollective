@@ -5,11 +5,11 @@ class Api::ImagesController < ApplicationController
 
   def create
 
-    debugger
+
     @image = Image.new(image_params)
 
     if @image.save
-      debugger
+
       render json: @image
     else
       render json: @image.errors.full_messages, status: 422
@@ -23,7 +23,7 @@ class Api::ImagesController < ApplicationController
 
   private
   def image_params
-    debugger
+    
     params.require(:image).permit(:url, :adventure_id)
   end
 end

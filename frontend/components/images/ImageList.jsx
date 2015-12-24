@@ -1,16 +1,18 @@
 var React = require('react');
+var Carousel = require('nuka-carousel');
 
 var ImageList = React.createClass({
+  mixins: [Carousel.ControllerMixin],
   render: function() {
     return(
       <ul>
-        {this.props.images.map(function (image) {
-          return (
-            <li className="image" key={image.id}>
-              <img key={image.id} src={image.url}/>
-            </li>
-          );
-        })}
+        <Carousel>
+          {this.props.images.map(function (image) {
+            return (
+              <img key={image.id} src={image.url}/>    
+            );
+          })}
+        </Carousel>
       </ul>
     );
   }
