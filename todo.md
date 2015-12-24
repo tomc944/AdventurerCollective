@@ -4,6 +4,7 @@ Immediately: make sure all activity tags display accordingly
 -I would ideally like an index show page:
   -photo
   -star button
+    - have unicode (not onClick handler)
   -hover off
       -displays activities as glphys
 
@@ -13,12 +14,11 @@ For tomorrow:
   -Add a completed element for the starred Adventures
     -Green market for completed
     -Red marker for TODO
-  -Start basic cloudinary debugging/setup
+    
+  -Start basic cloudinary debugging/setup (x)
 
 -Fix map flickering
   -Potentially add parent component...
-
--Test activity show page functionality... (in progress)
 
 -DEMO USER!!! Need to add this immediately so users can
 immediately test out functionality of app...
