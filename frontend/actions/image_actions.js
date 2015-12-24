@@ -7,6 +7,12 @@ var ImageActions = {
       actionType: ImageConstants.RECEIVED_IMAGE,
       image: image
     });
+  },
+  receiveAllImages: function(images) {
+    AppDispatcher.dispatch({
+      actionType: ImageConstants.RECEIVED_IMAGES,
+      images: images
+    });
   }
 };
 

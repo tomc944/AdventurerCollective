@@ -3,6 +3,7 @@ var AdventureStore = require('../../stores/adventure');
 var Navbar = require('../navbar');
 var Map = require('../map');
 var apiUtil = require('../../util/api_util');
+var Images = require('../images/images');
 
 var AdventureDetail = React.createClass({
   getInitialState: function() {
@@ -42,6 +43,7 @@ var AdventureDetail = React.createClass({
       return (
         <div>
           <Navbar />
+          <Images adventureId={this.props.params.adventureId}/>
           <Map
             key={this.state.adventure.id}
             adventures={adventureObject}

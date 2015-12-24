@@ -1,5 +1,5 @@
 var ApiActions = require('../actions/api_actions');
-var ImageActions = require('../action/image_actions');
+var ImageActions = require('../actions/image_actions');
 
 var apiUtil = {
   fetchAdventures: function(bounds) {
@@ -43,13 +43,23 @@ var apiUtil = {
       }
     });
   },
-  grabImage: function(id) {
+  grabImages: function(id) {
     $.ajax({
       method: 'GET',
-      url: 'api/images/' + id,
+      url: 'api/adventures/' + id + '/images',
       dataType: 'json',
-      success: function(image) {
-        ImageActions.receiveImage(image);
+      success: function(images) {
+        ImageActions.receiveAllImages(images);
+      }
+    });
+  },
+  postImage: function(image, id) {
+    $.ajax({
+      method: "POST",
+      url: 'api/adventures/' + id + '/images',
+      data: {image: {url: image.url}},
+      success: function(newImage) {
+        ImageActions.receiveImage(newImage);
       }
     });
   }

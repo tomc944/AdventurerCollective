@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :current_user, defaults: {format: :json}, only: :index
 
   namespace :api, defaults: {format: :json} do
-    resources :adventures
-    resources :images, only: [:create, :show]
+    resources :adventures do
+      resources :images, only: [:create, :show, :index]
+    end
   end
 
   root 'static_pages#root'

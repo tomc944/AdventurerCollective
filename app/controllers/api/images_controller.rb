@@ -13,8 +13,12 @@ class Api::ImagesController < ApplicationController
     end
   end
 
+  def index
+    @images = Image.all
+  end
+  
   private
   def image_params
-    params.require(:image).permit(:url)
+    params.require(:image).permit(:url, :adventure_id)
   end
 end
