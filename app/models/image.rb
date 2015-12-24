@@ -1,6 +1,5 @@
 class Image < ActiveRecord::Base
-  has_many :image_taggings
-  has_many :adventures, through: :image_taggings
+  belongs_to :adventure
 
   validates :url, presence: true
 end

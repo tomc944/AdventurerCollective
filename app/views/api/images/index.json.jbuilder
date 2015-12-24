@@ -1,1 +1,1 @@
-json.array! @images, :url
+json.array! @images, :url, :adventure, :id

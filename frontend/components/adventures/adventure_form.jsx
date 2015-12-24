@@ -25,12 +25,15 @@ var AdventureForm = React.createClass({
   createAdventure: function(event) {
     event.preventDefault();
     var adventure = {};
+
     Object.keys(this.state).forEach(function(key) {
       adventure[key] = this.state[key];
     }.bind(this));
+
     ApiUtil.createAdventure(adventure, function(id) {
       this.history.pushState(null, '/adventure/' + id, {});
     }.bind(this));
+
     this.setState(this.blankAttrs);
     this.history.pushState(null, '/', {});
   },

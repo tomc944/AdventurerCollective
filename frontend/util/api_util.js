@@ -43,10 +43,11 @@ var apiUtil = {
       }
     });
   },
-  grabImages: function(id) {
+  grabImages: function(adventureId) {
     $.ajax({
       method: 'GET',
-      url: 'api/adventures/' + id + '/images',
+      url: 'api/adventures/' + adventureId + '/images',
+      data: {params: adventureId},
       dataType: 'json',
       success: function(images) {
         ImageActions.receiveAllImages(images);
@@ -57,7 +58,7 @@ var apiUtil = {
     $.ajax({
       method: "POST",
       url: 'api/adventures/' + id + '/images',
-      data: {image: {url: image.url}},
+      data: {image: image},
       success: function(newImage) {
         ImageActions.receiveImage(newImage);
       }

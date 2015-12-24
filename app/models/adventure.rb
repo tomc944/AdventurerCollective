@@ -13,8 +13,7 @@ class Adventure < ActiveRecord::Base
   has_many :activity_taggings
   has_many :activities, through: :activity_taggings
 
-  has_many :image_taggings
-  has_many :images, through: :image_taggings
+  has_many :images
 
   def self.in_bounds(bounds)
     lat_bounds = bounds["southWest"]["lat"]..bounds['northEast']['lat']
@@ -23,5 +22,4 @@ class Adventure < ActiveRecord::Base
     return Adventure.where(lat: lat_bounds, lng: lng_bounds)
   end
 
-  # validates :author_id, uniqueness: true
 end

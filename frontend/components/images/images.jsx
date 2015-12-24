@@ -21,6 +21,7 @@ var Images = React.createClass({
     this.imageToken.remove();
   },
   postImage: function(image) {
+    image["adventure_id"] = this.id;
     apiUtil.postImage(image, this.id);
   },
   render: function() {
