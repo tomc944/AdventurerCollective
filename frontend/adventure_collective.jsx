@@ -9,7 +9,7 @@ var AdventureDetail = require('./components/adventures/adventure_detail.jsx');
 var User = require('./components/user');
 var App = require('./components/app');
 
-var Routes = (
+var routes = (
   <Router>
     <Route path="/" component={App}>
       <IndexRoute component={Search} />
@@ -20,10 +20,7 @@ var Routes = (
   </Router>
 );
 
-module.exports = Routes;
-
-
 window.addEventListener('DOMContentLoaded', function() {
   var root = document.getElementById('content');
-  if (root) {ReactDOM.render(Routes, root);}
+  if (root) {ReactDOM.render(routes, root);}
 });

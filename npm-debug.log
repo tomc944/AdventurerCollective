@@ -1,294 +1,73 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'eslint' ]
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'react-responsive-carouse',
+1 verbose cli   '--save' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.37
 4 verbose node symlink /usr/bin/node
-5 verbose cache add [ 'eslint', null ]
-6 verbose cache add name=undefined spec="eslint" args=["eslint",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: 'eslint',
-7 verbose parsed url   path: 'eslint',
-7 verbose parsed url   href: 'eslint' }
-8 silly lockFile e0b0b266-eslint eslint
-9 verbose lock eslint /home/thomas/.npm/e0b0b266-eslint.lock
-10 silly lockFile e0b0b266-eslint eslint
-11 silly lockFile e0b0b266-eslint eslint
-12 verbose addNamed [ 'eslint', '' ]
-13 verbose addNamed [ null, '*' ]
-14 silly lockFile 62e46387-eslint eslint@
-15 verbose lock eslint@ /home/thomas/.npm/62e46387-eslint.lock
-16 silly addNameRange { name: 'eslint', range: '*', hasData: false }
-17 verbose request where is /eslint
-18 verbose request registry https://registry.npmjs.org/
-19 verbose request id 4b2e7578741cf58f
-20 verbose url raw /eslint
-21 verbose url resolving [ 'https://registry.npmjs.org/', './eslint' ]
-22 verbose url resolved https://registry.npmjs.org/eslint
-23 verbose request where is https://registry.npmjs.org/eslint
-24 info trying registry request attempt 1 at 17:22:23
-25 verbose etag "3AH079A9EE2XZQMOFN53799V4"
-26 http GET https://registry.npmjs.org/eslint
-27 http 304 https://registry.npmjs.org/eslint
-28 silly registry.get cb [ 304,
-28 silly registry.get   { date: 'Fri, 18 Dec 2015 01:22:28 GMT',
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'react-responsive-carouse', null ]
+7 verbose cache add name=undefined spec="react-responsive-carouse" args=["react-responsive-carouse",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'react-responsive-carouse',
+8 verbose parsed url   path: 'react-responsive-carouse',
+8 verbose parsed url   href: 'react-responsive-carouse' }
+9 silly lockFile 04568e21-react-responsive-carouse react-responsive-carouse
+10 verbose lock react-responsive-carouse /home/thomas/.npm/04568e21-react-responsive-carouse.lock
+11 silly lockFile 04568e21-react-responsive-carouse react-responsive-carouse
+12 silly lockFile 04568e21-react-responsive-carouse react-responsive-carouse
+13 verbose addNamed [ 'react-responsive-carouse', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile 098d28e1-react-responsive-carouse react-responsive-carouse@
+16 verbose lock react-responsive-carouse@ /home/thomas/.npm/098d28e1-react-responsive-carouse.lock
+17 silly addNameRange { name: 'react-responsive-carouse', range: '*', hasData: false }
+18 verbose request where is /react-responsive-carouse
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id c2e908e7c7a98bf1
+21 verbose url raw /react-responsive-carouse
+22 verbose url resolving [ 'https://registry.npmjs.org/', './react-responsive-carouse' ]
+23 verbose url resolved https://registry.npmjs.org/react-responsive-carouse
+24 verbose request where is https://registry.npmjs.org/react-responsive-carouse
+25 info trying registry request attempt 1 at 13:37:42
+26 http GET https://registry.npmjs.org/react-responsive-carouse
+27 http 404 https://registry.npmjs.org/react-responsive-carouse
+28 silly registry.get cb [ 404,
+28 silly registry.get   { 'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=0',
+28 silly registry.get     'content-length': '2',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     date: 'Thu, 24 Dec 2015 21:37:42 GMT',
 28 silly registry.get     via: '1.1 varnish',
-28 silly registry.get     'cache-control': 'max-age=300',
-28 silly registry.get     etag: '"3AH079A9EE2XZQMOFN53799V4"',
-28 silly registry.get     age: '41',
+28 silly registry.get     age: '0',
 28 silly registry.get     connection: 'keep-alive',
-28 silly registry.get     'x-served-by': 'cache-sjc3123-SJC',
-28 silly registry.get     'x-cache': 'HIT',
-28 silly registry.get     'x-cache-hits': '1',
-28 silly registry.get     'x-timer': 'S1450401748.771709,VS0,VE1',
-28 silly registry.get     vary: 'Accept' } ]
-29 verbose etag https://registry.npmjs.org/eslint from cache
-30 silly addNameRange number 2 { name: 'eslint', range: '*', hasData: true }
-31 silly addNameRange versions [ 'eslint',
-31 silly addNameRange   [ '0.0.4',
-31 silly addNameRange     '0.0.5',
-31 silly addNameRange     '0.0.6',
-31 silly addNameRange     '0.0.7',
-31 silly addNameRange     '0.1.0-dev',
-31 silly addNameRange     '0.1.0',
-31 silly addNameRange     '0.1.1',
-31 silly addNameRange     '0.1.2',
-31 silly addNameRange     '0.1.3',
-31 silly addNameRange     '0.1.4',
-31 silly addNameRange     '0.2.0',
-31 silly addNameRange     '0.3.0',
-31 silly addNameRange     '0.4.0',
-31 silly addNameRange     '0.4.1',
-31 silly addNameRange     '0.4.2',
-31 silly addNameRange     '0.4.3',
-31 silly addNameRange     '0.4.4',
-31 silly addNameRange     '0.4.5',
-31 silly addNameRange     '0.5.0',
-31 silly addNameRange     '0.5.1',
-31 silly addNameRange     '0.6.0',
-31 silly addNameRange     '0.6.1',
-31 silly addNameRange     '0.6.2',
-31 silly addNameRange     '0.7.1',
-31 silly addNameRange     '0.7.2',
-31 silly addNameRange     '0.7.3',
-31 silly addNameRange     '0.7.4',
-31 silly addNameRange     '0.8.0',
-31 silly addNameRange     '0.8.1',
-31 silly addNameRange     '0.8.2',
-31 silly addNameRange     '0.9.0',
-31 silly addNameRange     '0.9.1',
-31 silly addNameRange     '0.9.2',
-31 silly addNameRange     '0.10.0-alpha',
-31 silly addNameRange     '0.10.0-alpha.1',
-31 silly addNameRange     '0.10.0-alpha.2',
-31 silly addNameRange     '0.10.0',
-31 silly addNameRange     '0.11.0-alpha.0',
-31 silly addNameRange     '0.10.1',
-31 silly addNameRange     '0.10.2',
-31 silly addNameRange     '0.11.0',
-31 silly addNameRange     '0.12.0',
-31 silly addNameRange     '0.13.0',
-31 silly addNameRange     '0.14.0',
-31 silly addNameRange     '0.14.1',
-31 silly addNameRange     '0.15.0',
-31 silly addNameRange     '0.15.1',
-31 silly addNameRange     '0.16.0',
-31 silly addNameRange     '0.16.1',
-31 silly addNameRange     '0.16.2',
-31 silly addNameRange     '0.17.0',
-31 silly addNameRange     '0.17.1',
-31 silly addNameRange     '0.18.0',
-31 silly addNameRange     '0.19.0',
-31 silly addNameRange     '0.20.0',
-31 silly addNameRange     '0.21.0',
-31 silly addNameRange     '0.21.1',
-31 silly addNameRange     '0.21.2',
-31 silly addNameRange     '0.22.0',
-31 silly addNameRange     '0.22.1',
-31 silly addNameRange     '0.23.0',
-31 silly addNameRange     '0.24.0',
-31 silly addNameRange     '0.24.1',
-31 silly addNameRange     '1.0.0-rc-1',
-31 silly addNameRange     '1.0.0-rc-2',
-31 silly addNameRange     '1.0.0-rc-3',
-31 silly addNameRange     '1.0.0',
-31 silly addNameRange     '1.1.0',
-31 silly addNameRange     '1.2.0',
-31 silly addNameRange     '1.2.1',
-31 silly addNameRange     '1.3.0',
-31 silly addNameRange     '1.3.1',
-31 silly addNameRange     '1.4.0',
-31 silly addNameRange     '1.4.1',
-31 silly addNameRange     '1.4.2',
-31 silly addNameRange     '1.4.3',
-31 silly addNameRange     '1.5.0',
-31 silly addNameRange     '1.5.1',
-31 silly addNameRange     '1.6.0',
-31 silly addNameRange     '1.7.0',
-31 silly addNameRange     '1.7.1',
-31 silly addNameRange     '1.7.2',
-31 silly addNameRange     '1.7.3',
-31 silly addNameRange     '1.8.0',
-31 silly addNameRange     '1.9.0',
-31 silly addNameRange     '1.10.0',
-31 silly addNameRange     '1.10.1',
-31 silly addNameRange     '1.10.2',
-31 silly addNameRange     '1.10.3',
-31 silly addNameRange     '2.0.0-alpha-1' ] ]
-32 verbose addNamed [ 'eslint', '1.10.3' ]
-33 verbose addNamed [ '1.10.3', '1.10.3' ]
-34 silly lockFile 936d1e19-eslint-1-10-3 eslint@1.10.3
-35 verbose lock eslint@1.10.3 /home/thomas/.npm/936d1e19-eslint-1-10-3.lock
-36 silly lockFile 936d1e19-eslint-1-10-3 eslint@1.10.3
-37 silly lockFile 936d1e19-eslint-1-10-3 eslint@1.10.3
-38 silly lockFile 62e46387-eslint eslint@
-39 silly lockFile 62e46387-eslint eslint@
-40 silly resolved [ { name: 'eslint',
-40 silly resolved     version: '1.10.3',
-40 silly resolved     author:
-40 silly resolved      { name: 'Nicholas C. Zakas',
-40 silly resolved        email: 'nicholas+npm@nczconsulting.com' },
-40 silly resolved     description: 'An AST-based pattern checker for JavaScript.',
-40 silly resolved     bin: { eslint: './bin/eslint.js' },
-40 silly resolved     main: './lib/api.js',
-40 silly resolved     scripts:
-40 silly resolved      { test: 'node Makefile.js test',
-40 silly resolved        lint: 'node Makefile.js lint',
-40 silly resolved        patch: 'node Makefile.js patch',
-40 silly resolved        minor: 'node Makefile.js minor',
-40 silly resolved        major: 'node Makefile.js major',
-40 silly resolved        docs: 'node Makefile.js docs',
-40 silly resolved        gensite: 'node Makefile.js gensite',
-40 silly resolved        browserify: 'node Makefile.js browserify',
-40 silly resolved        perf: 'node Makefile.js perf',
-40 silly resolved        profile: 'beefy tests/bench/bench.js --open -- -t brfs -t ./tests/bench/xform-rules.js -r espree',
-40 silly resolved        coveralls: 'cat ./coverage/lcov.info | coveralls',
-40 silly resolved        'check-commit': 'node Makefile.js checkGitCommit' },
-40 silly resolved     files: [ 'LICENSE', 'README.md', 'bin', 'conf', 'lib' ],
-40 silly resolved     repository: { type: 'git', url: 'https://github.com/eslint/eslint' },
-40 silly resolved     homepage: 'http://eslint.org',
-40 silly resolved     bugs: { url: 'https://github.com/eslint/eslint/issues/' },
-40 silly resolved     dependencies:
-40 silly resolved      { chalk: '^1.0.0',
-40 silly resolved        'concat-stream': '^1.4.6',
-40 silly resolved        debug: '^2.1.1',
-40 silly resolved        doctrine: '^0.7.1',
-40 silly resolved        'escape-string-regexp': '^1.0.2',
-40 silly resolved        escope: '^3.3.0',
-40 silly resolved        espree: '^2.2.4',
-40 silly resolved        estraverse: '^4.1.1',
-40 silly resolved        'estraverse-fb': '^1.3.1',
-40 silly resolved        esutils: '^2.0.2',
-40 silly resolved        'file-entry-cache': '^1.1.1',
-40 silly resolved        glob: '^5.0.14',
-40 silly resolved        globals: '^8.11.0',
-40 silly resolved        handlebars: '^4.0.0',
-40 silly resolved        inquirer: '^0.11.0',
-40 silly resolved        'is-my-json-valid': '^2.10.0',
-40 silly resolved        'is-resolvable': '^1.0.0',
-40 silly resolved        'js-yaml': '3.4.5',
-40 silly resolved        'json-stable-stringify': '^1.0.0',
-40 silly resolved        'lodash.clonedeep': '^3.0.1',
-40 silly resolved        'lodash.merge': '^3.3.2',
-40 silly resolved        'lodash.omit': '^3.1.0',
-40 silly resolved        minimatch: '^3.0.0',
-40 silly resolved        mkdirp: '^0.5.0',
-40 silly resolved        'object-assign': '^4.0.1',
-40 silly resolved        optionator: '^0.6.0',
-40 silly resolved        'path-is-absolute': '^1.0.0',
-40 silly resolved        'path-is-inside': '^1.0.1',
-40 silly resolved        shelljs: '^0.5.3',
-40 silly resolved        'strip-json-comments': '~1.0.1',
-40 silly resolved        'text-table': '~0.2.0',
-40 silly resolved        'user-home': '^2.0.0',
-40 silly resolved        'xml-escape': '~1.0.0' },
-40 silly resolved     devDependencies:
-40 silly resolved      { beefy: '^1.0.0',
-40 silly resolved        brfs: '0.0.9',
-40 silly resolved        browserify: '^12.0.1',
-40 silly resolved        chai: '^3.4.0',
-40 silly resolved        cheerio: '^0.19.0',
-40 silly resolved        coveralls: '2.11.4',
-40 silly resolved        dateformat: '^1.0.8',
-40 silly resolved        ejs: '^2.3.3',
-40 silly resolved        esprima: '^2.4.1',
-40 silly resolved        'esprima-fb': '^15001.1001.0-dev-harmony-fb',
-40 silly resolved        'gh-got': '^2.2.0',
-40 silly resolved        istanbul: '^0.4.0',
-40 silly resolved        jsdoc: '^3.3.0-beta1',
-40 silly resolved        jsonlint: '^1.6.2',
-40 silly resolved        leche: '^2.1.1',
-40 silly resolved        linefix: '^0.1.1',
-40 silly resolved        'load-perf': '^0.2.0',
-40 silly resolved        markdownlint: '^0.0.8',
-40 silly resolved        mocha: '^2.1.0',
-40 silly resolved        'mocha-phantomjs': '4.0.1',
-40 silly resolved        'npm-license': '^0.3.1',
-40 silly resolved        phantomjs: '1.9.18',
-40 silly resolved        proxyquire: '^1.0.0',
-40 silly resolved        rewire: '^2.3.4',
-40 silly resolved        semver: '^5.0.3',
-40 silly resolved        'shelljs-nodecli': '~0.1.0',
-40 silly resolved        sinon: '1.17.2',
-40 silly resolved        through: '^2.3.6' },
-40 silly resolved     keywords: [ 'ast', 'lint', 'javascript', 'ecmascript', 'espree' ],
-40 silly resolved     license: 'MIT',
-40 silly resolved     engines: { node: '>=0.10' },
-40 silly resolved     gitHead: '2436cc6c1816a7890e35dab38e609daee84d7530',
-40 silly resolved     _id: 'eslint@1.10.3',
-40 silly resolved     _shasum: 'fb19a91b13c158082bbca294b17d979bc8353a0a',
-40 silly resolved     _from: 'eslint@',
-40 silly resolved     _npmVersion: '1.4.28',
-40 silly resolved     _npmUser: { name: 'nzakas', email: 'nicholas@nczconsulting.com' },
-40 silly resolved     maintainers: [ [Object], [Object] ],
-40 silly resolved     dist:
-40 silly resolved      { shasum: 'fb19a91b13c158082bbca294b17d979bc8353a0a',
-40 silly resolved        tarball: 'http://registry.npmjs.org/eslint/-/eslint-1.10.3.tgz' },
-40 silly resolved     directories: {},
-40 silly resolved     _resolved: 'https://registry.npmjs.org/eslint/-/eslint-1.10.3.tgz',
-40 silly resolved     readme: 'ERROR: No README data found!' } ]
-41 info install eslint@1.10.3 into /usr/lib
-42 info installOne eslint@1.10.3
-43 verbose lib/node_modules/eslint unbuild
-44 verbose tar unpack /home/thomas/.npm/eslint/1.10.3/package.tgz
-45 silly lockFile e333a705-tar-usr-lib-node-modules-eslint tar:///usr/lib/node_modules/eslint
-46 verbose lock tar:///usr/lib/node_modules/eslint /home/thomas/.npm/e333a705-tar-usr-lib-node-modules-eslint.lock
-47 silly lockFile 1eb50591-as-npm-eslint-1-10-3-package-tgz tar:///home/thomas/.npm/eslint/1.10.3/package.tgz
-48 verbose lock tar:///home/thomas/.npm/eslint/1.10.3/package.tgz /home/thomas/.npm/1eb50591-as-npm-eslint-1-10-3-package-tgz.lock
-49 silly gunzTarPerm modes [ '775', '664' ]
-50 error Error: EACCES, mkdir '/usr/lib/node_modules/eslint'
-50 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/eslint']
-50 error   errno: 3,
-50 error   code: 'EACCES',
-50 error   path: '/usr/lib/node_modules/eslint',
-50 error   fstream_type: 'Directory',
-50 error   fstream_path: '/usr/lib/node_modules/eslint',
-50 error   fstream_class: 'DirWriter',
-50 error   fstream_stack:
-50 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
-50 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
-50 error      'Object.oncomplete (fs.js:108:15)' ] }
-51 error Please try running this command again as root/Administrator.
-52 error System Linux 3.19.0-39-generic
-53 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "eslint"
-54 error cwd /home/thomas/Desktop/outbound_project_proposal
-55 error node -v v0.10.37
-56 error npm -v 1.4.28
-57 error path /usr/lib/node_modules/eslint
-58 error fstream_path /usr/lib/node_modules/eslint
-59 error fstream_type Directory
-60 error fstream_class DirWriter
-61 error code EACCES
-62 error errno 3
-63 error stack Error: EACCES, mkdir '/usr/lib/node_modules/eslint'
-64 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
-64 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
-64 error fstream_stack Object.oncomplete (fs.js:108:15)
-65 verbose exit [ 3, true ]
+28 silly registry.get     'x-served-by': 'cache-lax1428-LAX',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1450993062.465744,VS0,VE68' } ]
+29 silly lockFile 098d28e1-react-responsive-carouse react-responsive-carouse@
+30 silly lockFile 098d28e1-react-responsive-carouse react-responsive-carouse@
+31 error 404 Not Found
+31 error 404
+31 error 404 'react-responsive-carouse' is not in the npm registry.
+31 error 404 You should bug the author to publish it
+31 error 404 It was specified as a dependency of 'AdventurerCollective'
+31 error 404
+31 error 404 Note that you can also install from a
+31 error 404 tarball, folder, or http url, or git url.
+32 error System Linux 3.19.0-39-generic
+33 error command "/usr/bin/node" "/usr/bin/npm" "install" "react-responsive-carouse" "--save"
+34 error cwd /home/thomas/Desktop/outbound_project_proposal
+35 error node -v v0.10.37
+36 error npm -v 1.4.28
+37 error code E404
+38 verbose exit [ 1, true ]
