@@ -81,8 +81,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: OutboundCollective_production
-  username: OutboundCollective
-  password: <%= ENV['OUTBOUNDCOLLECTIVE_DATABASE_PASSWORD'] %>

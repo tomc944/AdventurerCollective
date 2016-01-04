@@ -14,7 +14,7 @@ For tomorrow:
   -Add a completed element for the starred Adventures
     -Green market for completed
     -Red marker for TODO
-    
+
   -Start basic cloudinary debugging/setup (x)
 
 -Fix map flickering
@@ -22,3 +22,12 @@ For tomorrow:
 
 -DEMO USER!!! Need to add this immediately so users can
 immediately test out functionality of app...
+  - this has been added just needs to be formatted correctly
+
+-Fix heroku issues
+  -Buy domain (X)
+  -Figure out why the adventures api controllers are not working correctly
+  -Figure out relic and pinning (X)
+
+-Use a better google font
+  -Something less silly and more legible
