@@ -80,9 +80,9 @@ var AdventureForm = React.createClass({
 
           <fieldset className="form-group">
             <label>Description:</label>
-            <input
-              type="text"
+            <textarea
               className="form-control"
+              rows="4"
               valueLink={this.linkState('description')} />
           </fieldset>
 
