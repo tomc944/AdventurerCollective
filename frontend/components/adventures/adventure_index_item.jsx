@@ -40,7 +40,7 @@ var AdventureIndexItem = React.createClass({
   render: function() {
     return (
 
-      <tr key={this.props.id} onClick={this.showAdventure}
+      <tr className="pointer" key={this.props.id} onClick={this.showAdventure}
           onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
         <td className="setFixed">
           {this.props.title}
