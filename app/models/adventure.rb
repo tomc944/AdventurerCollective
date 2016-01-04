@@ -13,6 +13,8 @@ class Adventure < ActiveRecord::Base
   has_many :activity_taggings
   has_many :activities, through: :activity_taggings
 
+  has_many :user_adventures
+
   has_many :images
 
   def self.in_bounds(bounds)

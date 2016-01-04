@@ -16,11 +16,9 @@ var StarredAdventures = React.createClass({
 
     return (
       <div>
-        <div>
-          <h5>{this.props.title}</h5>
-          <h6>Activities Availables</h6>
-          {allTags}
-        </div>
+        <h5>{this.props.title}</h5>
+        <h6>Activities Availables</h6>
+        {allTags}
       </div>
     );
   }

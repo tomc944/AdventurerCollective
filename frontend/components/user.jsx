@@ -5,6 +5,7 @@ var Navbar = require('./navbar');
 var AuthoredAdventures = require('./adventures/authored_adventures');
 var StarredAdventures = require('./adventures/starred_adventures');
 var UserAdventures = require('./adventures/user_adventures');
+var Map = require('./map');
 
 var User = React.createClass({
   getInitialState: function() {
@@ -34,45 +35,15 @@ var User = React.createClass({
         );
       });
     }
-    if (this.state.user.authored_adventures) {
-      var AuthorList = this.state.user
-                       .authored_adventures.map(function (adventure){
 
-        return (
-          <AuthoredAdventures
-            key={adventure.id}
-            id={adventure.id}
-            title={adventure.title}
-            taggings={adventure.taggings}
-            />
-        );
-      });
-    }
-
-    if (this.state.user.user_adventures) {
-      var UserAdventureList = this.state.user
-                              .user_adventures.map(function (adventure) {
-
-        return (
-          <UserAdventures
-            key={adventure.id}
-            id={adventure.id}
-            adventureId={adventure.adventure_id}
-            adventureeId={adventure.adventuree_id}
-            completed={adventure.completed}
-            />
-        );
-      });
-    }
     return (
       <div>
         <Navbar />
-        <h2>Authored Adventures</h2>
-        {AuthorList}
-        <h2>Starred Adventures</h2>
-        {StarList}
-        <h2>User Adventures</h2>
-        {UserAdventureList}
+        <div className="starred_adventures">
+          <h2>Starred Adventures</h2>
+          {StarList}
+        </div>
+        <Map adventures={this.state.user.starred_adventures}/>
       </div>
     );
   }

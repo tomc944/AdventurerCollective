@@ -8,9 +8,11 @@ json.authored_adventures do
 end
 
 json.starred_adventures do
-  json.array! @user.starred_adventures do |starred_adventures|
-    json.title starred_adventures.title
-    json.taggings starred_adventures.activities
+  json.array! @user.starred_adventures do |starred_adventure|
+    json.title starred_adventure.title
+    json.taggings starred_adventure.activities
+    json.lat starred_adventure.lat
+    json.lng starred_adventure.lng
   end
 end
 

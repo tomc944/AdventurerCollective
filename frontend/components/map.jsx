@@ -11,15 +11,21 @@ var Map = React.createClass({
   _placeAdventures: function() {
     var that = this;
     var adventureKeys = Object.keys(this.props.adventures);
-      adventureKeys.map(function(adventureId) {
-        var adventure = that.props.adventures[parseInt(adventureId)];
-        adventure = new google.maps.Marker({
-          position: {lat: adventure.lat, lng: adventure.lng},
-          description: adventure.title
-        });
-        that.attachDescription(adventure);
-        return (adventure.setMap(that.map));
+
+    adventureKeys.map(function(adventureId) {
+      var adventure = that.props.adventures[parseInt(adventureId)];
+      adventure = new google.maps.Marker({
+        position: {lat: adventure.lat, lng: adventure.lng},
+        description: adventure.title,
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          strokeColor: "green",
+          scale: 5
+        },
       });
+      that.attachDescription(adventure);
+      return (adventure.setMap(that.map));
+    });
 
   },
   attachDescription: function(adventure) {
@@ -41,7 +47,7 @@ var Map = React.createClass({
 
     this.map = new google.maps.Map(map, mapOptions);
 
-    this._placeAdventures();
+    if (this.props.adventures) {this._placeAdventures();}
     if (this.props.onIndex){this.listenForMove();}
     if (this.props.check){this.listenForClick();}
 
