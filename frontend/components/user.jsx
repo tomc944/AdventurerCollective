@@ -4,6 +4,7 @@ var userUtil = require('../util/user_api_util.js');
 var Navbar = require('./navbar');
 var AuthoredAdventures = require('./adventures/authored_adventures');
 var StarredAdventures = require('./adventures/starred_adventures');
+var UserAdventures = require('./adventures/user_adventures');
 
 var User = React.createClass({
   getInitialState: function() {
@@ -47,6 +48,22 @@ var User = React.createClass({
         );
       });
     }
+
+    if (this.state.user.user_adventures) {
+      var UserAdventureList = this.state.user
+                              .user_adventures.map(function (adventure) {
+
+        return (
+          <UserAdventures
+            key={adventure.id}
+            id={adventure.id}
+            adventureId={adventure.adventure_id}
+            adventureeId={adventure.adventuree_id}
+            completed={adventure.completed}
+            />
+        );
+      });
+    }
     return (
       <div>
         <Navbar />
@@ -54,6 +71,8 @@ var User = React.createClass({
         {AuthorList}
         <h2>Starred Adventures</h2>
         {StarList}
+        <h2>User Adventures</h2>
+        {UserAdventureList}
       </div>
     );
   }

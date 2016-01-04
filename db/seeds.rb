@@ -28,7 +28,7 @@ User.create!(username: "demouser",
 
 # Add the necessary user_adventure join table (this corresponds to starred_adventures)
 UserAdventure.create!(adventure_id: 1, adventuree_id: 1)
-UserAdventure.create!(adventure_id: 2, adventuree_id: 1)
+UserAdventure.create!(adventure_id: 2, adventuree_id: 1, completed: true)
 
 UserAdventure.create!(adventure_id: 1, adventuree_id: 2)
 UserAdventure.create!(adventure_id: 2, adventuree_id: 2)
