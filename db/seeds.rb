@@ -108,6 +108,8 @@ Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/c_scale,h_6
               adventure_id: 1)
 Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927114/mtwhitney_wd1fep.jpg',
               adventure_id: 2)
+Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451928177/whitney2_ow2ep3.jpg',
+              adventure_id: 2)
 Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927220/mount_shasta_by_piarro_zxyghn.jpg',
               adventure_id: 3)
 Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927333/santacruz_trrsn6.jpg',

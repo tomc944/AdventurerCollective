@@ -5,12 +5,12 @@ var ImageList = React.createClass({
   render: function() {
     var settings = {
       dots: true,
-      infinite: true,
+      infinite: false,
       fade: true,
-      speed: 5000,
-      variableWidth: true,
+      speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      variableWidth: true,
     };
     return(
       <Slider {...settings}>
