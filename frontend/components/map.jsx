@@ -14,19 +14,38 @@ var Map = React.createClass({
 
     adventureKeys.map(function(adventureId) {
       var adventure = that.props.adventures[parseInt(adventureId)];
-      adventure = new google.maps.Marker({
-        position: {lat: adventure.lat, lng: adventure.lng},
-        description: adventure.title,
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          strokeColor: "green",
-          scale: 5
-        },
-      });
-      that.attachDescription(adventure);
-      return (adventure.setMap(that.map));
+      if (adventure.completed !== null) {
+        that._placeCompletedAdventure(adventure);
+      } else {
+        that._placeTodoAdventure(adventure);
+      }
+
+      that.attachDescription(newadventure);
+      return (newadventure.setMap(that.map));
     });
 
+  },
+  _placeCompletedAdventure: function(adventure) {
+    newadventure = new google.maps.Marker({
+      position: {lat: adventure.lat, lng: adventure.lng},
+      description: adventure.title,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        strokeColor: "green",
+        scale: 5
+      },
+    });
+  },
+  _placeTodoAdventure: function(adventure) {
+    newadventure = new google.maps.Marker({
+      position: {lat: adventure.lat, lng: adventure.lng},
+      description: adventure.title,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        strokeColor: "red",
+        scale: 5
+      },
+    });
   },
   attachDescription: function(adventure) {
     var infowindow = new google.maps.InfoWindow({

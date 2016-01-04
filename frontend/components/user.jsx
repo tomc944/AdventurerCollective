@@ -4,7 +4,6 @@ var userUtil = require('../util/user_api_util.js');
 var Navbar = require('./navbar');
 var AuthoredAdventures = require('./adventures/authored_adventures');
 var StarredAdventures = require('./adventures/starred_adventures');
-var UserAdventures = require('./adventures/user_adventures');
 var Map = require('./map');
 
 var User = React.createClass({
@@ -23,19 +22,27 @@ var User = React.createClass({
   },
   render: function() {
     if (this.state.user.starred_adventures) {
-      var StarList = this.state.user
-                     .starred_adventures.map(function (adventure){
-        return (
-          <StarredAdventures
-            key={adventure.id}
-            id={adventure.id}
-            title={adventure.title}
-            taggings={adventure.taggings}
-            completed={adventure.completed}
-            inProgress={adventure.in_progress}
-            />
-        );
-      });
+      this.state.user.starred_adventures.forEach(function (adventure){
+        if (adventure.completed !== null) {
+          this.completed =
+            <StarredAdventures
+              key={adventure.id}
+              id={adventure.id}
+              title={adventure.title}
+              taggings={adventure.taggings}
+              completed={adventure.completed}
+              />
+        } else {
+          this.inProgress =
+            <StarredAdventures
+              key={adventure.id}
+              id={adventure.id}
+              title={adventure.title}
+              taggings={adventure.taggings}
+              completed={adventure.completed}
+              />
+        }
+      }.bind(this));
     }
 
     return (
@@ -43,7 +50,10 @@ var User = React.createClass({
         <Navbar />
         <div className="starred_adventures">
           <h2>Starred Adventures</h2>
-          {StarList}
+          <h3 className="completed">Completed</h3>
+          {this.completed}
+          <h3 className="in_progress">In progress</h3>
+          {this.inProgress}
         </div>
         <Map adventures={this.state.user.starred_adventures}/>
       </div>

@@ -25,14 +25,6 @@ class Adventure < ActiveRecord::Base
     end
   end
 
-  def in_progress(user_id)
-    if !(UserAdventure.where(completed: false,
-                         adventure_id: self.id,
-                         adventuree_id: user_id).empty?)
-      return self
-    end
-  end
-
   def self.in_bounds(bounds)
     lat_bounds = bounds["southWest"]["lat"]..bounds['northEast']['lat']
     lng_bounds = bounds["southWest"]["lng"]..bounds['northEast']['lng']
