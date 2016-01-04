@@ -2,11 +2,31 @@ var React = require('react');
 var UserStore = require('../stores/user');
 var userUtil = require('../util/user_api_util.js');
 var Navbar = require('./navbar');
+var PropTypes = React.PropTypes;
+var ItemTypes = require('../constants/drag_constants');
+var DragSource = require('react-dnd').DragSource;
 var AuthoredAdventures = require('./adventures/authored_adventures');
 var StarredAdventures = require('./adventures/starred_adventures');
 var Map = require('./map');
 
+var starredSource = {
+  beginDrag: function(props) {
+    return {};
+  }
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
+  }
+}
+
 var User = React.createClass({
+  propTypes: {
+    connectDragSource: PropTypes.func.isRequired,
+    isDragging: PropTypes.bool.isRequired
+  },
   getInitialState: function() {
     return ({user: UserStore.all()});
   },
@@ -21,6 +41,9 @@ var User = React.createClass({
     this.userToken.remove();
   },
   render: function() {
+    var connectDragSource = this.props.connectDragSource
+    var isDragging = this.props.isDragging
+
     if (this.state.user.starred_adventures) {
       this.state.user.starred_adventures.forEach(function (adventure){
         if (adventure.completed !== null) {
@@ -45,7 +68,7 @@ var User = React.createClass({
       }.bind(this));
     }
 
-    return (
+    return connectDragSource(
       <div>
         <Navbar />
         <div className="starred_adventures">
@@ -61,4 +84,4 @@ var User = React.createClass({
   }
 });
 
-module.exports = User;
+module.exports = DragSource(ItemTypes.STARREDADVENTURE, starredSource, collect) (User);
