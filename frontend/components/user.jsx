@@ -21,30 +21,33 @@ var User = React.createClass({
     this.userToken.remove();
   },
   render: function() {
+    this.completed = [];
+    this.inProgress = [];
+
     if (this.state.user.starred_adventures) {
       this.state.user.starred_adventures.forEach(function (adventure){
         if (adventure.completed !== null) {
-          this.completed =
+          this.completed.push(
             <StarredAdventures
               key={adventure.id}
               id={adventure.id}
               title={adventure.title}
               taggings={adventure.taggings}
               completed={adventure.completed}
-              />
+              />)
         } else {
-          this.inProgress =
+          this.inProgress.push(
             <StarredAdventures
               key={adventure.id}
               id={adventure.id}
               title={adventure.title}
               taggings={adventure.taggings}
               completed={adventure.completed}
-              />
+              />)
         }
       }.bind(this));
     }
-
+    
     return (
       <div>
         <Navbar />

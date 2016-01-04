@@ -12,22 +12,16 @@ Immediately: make sure all activity tags display accordingly
 For tomorrow:
   -Be able to star an adventure from either the show or the index page
   -Add a completed element for the starred Adventures
-    -Green market for completed
-    -Red marker for TODO
+    -Green market for completed (x)
+    -Red marker for TODO (x)
+    -Need to be able to switch between completed and todo
 
   -Start basic cloudinary debugging/setup (x)
 
 -Fix map flickering
   -Potentially add parent component...
 
--DEMO USER!!! Need to add this immediately so users can
-immediately test out functionality of app...
-  - this has been added just needs to be formatted correctly (X)
 
--Fix heroku issues
-  -Buy domain (X)
-  -Figure out why the adventures api controllers are not working correctly (x)
-  -Figure out relic and pinning (X)
 
 -Use a better google font
   -Something less silly and more legible
