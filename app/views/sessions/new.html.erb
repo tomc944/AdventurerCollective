@@ -34,7 +34,7 @@
 
   </form>
 
-  <form class="form-sign" action="<%= session_url %>" method="post">
+  <form class="form-signin2" action="<%= session_url %>" method="post">
     <input
       type="hidden"
       name="authenticity_token"
@@ -42,6 +42,6 @@
 
     <input type="hidden" name="user[username]" value="tomc945">
     <input type="hidden" name="user[password]" value="weezer">
-    <button type="submit">Demo User</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Demo User</button>
   </form>
 </body>

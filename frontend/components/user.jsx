@@ -31,6 +31,8 @@ var User = React.createClass({
             id={adventure.id}
             title={adventure.title}
             taggings={adventure.taggings}
+            completed={adventure.completed}
+            inProgress={adventure.in_progress}
             />
         );
       });

@@ -10,15 +10,23 @@ var StarredAdventures = React.createClass({
     this.history.push(adventureUrl);
   },
   render: function() {
-    var allTags = this.props.taggings.map(function(tag, i) {
-      return (<li key={i} onClick={this.showStarred}>{tag.pursuit}</li>);
-    });
+    // var allTags = this.props.taggings.map(function(tag, i) {
+    //   return (<li key={i} onClick={this.showStarred}>{tag.pursuit}</li>);
+    // });
+    if (this.props.completed !== null) {
+      var completed = this.props.title
+    }
+
+    if (this.props.inProgress !== null) {
+      var inProgress = this.props.title
+    }
 
     return (
       <div>
-        <h5>{this.props.title}</h5>
-        <h6>Activities Availables</h6>
-        {allTags}
+        <h3>Completed Adventures</h3>
+        {completed}
+        <h3>In Progress Adventures</h3>
+        {inProgress}
       </div>
     );
   }

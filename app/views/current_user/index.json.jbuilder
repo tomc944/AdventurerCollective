@@ -13,6 +13,8 @@ json.starred_adventures do
     json.taggings starred_adventure.activities
     json.lat starred_adventure.lat
     json.lng starred_adventure.lng
+    json.completed starred_adventure.completed(@user.id)
+    json.in_progress starred_adventure.in_progress(@user.id)
   end
 end
 
