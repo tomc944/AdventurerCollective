@@ -1,6 +1,6 @@
 # AdventurerCollective
 
-[heroku]: http://www.herokuapp.com
+http://adventurercollective.xyz
 
 ## Minimum Viable Product
 
@@ -38,7 +38,7 @@ AdventurerCollective doesn't have following functionality (i.e. where the inspir
 In Phase 1, I will begin by implementing user signup and authentication (using
 BCrypt). There will be a basic landing page after signup (which will be the Adventures
 index page). This index page will be seeded with several adventures. There will also be a barebones
-User show page which will be added with new React components as their corresponding 
+User show page which will be added with new React components as their corresponding
 backends are completed. In this phase the view will be blank.
 
 [Details][phase-one]
@@ -61,18 +61,18 @@ styling. (Copied most of this from Charles example - very applicable to my desig
 
 Phase 3 adds organization to the Adventures. Adventures can belong to a List, which has
 its own `ListIndex` view. Within the `ListInded` view there will be `ListIndexItem`s which
-contain all of the functionality of an individual list. Create JSON API for Lists. 
-Adventures can also now be tagged with multiple activities. Users can bring up adventures in a separate 
-`SearchIndex` view by searching for their tags. 
+contain all of the functionality of an individual list. Create JSON API for Lists.
+Adventures can also now be tagged with multiple activities. Users can bring up adventures in a separate
+`SearchIndex` view by searching for their tags.
 
 [Details][phase-three]
 
 ### Phase 4: Google Maps API (2 days)
 
 Phase 4 will be implementing the Google Maps API. The bare bones of the user profile will be made
-in order to show activities that are either completed or planning to be done. Markers will be shown 
-on the users profile "adventure map". Red markers are in progress adventures and green markers are 
-completed adventures. The Map will be a react component. Bonus: possibly add adventure stats. 
+in order to show activities that are either completed or planning to be done. Markers will be shown
+on the users profile "adventure map". Red markers are in progress adventures and green markers are
+completed adventures. The Map will be a react component. Bonus: possibly add adventure stats.
 
 ### Phase 5: Followers/Followees (1 day)
 
