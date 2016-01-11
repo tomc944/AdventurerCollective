@@ -19,19 +19,16 @@ var AdventureIndex = React.createClass({
           description={adventure.description}
           lat={adventure.lat}
           lng={adventure.lng}
-          tagging={adventure.activities} />
-
+          tagging={adventure.activities}
+          imageUrl={adventure.images[0].url} />
       );
     });
 
     return (
-      <div className="table-responsive">
-        <h2 className="sub-header">Adventures Near You!</h2>
-        <table className="table table-striped">
-          <tbody>
-            {adventureList}
-          </tbody>
-        </table>
+      <div className="adventure-index-items-container">
+        <ul className="adventure-index-items-list">
+          {adventureList}
+        </ul>
       </div>
     );
   }

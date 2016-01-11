@@ -104,21 +104,21 @@ ActivityTagging.create!(adventure_id: 8, activity_id: 2)
 ActivityTagging.create!(adventure_id: 8, activity_id: 3)
 ActivityTagging.create!(adventure_id: 8, activity_id: 8)
 
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/c_scale,h_600,r_10,w_800/v1450913707/aqirv9k2zer1qgglsrtf.jpg',
+Image.create!(url: 'aqirv9k2zer1qgglsrtf.jpg',
               adventure_id: 1)
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927114/mtwhitney_wd1fep.jpg',
+Image.create!(url: 'mtwhitney_wd1fep.jpg',
               adventure_id: 2)
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451928177/whitney2_ow2ep3.jpg',
+Image.create!(url: 'whitney2_ow2ep3.jpg',
               adventure_id: 2)
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927220/mount_shasta_by_piarro_zxyghn.jpg',
+Image.create!(url: 'mount_shasta_by_piarro_zxyghn.jpg',
               adventure_id: 3)
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927333/santacruz_trrsn6.jpg',
+Image.create!(url: 'santacruz_trrsn6.jpg',
               adventure_id: 4)
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927408/angora_jnpaii.jpg',
+Image.create!(url: 'angora_jnpaii.jpg',
               adventure_id: 5)
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927534/echolake_felpcq.jpg',
+Image.create!(url: 'echolake_felpcq.jpg',
               adventure_id: 6)
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927598/tam_bbqsbo.jpg',
+Image.create!(url: 'tam_bbqsbo.jpg',
               adventure_id: 7)
-Image.create!(url: 'http://res.cloudinary.com/dpdxfgx58/image/upload/v1451927690/diablo_klm5ub.jpg',
+Image.create!(url: 'diablo_klm5ub.jpg',
               adventure_id: 8)

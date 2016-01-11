@@ -38,16 +38,17 @@ var AdventureIndexItem = React.createClass({
     }
   },
   render: function() {
+    var photoUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_200/" + this.props.imageUrl;
+
+    var backgroundImage = {
+      backgroundImage: "url(" + photoUrl + ")"
+    }
+
     return (
-
-      <tr className="pointer" key={this.props.id} onClick={this.showAdventure}
-          onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-        <td className="setFixed">
-          {this.props.title}
-        </td>
-        <td className="aligned">{this.getInfo()}</td>
-      </tr>
-
+      <li style={backgroundImage}
+        className="adventure-index-item"
+        onClick={this.showAdventure}>
+      </li>
     );
   }
 });
