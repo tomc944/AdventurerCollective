@@ -21,6 +21,7 @@ body {font-family: 'Shadows Into Light', cursive;}
 
 .adventure-index-items-list {
   padding: 0%;
+  text-align: center;
 }
 
 .adventure-index-item-container {
@@ -39,5 +40,22 @@ body {font-family: 'Shadows Into Light', cursive;}
   border: 1px solid white;
   border-radius: 3px;
   padding: 5px 0px;
+  // border-radius: 3px 10px;
   overflow: hidden;
+}
+
+.adventure-index-item-title {
+  position: relative;
+  margin: 15px 20px;
+  border: 1px solid white;
+  box-shadow: 1px 1px 1px #888888;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px 0px;
+  // border-radius: 3px 10px;
+  overflow: hidden;
+
 }

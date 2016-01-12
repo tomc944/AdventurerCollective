@@ -5,7 +5,7 @@ var History = require('react-router').History;
 var AdventureIndexItem = React.createClass({
   mixins: [History],
   getInitialState: function() {
-    return ({showActivities: false});
+    return ({showTitle: false});
   },
   showAdventure: function() {
     var adventureUrl = 'adventures/' + this.props.id;
@@ -13,14 +13,14 @@ var AdventureIndexItem = React.createClass({
     this.history.push(adventureUrl);
   },
   onMouseEnter: function() {
-    this.setState({showActivities: true});
+    this.setState({showTitle: true});
   },
   onMouseLeave: function() {
-    this.setState({showActivities: false});
+    this.setState({showTitle: false});
   },
   getInfo: function(){
-    if(this.state.showActivities){
-      return  ("Activities: " + this.getAllTags() + this.getStar());
+    if(this.state.showTitle){
+      return  (this.props.title);
     }
   },
   getAllTags: function() {
@@ -44,10 +44,19 @@ var AdventureIndexItem = React.createClass({
       backgroundImage: "url(" + photoUrl + ")"
     }
 
+    if (this.state.showTitle) {
+      var adventureClass = "adventure-index-item-title"
+    } else {
+      adventureClass = "adventure-index-item"
+    }
+
     return (
       <li style={backgroundImage}
-        className="adventure-index-item"
+        className={adventureClass}
+        onMouseEnter={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
         onClick={this.showAdventure}>
+        {this.getInfo()}
       </li>
     );
   }

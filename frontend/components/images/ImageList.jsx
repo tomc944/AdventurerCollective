@@ -3,6 +3,7 @@ var Slider = require('react-slick');
 
 var ImageList = React.createClass({
   render: function() {
+    debugger;
     var settings = {
       dots: true,
       infinite: false,
@@ -12,11 +13,13 @@ var ImageList = React.createClass({
       slidesToScroll: 1,
       variableWidth: true,
     };
+
     return(
       <Slider {...settings}>
         {this.props.images.map(function (image) {
+          var imageUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/" + image.url
           return (
-            <img key={image.id} src={image.url}/>
+            <img key={image.id} src={imageUrl}/>
           );
         })}
       </Slider>
