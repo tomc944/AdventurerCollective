@@ -20,7 +20,9 @@ var AdventureIndexItem = React.createClass({
   },
   getInfo: function(){
     if(this.state.showTitle){
-      return  (this.props.title);
+      return  (<div className="adventure-index-item-label-text">
+                 <p>{this.props.title}</p>
+               </div>);
     }
   },
   getAllTags: function() {
@@ -38,7 +40,7 @@ var AdventureIndexItem = React.createClass({
     }
   },
   render: function() {
-    var photoUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_200/" + this.props.imageUrl;
+    var photoUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_300/" + this.props.imageUrl;
 
     var backgroundImage = {
       backgroundImage: "url(" + photoUrl + ")"
