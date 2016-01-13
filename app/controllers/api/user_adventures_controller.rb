@@ -11,6 +11,10 @@ class Api::UserAdventuresController < ApplicationController
     end
   end
 
+  def index
+    @user_adventures = UserAdventure.where(adventuree_id: current_user.id)
+  end
+
   private
   def user_adventures_params
     params.require(:user_adventure).permit(:adventure_id)
