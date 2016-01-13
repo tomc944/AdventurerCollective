@@ -24,14 +24,19 @@ body {font-family: 'Shadows Into Light', cursive;}
   text-align: center;
 }
 
-.adventure-index-item-container {
+.adventure-title {
+  text-align: center;
+}
+
+.adventure-index-items-container {
+  width: 80%;
   overflow: auto;
-  margin: 3% 0% 10% 0%;
+  margin: 0 auto;
 }
 
 .adventure-index-item {
   position: relative;
-  margin: 15px 20px;
+  margin: 0px 0px;
   border: 1px solid white;
   box-shadow: 1px 1px 1px #888888;
   display: inline-block;
@@ -46,9 +51,9 @@ body {font-family: 'Shadows Into Light', cursive;}
 
 .adventure-index-item-title {
   position: relative;
-  margin: 15px 20px;
+  margin: 0px 0px;
   border: 1px solid white;
-  box-shadow: 5px 5px 5px #003300;
+  box-shadow: 5px 5px 5px #001a00;
   display: inline-block;
   height: 300px;
   width: 300px;
@@ -57,15 +62,28 @@ body {font-family: 'Shadows Into Light', cursive;}
   padding: 5px 0px;
   // border-radius: 3px 10px;
   overflow: hidden;
-
 }
 
 .adventure-index-item-label-text {
   border: 1px solid black;
   // border-radius: 2px 5px;
-  padding: 0px 10px;
+  padding: 10px 10px;
   margin: 3px;
   display: inline-block;
   border-radius: 3px;
-  background-color: #F8F8F8;
+  background-color: #F2F2F2;
+}
+
+.adventure-index-item-star {
+  position: absolute;
+  float: right;
+  margin-right: 5px;
+  background-color: #3f9f53;
+  color: #fff;
+  padding: 0px 15px;
+  line-height: 30px;
+  font-size: 13px;
+  border-radius: 3px;
+  bottom: 15px;
+  right: 15px;
 }

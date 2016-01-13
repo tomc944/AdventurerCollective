@@ -3,7 +3,6 @@ var Slider = require('react-slick');
 
 var ImageList = React.createClass({
   render: function() {
-    debugger;
     var settings = {
       dots: true,
       infinite: false,
@@ -12,6 +11,8 @@ var ImageList = React.createClass({
       slidesToShow: 1,
       slidesToScroll: 1,
       variableWidth: true,
+      draggable: false,
+      arrows: true
     };
 
     return(

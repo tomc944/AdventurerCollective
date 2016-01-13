@@ -7,10 +7,8 @@ var StarredAdventures = React.createClass({
   },
   toggleCompletion: function() {
     if (this.props.completed !== null) {
-      debugger
       this.props.completed = null;
     } else {
-      debugger
       this.props.completed = true;
     }
   },

@@ -1,6 +1,7 @@
 var React = require('react');
 var apiUtil = require('../../util/api_util');
 var History = require('react-router').History;
+var AdventureStar = require('./adventure_star');
 
 var AdventureIndexItem = React.createClass({
   mixins: [History],
@@ -52,6 +53,10 @@ var AdventureIndexItem = React.createClass({
       adventureClass = "adventure-index-item"
     }
 
+    debugger;
+
+    var starUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_30,w_30/v1452661171/Hopstarter-Soft-Scraps-Button-Favorite_bagcvj.ico"
+
     return (
       <li style={backgroundImage}
         className={adventureClass}
@@ -59,6 +64,9 @@ var AdventureIndexItem = React.createClass({
         onMouseLeave={this.onMouseLeave}
         onClick={this.showAdventure}>
         {this.getInfo()}
+        <div className="adventure-index-item-star">
+          <AdventureStar id={this.props.id} key={this.props.id}/>
+        </div>
       </li>
     );
   }
