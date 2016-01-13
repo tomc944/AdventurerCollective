@@ -9,9 +9,12 @@ var AdventureStar = React.createClass({
 
   render: function() {
     return (
-      <i className="fa fa-star"
-         onClick={this.createStarred}>
-      </i>
+      <div className="adventure-index-item-star"
+        onClick={this.createStarred}>
+        <i className="fa fa-star">
+        </i>
+      </div>
+
     )
   }
 })

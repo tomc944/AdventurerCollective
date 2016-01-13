@@ -87,3 +87,29 @@ body {font-family: 'Shadows Into Light', cursive;}
   bottom: 15px;
   right: 15px;
 }
+
+.adventure-index-item-star:hover {
+  position: absolute;
+  float: right;
+  margin-right: 5px;
+  background-color: #3f9f53;
+  color: #000000;
+  padding: 0px 15px;
+  line-height: 30px;
+  font-size: 13px;
+  border-radius: 5px;
+  border-color: black;
+  bottom: 15px;
+  right: 15px;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
