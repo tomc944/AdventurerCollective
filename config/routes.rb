@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :adventures do
       resources :images, only: [:create, :show, :index]
     end
+    resources :user_adventures, only: :create
   end
 
   root 'static_pages#root'

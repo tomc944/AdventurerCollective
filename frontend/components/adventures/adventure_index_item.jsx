@@ -53,8 +53,6 @@ var AdventureIndexItem = React.createClass({
       adventureClass = "adventure-index-item"
     }
 
-    debugger;
-
     var starUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_30,w_30/v1452661171/Hopstarter-Soft-Scraps-Button-Favorite_bagcvj.ico"
 
     return (

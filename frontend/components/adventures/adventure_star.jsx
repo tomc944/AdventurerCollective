@@ -1,35 +1,16 @@
 var React = require('react');
-var apiUtil = require('../../util/api_util');
-var History = require('react-router').History;
-var UserStore = require('../../stores/user');
-var userUtil = require('../../util/user_api_util');
+var starUtil = require('../../util/star_adventure_util');
 
 var AdventureStar = React.createClass({
-  getInitialState: function() {
-    return ({user: UserStore.all()})
-  },
-
-  componentDidMount: function() {
-    this.starToken = UserStore.addListener(this._onChange);
-    userUtil.fetchUser();
-  },
-
-  componentWillUnmount: function() {
-    this.starToken.remove();
-  },
-
-  _onChange: function() {
-    this.setState({user: UserStore.all()});
-  },
-
-  onClick: function() {
-
+  createStarred: function() {
+    var user_adventure = {adventure_id: this.props.id}
+    starUtil.createStarred(user_adventure)
   },
 
   render: function() {
     return (
       <i className="fa fa-star"
-         onClick={this.onClick}>
+         onClick={this.createStarred}>
       </i>
     )
   }
