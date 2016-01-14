@@ -16,7 +16,7 @@ var starAdventureUtil = {
       method: "GET",
       url: 'api/user_adventures',
       success: function(starred) {
-        StarActions.receivedStarred(starred)
+        StarActions.receivedAllStarred(starred)
       }
     })
   },

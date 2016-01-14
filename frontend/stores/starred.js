@@ -10,8 +10,11 @@ StarredAdventureStore.all = function() {
 
 StarredAdventureStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
-    case StarConstants.RECEIVED_STARRED:
+    case StarConstants.RECEIVED_ALL_STARRED:
       this._receivedAllStarred(payload.starred)
+      break;
+    case StarConstants.RECEIVED_STARRED:
+      this._receiveStarred(payload.starred)
       break;
   }
 };
@@ -19,6 +22,11 @@ StarredAdventureStore.__onDispatch = function(payload) {
 StarredAdventureStore.find = function(id) {
   return _starred[id]
 };
+
+StarredAdventureStore._receiveStarred = function(starred) {
+  _starred[starred.id] = starred
+  this.__emitChange();
+}
 
 StarredAdventureStore._receivedAllStarred = function(starred) {
   _starred = {};

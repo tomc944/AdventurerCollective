@@ -46,7 +46,7 @@ AdventureStore._resetAdventures = function(adventures) {
 
 AdventureStore._receiveAdventure = function(adventure) {
   _adventures[adventure.id] = adventure;
-    this.__emitChange();
+  this.__emitChange();
 };
 
 AdventureStore._setAttrs = function(attrs) {
