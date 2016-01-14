@@ -19,6 +19,15 @@ var starAdventureUtil = {
         StarActions.receivedStarred(starred)
       }
     })
+  },
+  deleteStarred: function(id) {
+    debugger
+    $.ajax({
+      method: "DELETE",
+      url: 'api/user_adventures/' + id,
+      data: {adventure_id: id},
+      success: function() {}
+    })
   }
 }
 

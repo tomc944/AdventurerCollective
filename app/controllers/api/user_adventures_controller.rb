@@ -1,6 +1,5 @@
 class Api::UserAdventuresController < ApplicationController
   def create
-    debugger
     @user_adventure = UserAdventure.new(user_adventures_params)
     @user_adventure[:adventuree_id] = current_user.id
 
@@ -13,6 +12,15 @@ class Api::UserAdventuresController < ApplicationController
 
   def index
     @user_adventures = UserAdventure.where(adventuree_id: current_user.id)
+  end
+
+  def destroy
+    debugger
+    adventure_id = params[:adventure_id]
+    @user_adventure = UserAdventure.find_by(adventure_id: adventure_id,
+                                            adventuree_id: current_user.id)
+    @user_adventure.destroy
+    render json: {wahoo: "wahoo!!!!"}
   end
 
   private

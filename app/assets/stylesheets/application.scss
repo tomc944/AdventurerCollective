@@ -74,12 +74,12 @@ body {font-family: 'Shadows Into Light', cursive;}
   background-color: #F2F2F2;
 }
 
-.adventure-index-item-star {
+.adventure-index-item-starred {
   position: absolute;
   float: right;
   margin-right: 5px;
   background-color: #3f9f53;
-  color: #fff;
+  color: #FFFFFF;
   padding: 0px 15px;
   line-height: 30px;
   font-size: 13px;
@@ -88,12 +88,12 @@ body {font-family: 'Shadows Into Light', cursive;}
   right: 15px;
 }
 
-.adventure-index-item-star:hover {
+.adventure-index-item-not-starred {
   position: absolute;
   float: right;
   margin-right: 5px;
-  background-color: #3f9f53;
-  color: #000000;
+  background-color: #707070;
+  color: #FFFFFF;
   padding: 0px 15px;
   line-height: 30px;
   font-size: 13px;

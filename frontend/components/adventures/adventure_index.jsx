@@ -3,8 +3,12 @@ var AdventureStore = require('../../stores/adventure');
 var apiUtil = require('../../util/api_util.js');
 var Link = require('react-router').Link;
 var AdventureIndexItem = require('./adventure_index_item');
+var starUtil = require('../../util/star_adventure_util');
 
 var AdventureIndex = React.createClass({
+  getAllStarred: function() {
+    starUtil.fetchStarAdventures();
+  },
   render: function() {
     var that = this;
     var adventureKeys = Object.keys(this.props.adventures);
@@ -23,6 +27,8 @@ var AdventureIndex = React.createClass({
           imageUrl={adventure.images[0].url} />
       );
     });
+
+    this.getAllStarred();
 
     return (
       <div className="adventure-index-items-container">

@@ -1,1 +1,1 @@
-json.array! @user_adventures, :adventure_id, :adventuree_id
+json.array! @user_adventures, :id, :adventure_id, :adventuree_id
