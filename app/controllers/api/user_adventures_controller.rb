@@ -15,7 +15,6 @@ class Api::UserAdventuresController < ApplicationController
   end
 
   def destroy
-    debugger
     adventure_id = params[:adventure_id]
     @user_adventure = UserAdventure.find_by(adventure_id: adventure_id,
                                             adventuree_id: current_user.id)

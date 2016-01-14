@@ -13,6 +13,12 @@ var StarActions = {
       actionType: StarConstants.RECEIVED_STARRED,
       starred: starred
     })
+  },
+  deleteStarred: function(starred) {
+    AppDispatcher.dispatch({
+      actionType: StarConstants.DELETE_STARRED,
+      starred: starred
+    })
   }
 };
 

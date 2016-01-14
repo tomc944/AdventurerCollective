@@ -16,14 +16,23 @@ StarredAdventureStore.__onDispatch = function(payload) {
     case StarConstants.RECEIVED_STARRED:
       this._receiveStarred(payload.starred)
       break;
-  }
-};
+    case StarConstants.DELETE_STARRED:
+      this._deleteStarred(payload.starred)
+      break;
+    }
+  };
 
 StarredAdventureStore.find = function(id) {
   return _starred[id]
 };
 
+StarredAdventureStore._deleteStarred = function(starred) {
+  delete _starred[starred.id];
+  this.__emitChange();
+};
+
 StarredAdventureStore._receiveStarred = function(starred) {
+  debugger
   _starred[starred.id] = starred
   this.__emitChange();
 }
