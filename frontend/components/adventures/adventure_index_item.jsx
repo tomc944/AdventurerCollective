@@ -6,10 +6,15 @@ var AdventureStar = require('./adventure_star');
 var AdventureIndexItem = React.createClass({
   mixins: [History],
   getInitialState: function() {
-    return ({showTitle: false, checkingChild: false});
+    return ({showTitle: false});
   },
-  showAdventure: function() {
-    if (false) {
+  showAdventure: function(e) {
+    var child = "adventure-index-item-starred"
+    var other_child = "adventure-index-item-not-starred"
+    var inner_child = "fa fa-star"
+
+    if (e.target.className !== child && e.target.className !== other_child &&
+        e.target.className !== inner_child) {
       var adventureUrl = 'adventures/' + this.props.id;
       apiUtil.fetchAdventure(this.props.id);
       this.history.push(adventureUrl);
@@ -27,9 +32,6 @@ var AdventureIndexItem = React.createClass({
                  <p>{this.props.title}</p>
                </div>);
     }
-  },
-  checkChildClick: function() {
-    this.setState({checkingChild: true})
   },
   render: function() {
     var photoUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_300/" + this.props.imageUrl;
@@ -53,8 +55,7 @@ var AdventureIndexItem = React.createClass({
         onMouseLeave={this.onMouseLeave}
         onClick={this.showAdventure}>
         {this.getInfo()}
-        <AdventureStar id={this.props.id} key={this.props.id}
-                       childCheck={this.checkChildClick}/>
+        <AdventureStar id={this.props.id} key={this.props.id}/>
       </li>
     );
   }

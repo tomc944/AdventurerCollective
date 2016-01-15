@@ -32,7 +32,6 @@ StarredAdventureStore._deleteStarred = function(starred) {
 };
 
 StarredAdventureStore._receiveStarred = function(starred) {
-  debugger
   _starred[starred.id] = starred
   this.__emitChange();
 }

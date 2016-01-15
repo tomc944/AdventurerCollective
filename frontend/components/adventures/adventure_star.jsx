@@ -16,7 +16,8 @@ var AdventureStar = React.createClass({
         adventureStar: adventureStar
       })
   },
-  toggleStarred: function() {
+  toggleStarred: function(e) {
+    e.preventDefault();
     if (this.state.starred) {
       starUtil.deleteStarred(this.props.id)
       this.setState({
