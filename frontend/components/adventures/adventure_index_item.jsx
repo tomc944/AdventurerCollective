@@ -9,16 +9,18 @@ var AdventureIndexItem = React.createClass({
     return ({showTitle: false});
   },
   showAdventure: function(e) {
-    var child = "adventure-index-item-starred"
-    var other_child = "adventure-index-item-not-starred"
-    var inner_child = "fa fa-star"
-
-    if (e.target.className !== child && e.target.className !== other_child &&
-        e.target.className !== inner_child) {
+    if (checkStarClick(e)) {
       var adventureUrl = 'adventures/' + this.props.id;
       apiUtil.fetchAdventure(this.props.id);
       this.history.push(adventureUrl);
     }
+  },
+  checkStarClick: function(e) {
+    var child = "adventure-index-item-starred"
+    var other_child = "adventure-index-item-not-starred"
+    var inner_child = "fa fa-star"
+    return (e.target.className !== child && e.target.className !== other_child &&
+        e.target.className !== inner_child)
   },
   onMouseEnter: function() {
     this.setState({showTitle: true});
