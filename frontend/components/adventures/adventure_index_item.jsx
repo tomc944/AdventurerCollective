@@ -9,7 +9,7 @@ var AdventureIndexItem = React.createClass({
     return ({showTitle: false});
   },
   showAdventure: function(e) {
-    if (checkStarClick(e)) {
+    if (this.checkStarClick(e)) {
       var adventureUrl = 'adventures/' + this.props.id;
       apiUtil.fetchAdventure(this.props.id);
       this.history.push(adventureUrl);
