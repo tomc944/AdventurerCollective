@@ -12,6 +12,10 @@ var Map = React.createClass({
     var that = this;
     var adventureKeys = Object.keys(this.props.adventures);
 
+    if (adventureKeys.length === 1) {
+      this.adventureClass = "show-page-map";
+    }
+
     adventureKeys.map(function(adventureId) {
       var adventure = that.props.adventures[parseInt(adventureId)];
       if (adventure.completed !== null) {
@@ -98,8 +102,11 @@ var Map = React.createClass({
     });
   },
   render: function() {
+    if (!this.adventureClass) {
+      this.adventureClass = "map"
+    }
     return (
-      <div className="map" ref="map"></div>
+      <div className={this.adventureClass} ref="map"></div>
     );
   }
 });

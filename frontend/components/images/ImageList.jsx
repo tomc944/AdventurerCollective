@@ -1,5 +1,6 @@
 var React = require('react');
-var Slider = require('react-slick');
+var Map = require('../map');
+var Slider=require('react-slick');
 
 var ImageList = React.createClass({
   render: function() {
@@ -15,13 +16,13 @@ var ImageList = React.createClass({
       arrows: true
     };
 
+
+
     return(
       <Slider {...settings}>
         {this.props.images.map(function (image) {
           var imageUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/" + image.url
-          return (
-            <img key={image.id} src={imageUrl}/>
-          );
+          return (<img key={image.id} src={imageUrl}/>)
         })}
       </Slider>
     );
