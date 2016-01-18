@@ -80,8 +80,9 @@ var AdventureForm = React.createClass({
 
           <fieldset className="form-group">
             <label>Description:</label>
-            <input
-              type="text"
+            <textarea
+              rows='6'
+              cols='50'
               className="form-control"
               valueLink={this.linkState('description')} />
           </fieldset>
@@ -91,6 +92,7 @@ var AdventureForm = React.createClass({
             <input
               type="text"
               className="form-control"
+              readOnly='true'
               valueLink={this.linkState('lat')} />
           </fieldset>
 
@@ -98,6 +100,7 @@ var AdventureForm = React.createClass({
             <label>Lng:</label>
             <input
               type="text"
+              readOnly='true'
               className="form-control"
               valueLink={this.linkState('lng')} />
           </fieldset>
@@ -111,7 +114,7 @@ var AdventureForm = React.createClass({
           <button className="btn btn-primary">Create an Adventure!</button>
           <br/>
         </form>
-        <Map check={true}
+        <Map className="map-form" check={true}
              adventures={{}}/>
       </div>
     );

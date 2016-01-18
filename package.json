@@ -36,6 +36,7 @@
     "react-slick": "^0.9.3",
     "react-tagsinput": "^3.0.3",
     "slick-carousel": "^1.5.9",
+    "tether-shepherd": "^1.2.0",
     "webpack": "^1.12.4"
   },
   "devDependencies": {

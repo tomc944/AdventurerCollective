@@ -65,7 +65,7 @@ var Map = React.createClass({
 
     var mapOptions = {
       center: {lat: 37.7758, lng: -122.435},
-      zoom: 6
+      zoom: 5 
     };
 
     this.map = new google.maps.Map(map, mapOptions);

@@ -7,7 +7,6 @@ var apiUtil = require('../../util/api_util');
 var Images = require('../images/images');
 
 var AdventureDetail = React.createClass({
-  mixins: [LocalStorageMixin],
 
   getInitialState: function() {
     return ({adventure: this.findFromStore()});
