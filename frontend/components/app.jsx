@@ -1,4 +1,5 @@
 var React = require('react');
+var Resize = require('react-resize');
 
 var App = React.createClass({
   render: function() {

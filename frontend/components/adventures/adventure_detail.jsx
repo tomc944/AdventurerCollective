@@ -1,11 +1,14 @@
 var React = require('react');
 var AdventureStore = require('../../stores/adventure');
 var Navbar = require('../navbar');
+var LocalStorageMixin = require('react-localstorage');
 var Map = require('../map');
 var apiUtil = require('../../util/api_util');
 var Images = require('../images/images');
 
 var AdventureDetail = React.createClass({
+  mixins: [LocalStorageMixin],
+
   getInitialState: function() {
     return ({adventure: this.findFromStore()});
   },
@@ -13,6 +16,7 @@ var AdventureDetail = React.createClass({
     return (AdventureStore.find(parseInt(this.props.params.adventureId)));
   },
   componentDidMount: function() {
+    apiUtil.fetchAdventure(this.props.params.adventureId)
     this.token = AdventureStore.addListener(this._onChange);
   },
   _onChange: function() {

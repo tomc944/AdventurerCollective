@@ -1,10 +1,13 @@
 var React = require('react');
 var Map = require('./map');
 var Navbar = require("./navbar");
+var LocalStorageMixin = require('react-localstorage');
 var AdventureIndex = require('./adventures/adventure_index');
 var AdventureStore = require('../stores/adventure');
 
 var Search = React.createClass({
+  mixins: [LocalStorageMixin],
+  
   getInitialState: function() {
     return ({adventures: AdventureStore.all()});
   },

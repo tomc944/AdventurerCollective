@@ -7,7 +7,8 @@ var ImageList = React.createClass({
 
   render: function() {
     return(
-      <Carousel slidesToShow={1} dragging={false} slideHeight="600px" slideWidth="800px">
+      <Carousel className='carousel' slidesToShow={1} dragging={false} slideHeight="600px" slideWidth="800px"
+                cellAlign="center" cellSpacing={20} width="50%">
 
         <Map adventures={this.props.adventures}></Map>
         {this.props.images.map(function (image) {

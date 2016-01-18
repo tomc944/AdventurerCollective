@@ -17,7 +17,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-body {font-family: 'Roboto Slab', cursive;}
+body {font-family: 'Gentium Basic', serif;}
 
 .adventure-index-items-list {
   padding: 0%;
@@ -83,7 +83,7 @@ body {font-family: 'Roboto Slab', cursive;}
   padding: 0px 15px;
   line-height: 30px;
   font-size: 13px;
-  border-radius: 3px;
+  border-radius: 5px;
   bottom: 15px;
   right: 15px;
 }
@@ -112,4 +112,8 @@ body {font-family: 'Roboto Slab', cursive;}
   -moz-osx-font-smoothing: grayscale;
   transition-duration: 0.3s;
   transition-property: transform;
+}
+
+.carousel {
+  float: right;
 }
