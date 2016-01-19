@@ -26,10 +26,13 @@ class Adventure < ActiveRecord::Base
   end
 
   def self.in_bounds(bounds)
-    lat_bounds = bounds["southWest"]["lat"]..bounds['northEast']['lat']
-    lng_bounds = bounds["southWest"]["lng"]..bounds['northEast']['lng']
+    if bounds['southWest']['lng'] > bounds['northEast']['lng']
+      bounds['southWest']['lng'] = -180
+    end
 
-    return Adventure.where(lat: lat_bounds, lng: lng_bounds)
+    self.where("lat < ?", bounds['northEast']['lat'])
+        .where("lat > ?", bounds['southWest']['lat'])
+        .where("lng > ?", bounds['southWest']['lng'])
+        .where("lng < ?", bounds['northEast']['lng'])
   end
-
 end
