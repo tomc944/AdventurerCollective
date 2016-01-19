@@ -7,7 +7,7 @@ var AdventureStore = require('../stores/adventure');
 
 var Search = React.createClass({
   mixins: [LocalStorageMixin],
-  
+
   getInitialState: function() {
     return ({adventures: AdventureStore.all()});
   },
@@ -22,7 +22,7 @@ var Search = React.createClass({
   },
   render: function() {
     return (
-      <div>
+      <div className="main-div">
         <Navbar />
         <h3 className="adventure-title">Adventures Near You!</h3>
         <Map className="home-map"

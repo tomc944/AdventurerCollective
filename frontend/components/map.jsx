@@ -12,9 +12,9 @@ var Map = React.createClass({
     var that = this;
     var adventureKeys = Object.keys(this.props.adventures);
 
-    if (adventureKeys.length === 1) {
-      this.adventureClass = "show-page-map";
-    }
+    // if (adventureKeys.length === 1) {
+    //   this.adventureClass = "show-page-map";
+    // }
 
     adventureKeys.map(function(adventureId) {
       var adventure = that.props.adventures[parseInt(adventureId)];

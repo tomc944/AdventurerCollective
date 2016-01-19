@@ -17,19 +17,41 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-body {font-family: 'Gentium Basic', serif;}
+body {font-family: 'Gentium Basic', serif;
+      background: url(nature.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      top: 0px;
+      left: 0px;
+      position: absolute;}
 
 .adventure-index-items-list {
   padding: 0%;
   text-align: center;
 }
 
+.main-div {
+  display: block;
+  background: #ffffff;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border-radius: 20px;
+}
+
 .adventure-title {
   text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .adventure-index-items-container {
-  width: 80%;
+  width: 90%;
   overflow: auto;
   margin: 0 auto;
 }
