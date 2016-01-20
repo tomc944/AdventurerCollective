@@ -18,6 +18,7 @@
 @import 'bootstrap';
 
 body {font-family: 'Gentium Basic', serif;
+      color: white;
       background: url(nature.jpg) no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -42,6 +43,7 @@ body {font-family: 'Gentium Basic', serif;
   margin: 0 auto;
   margin-bottom: 40px;
   border-radius: 20px;
+  background-color: rgba(0,0,0,0.9);
 }
 
 .adventure-title {
@@ -54,6 +56,8 @@ body {font-family: 'Gentium Basic', serif;
   width: 90%;
   overflow: auto;
   margin: 0 auto;
+  margin-top: 20px;
+
 }
 
 .adventure-index-item {

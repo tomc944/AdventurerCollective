@@ -26,7 +26,7 @@ class Adventure < ActiveRecord::Base
   end
 
   def self.in_bounds(bounds)
-    if bounds['southWest']['lng'] > bounds['northEast']['lng']
+    if bounds['southWest']['lng'].to_i > bounds['northEast']['lng'].to_i
       bounds['southWest']['lng'] = -180
     end
 
