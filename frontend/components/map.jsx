@@ -23,7 +23,7 @@ var Map = React.createClass({
       } else {
         that._placeTodoAdventure(adventure);
       }
-
+      
       that.attachDescription(newadventure);
       return (newadventure.setMap(that.map));
     });
