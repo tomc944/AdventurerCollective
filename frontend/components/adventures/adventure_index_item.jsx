@@ -36,7 +36,11 @@ var AdventureIndexItem = React.createClass({
     }
   },
   render: function() {
-    var photoUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_300/" + this.props.imageUrl;
+    if (this.props.imageUrl) {
+      var photoUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_300/" + this.props.imageUrl;
+    } else {
+      photoUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_300/v1451927030/sample.jpg";
+    }
 
     var backgroundImage = {
       backgroundImage: "url(" + photoUrl + ")"
@@ -47,9 +51,7 @@ var AdventureIndexItem = React.createClass({
     } else {
       adventureClass = "adventure-index-item"
     }
-
-    var starUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/h_30,w_30/v1452661171/Hopstarter-Soft-Scraps-Button-Favorite_bagcvj.ico"
-
+    
     return (
       <li style={backgroundImage}
         className={adventureClass}

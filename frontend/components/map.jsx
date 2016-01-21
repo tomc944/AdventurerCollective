@@ -23,13 +23,16 @@ var Map = React.createClass({
       } else {
         that._placeTodoAdventure(adventure);
       }
-      
+
       that.attachDescription(newadventure);
       return (newadventure.setMap(that.map));
     });
 
   },
   _placeCompletedAdventure: function(adventure) {
+    if (adventure.title === "testing") {
+      console.log(adventure)
+    }
     newadventure = new google.maps.Marker({
       position: {lat: adventure.lat, lng: adventure.lng},
       description: adventure.title,
