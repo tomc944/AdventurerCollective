@@ -1,4 +1,17 @@
 .outerForm {
   width: 300px;
   float: left;
+  right: 30px;
+  top: 30px;
+  text-align: center;
+  color: white;
+}
+
+.form-container {
+  width: 80%;
+  overflow: auto;
+  border-radius: 10px;
+  border: 30px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
 }

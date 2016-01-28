@@ -34,13 +34,7 @@ var AdventureStar = React.createClass({
     }
   },
 
-  // checkStarred: function() {
-  //   if (this.state.starred)) {
-  //     this.adventureStar="adventure-index-item-starred"
-  //   } else {
-  //     this.adventureStar="adventure-index-item-not-starred"
-  //   }
-  // },
+
   render: function() {
     return (
       <div onClick={this.toggleStarred}
