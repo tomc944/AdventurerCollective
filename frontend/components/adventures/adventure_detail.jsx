@@ -46,13 +46,15 @@ var AdventureDetail = React.createClass({
       return (
         <div>
           <Navbar />
-          <Images adventureId={this.props.params.adventureId}
-                  adventures={adventureObject}/>
+
           <div className="panel panel-default">
+
             <div className="panel-heading">
               <h3 className="panel-title">{this.state.adventure.title}</h3>
             </div>
             <div className="panel-body">
+              <Images adventureId={this.props.params.adventureId}
+                      adventures={adventureObject}/>
               {this.state.adventure.description}
               <ul>
                 <h4>Activites:</h4>

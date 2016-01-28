@@ -1,6 +1,21 @@
 var React = require('react');
+var UserStore = require('../../stores/user');
+var userUtil = require('../../util/user_api_util');
 
 var UploadButton = React.createClass({
+  getInitialState: function() {
+    return ({user: UserStore.all()});
+  },
+  _onChange: function() {
+    this.setState({user: UserStore.all()});
+  },
+  componentDidMount: function() {
+    this.userToken = UserStore.addListener(this._onChange);
+    userUtil.fetchUser();
+  },
+  componentWillUnmount: function() {
+    this.userToken.remove();
+  },
   upload: function (e) {
     e.preventDefault();
     cloudinary.openUploadWidget({ cloud_name: "dpdxfgx58", upload_preset: "lp8jhmdl"},
@@ -10,12 +25,19 @@ var UploadButton = React.createClass({
       }
     }.bind(this));
   },
+  checkUserCredentials: function() {
+    if (this.props.adventures[Object.keys(this.props.adventures)[0]].author_id === this.state.user.id) {
+      return (<button onClick={this.upload}>Upload new image!</button>);
+    } else {
+      return (<div></div>)
+    }
+  },
   render: function() {
     return (
       <div className="upload-form">
-        <button onClick={this.upload}>Upload new image!</button>
+        {this.checkUserCredentials()}
       </div>
-    );
+    )
   }
 });
 

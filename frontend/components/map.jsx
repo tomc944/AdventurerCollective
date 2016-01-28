@@ -30,9 +30,6 @@ var Map = React.createClass({
 
   },
   _placeCompletedAdventure: function(adventure) {
-    if (adventure.title === "testing") {
-      console.log(adventure)
-    }
     newadventure = new google.maps.Marker({
       position: {lat: adventure.lat, lng: adventure.lng},
       description: adventure.title,
@@ -108,8 +105,9 @@ var Map = React.createClass({
     if (!this.adventureClass) {
       this.adventureClass = "map"
     }
+    
     return (
-      <div className={this.adventureClass} ref="map"></div>
+      <div className={this.props.mapClassName} ref="map"></div>
     );
   }
 });

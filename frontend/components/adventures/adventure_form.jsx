@@ -69,53 +69,55 @@ var AdventureForm = React.createClass({
     return (
       <div>
         <Navbar />
-        <form onSubmit={this.createAdventure} className="outerForm">
-          <fieldset className="form-group">
-            <label>Title:</label>
-            <input
-              type="text"
-              className="form-control"
-              valueLink={this.linkState('title')} />
-          </fieldset>
+        <div className="form-container">
+          <form onSubmit={this.createAdventure} className="outerForm">
+            <fieldset className="form-group">
+              <label>Title:</label>
+              <input
+                type="text"
+                className="form-control"
+                valueLink={this.linkState('title')} />
+            </fieldset>
 
-          <fieldset className="form-group">
-            <label>Description:</label>
-            <textarea
-              rows='6'
-              cols='50'
-              className="form-control"
-              valueLink={this.linkState('description')} />
-          </fieldset>
+            <fieldset className="form-group">
+              <label>Description:</label>
+              <textarea
+                rows='6'
+                cols='50'
+                className="form-control"
+                valueLink={this.linkState('description')} />
+            </fieldset>
 
-          <fieldset className="form-group">
-            <label>Lat:</label>
-            <input
-              type="text"
-              className="form-control"
-              readOnly='true'
-              valueLink={this.linkState('lat')} />
-          </fieldset>
+            <fieldset className="form-group">
+              <label>Lat:</label>
+              <input
+                type="text"
+                className="form-control"
+                readOnly='true'
+                valueLink={this.linkState('lat')} />
+            </fieldset>
 
-          <fieldset className="form-group">
-            <label>Lng:</label>
-            <input
-              type="text"
-              readOnly='true'
-              className="form-control"
-              valueLink={this.linkState('lng')} />
-          </fieldset>
+            <fieldset className="form-group">
+              <label>Lng:</label>
+              <input
+                type="text"
+                readOnly='true'
+                className="form-control"
+                valueLink={this.linkState('lng')} />
+            </fieldset>
 
-          <div>
-            <label>Type of Adventure:</label>
-            {checkboxes}
-          </div>
+            <div>
+              <label>Type of Adventure:</label>
+              {checkboxes}
+            </div>
 
-          <br />
-          <button className="btn btn-primary">Create an Adventure!</button>
-          <br/>
-        </form>
-        <Map className="map-form" check={true}
-             adventures={{}}/>
+            <br />
+            <button className="btn btn-primary">Create an Adventure!</button>
+            <br/>
+          </form>
+          <Map mapClassName="map-form" check={true}
+               adventures={{}}/>
+        </div>
       </div>
     );
   }

@@ -29,7 +29,8 @@ var Images = React.createClass({
       <div>
         <ImageList images={this.state.images}
           adventures={this.props.adventures}/>
-        <UploadButton postImage={this.postImage} />
+        <UploadButton postImage={this.postImage}
+          adventures={this.props.adventures}/>
       </div>
     );
   }

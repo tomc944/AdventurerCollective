@@ -25,7 +25,7 @@ var Search = React.createClass({
       <div className="main-div">
         <Navbar />
         <h2 className="adventure-title">Adventures Near You!</h2>
-        <Map className="home-map"
+        <Map mapClassName='map'
           adventures={this.state.adventures}
           onIndex={true}/>
         <AdventureIndex

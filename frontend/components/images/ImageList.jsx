@@ -10,7 +10,8 @@ var ImageList = React.createClass({
       <Carousel className='carousel' slidesToShow={1} dragging={false} slideHeight="600px" slideWidth="800px"
                 cellAlign="center" cellSpacing={20} width="50%">
 
-        <Map adventures={this.props.adventures}></Map>
+        <Map mapClassName='show-page-map'
+             adventures={this.props.adventures}></Map>
         {this.props.images.map(function (image) {
           var imageUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/" + image.url
           return (<img key={image.id} src={imageUrl}/>)
