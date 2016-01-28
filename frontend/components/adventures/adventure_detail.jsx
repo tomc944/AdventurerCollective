@@ -47,9 +47,9 @@ var AdventureDetail = React.createClass({
         <div>
           <Navbar />
 
-          <div className="panel panel-default">
+          <div className="panel2 panel-default2">
 
-            <div className="panel-heading">
+            <div className="panel-heading2">
               <h3 className="panel-title">{this.state.adventure.title}</h3>
             </div>
             <div className="panel-body">
