@@ -1,6 +1,7 @@
 var React = require('react');
 var starUtil = require('../../util/star_adventure_util');
 var StarStore = require('../../stores/starred');
+var classNames = require('classnames');
 
 var AdventureStar = React.createClass({
   getInitialState: function() {
@@ -20,25 +21,24 @@ var AdventureStar = React.createClass({
     e.preventDefault();
     if (this.state.starred) {
       starUtil.deleteStarred(this.props.id)
-      this.setState({
-        adventureStar: "adventure-index-item-not-starred",
-        starred: false
-      })
+      this.setState({ starred: false })
     } else {
       var user_adventure = {adventure_id: this.props.id}
       starUtil.createStarred(user_adventure)
-      this.setState({
-        adventureStar: "adventure-index-item-starred",
-        starred: true
-      })
+      this.setState({ starred: true })
     }
   },
 
 
   render: function() {
+    var starClass = classNames({
+      'adventure-index-item-starred': this.state.starred,
+      'adventure-index-item-not-starred': !this.state.starred
+    })
+
     return (
       <div onClick={this.toggleStarred}
-        className={this.state.adventureStar}>
+        className={starClass}>
         <i className="fa fa-star">
         </i>
       </div>

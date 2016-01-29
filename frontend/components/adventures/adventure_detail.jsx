@@ -5,6 +5,7 @@ var LocalStorageMixin = require('react-localstorage');
 var Map = require('../map');
 var apiUtil = require('../../util/api_util');
 var Images = require('../images/images');
+var AdventureStar = require('./adventure_star');
 
 var AdventureDetail = React.createClass({
 
@@ -53,6 +54,7 @@ var AdventureDetail = React.createClass({
               <h3 className="panel-title">{this.state.adventure.title}</h3>
             </div>
             <div className="panel-body">
+              <AdventureStar id={this.state.adventure.id} key={this.state.adventure.id} />
               <Images adventureId={this.props.params.adventureId}
                       adventures={adventureObject}/>
               {this.state.adventure.description}

@@ -105,7 +105,7 @@ var Map = React.createClass({
     if (!this.adventureClass) {
       this.adventureClass = "map"
     }
-    
+
     return (
       <div className={this.props.mapClassName} ref="map"></div>
     );
