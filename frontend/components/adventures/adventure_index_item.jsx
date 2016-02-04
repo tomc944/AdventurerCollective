@@ -51,7 +51,7 @@ var AdventureIndexItem = React.createClass({
     } else {
       adventureClass = "adventure-index-item"
     }
-    
+
     return (
       <li style={backgroundImage}
         className={adventureClass}
@@ -59,7 +59,7 @@ var AdventureIndexItem = React.createClass({
         onMouseLeave={this.onMouseLeave}
         onClick={this.showAdventure}>
         {this.getInfo()}
-        <AdventureStar id={this.props.id} key={this.props.id}/>
+        <AdventureStar id={this.props.id} key={this.props.id} />
       </li>
     );
   }

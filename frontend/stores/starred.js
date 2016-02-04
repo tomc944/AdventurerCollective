@@ -38,6 +38,7 @@ StarredAdventureStore._receiveStarred = function(starred) {
 
 StarredAdventureStore._receivedAllStarred = function(starred) {
   _starred = {};
+
   starred.forEach(function (star) {
     _starred[star.adventure_id] = star;
   });

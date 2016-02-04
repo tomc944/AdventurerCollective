@@ -17,6 +17,15 @@ var AdventureStar = React.createClass({
         adventureStar: adventureStar
       })
   },
+  componentWillReceiveProps: function(newProps) {
+    if (StarStore.find(newProps.id)) {
+      this.setState({ starred: true,
+                      adventureStar: 'adventure-index-item-starred' })
+    } else {
+      this.setState({ starred: false,
+                      adventureStar: 'adventure-index-item-not-starred' })
+    }
+  },
   toggleStarred: function(e) {
     e.preventDefault();
     if (this.state.starred) {

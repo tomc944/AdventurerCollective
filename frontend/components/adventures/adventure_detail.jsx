@@ -44,6 +44,7 @@ var AdventureDetail = React.createClass({
       var id = this.state.adventure.id;
       var adventureObject = {};
       adventureObject[id] = this.state.adventure;
+      
       return (
         <div>
           <Navbar />
@@ -54,7 +55,8 @@ var AdventureDetail = React.createClass({
               <h3 className="panel-title">{this.state.adventure.title}</h3>
             </div>
             <div className="panel-body">
-              <AdventureStar id={this.state.adventure.id} key={this.state.adventure.id} />
+              <AdventureStar id={this.state.adventure.id} key={this.state.adventure.id}
+                             showPage={true}/>
               <Images adventureId={this.props.params.adventureId}
                       adventures={adventureObject}/>
               {this.state.adventure.description}
