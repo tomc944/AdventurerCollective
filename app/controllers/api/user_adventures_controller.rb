@@ -19,7 +19,7 @@ class Api::UserAdventuresController < ApplicationController
     @user_adventure = UserAdventure.find_by(adventure_id: adventure_id,
                                             adventuree_id: current_user.id)
     @user_adventure.destroy
-    render json: {wahoo: "wahoo!!!!"}
+    render json: @user_adventure
   end
 
   private

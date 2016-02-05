@@ -129,6 +129,35 @@ body {font-family: 'Gentium Basic', serif;
   right: 15px;
 }
 
+.adventure-show-page-starred {
+  position: relative;
+  float: right;
+  margin-right: 5px;
+  background-color: #3f9f53;
+  color: #FFFFFF;
+  padding: 0px 15px;
+  line-height: 30px;
+  font-size: 13px;
+  border-radius: 5px;
+  bottom: 22px;
+  right: 15px;
+}
+
+.adventure-show-page-not-starred {
+  position: relative;
+  float: right;
+  margin-right: 5px;
+  background-color: #707070;
+  color: #FFFFFF;
+  padding: 0px 15px;
+  line-height: 30px;
+  font-size: 13px;
+  border-radius: 5px;
+  border-color: black;
+  bottom: 22px;
+  right: 15px;
+}
+
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;

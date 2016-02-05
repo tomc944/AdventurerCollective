@@ -59,7 +59,7 @@ var AdventureIndexItem = React.createClass({
         onMouseLeave={this.onMouseLeave}
         onClick={this.showAdventure}>
         {this.getInfo()}
-        <AdventureStar id={this.props.id} key={this.props.id} />
+        <AdventureStar id={this.props.id} key={this.props.id} index={true}/>
       </li>
     );
   }

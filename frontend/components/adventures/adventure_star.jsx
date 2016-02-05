@@ -5,44 +5,32 @@ var classNames = require('classnames');
 
 var AdventureStar = React.createClass({
   getInitialState: function() {
-    if (StarStore.find(this.props.id)) {
-      var starred = true;
-      var adventureStar = 'adventure-index-item-starred';
-    } else {
-      starred = false;
-      adventureStar = 'adventure-index-item-not-starred';
-    }
-    return ({
-        starred: starred,
-        adventureStar: adventureStar
-      })
+    return ({ starred: this.findFromStore() })
   },
-  componentWillReceiveProps: function(newProps) {
-    if (StarStore.find(newProps.id)) {
-      this.setState({ starred: true,
-                      adventureStar: 'adventure-index-item-starred' })
-    } else {
-      this.setState({ starred: false,
-                      adventureStar: 'adventure-index-item-not-starred' })
-    }
+  findFromStore: function() {
+    return (StarStore.find(this.props.id))
+  },
+  componentWillMount: function() {
+    this.starToken = StarStore.addListener(this._onChange)
+  },
+  componentWillUnmount: function() {
+    this.starToken.remove();
+  },
+  _onChange: function() {
+    this.setState({ starred: this.findFromStore() })
   },
   toggleStarred: function(e) {
     e.preventDefault();
-    if (this.state.starred) {
-      starUtil.deleteStarred(this.props.id)
-      this.setState({ starred: false })
-    } else {
-      var user_adventure = {adventure_id: this.props.id}
-      starUtil.createStarred(user_adventure)
-      this.setState({ starred: true })
-    }
+
+    this.state.starred ? starUtil.deleteStarred(this.props.id)
+                       : starUtil.createStarred({adventure_id: this.props.id})
   },
-
-
   render: function() {
     var starClass = classNames({
-      'adventure-index-item-starred': this.state.starred,
-      'adventure-index-item-not-starred': !this.state.starred
+      'adventure-show-page-starred': this.state.starred && this.props.showPage,
+      'adventure-show-page-not-starred': !this.state.starred && this.props.showPage,
+      'adventure-index-item-starred': this.state.starred && this.props.index,
+      'adventure-index-item-not-starred': !this.state.starred && this.props.index
     })
 
     return (
@@ -51,7 +39,6 @@ var AdventureStar = React.createClass({
         <i className="fa fa-star">
         </i>
       </div>
-
     )
   }
 })

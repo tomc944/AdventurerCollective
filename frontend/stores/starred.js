@@ -23,16 +23,16 @@ StarredAdventureStore.__onDispatch = function(payload) {
   };
 
 StarredAdventureStore.find = function(id) {
-  return _starred[id]
+  return _starred[id] ? true : false
 };
 
 StarredAdventureStore._deleteStarred = function(starred) {
-  delete _starred[starred.id];
+  delete _starred[starred.adventure_id];
   this.__emitChange();
 };
 
 StarredAdventureStore._receiveStarred = function(starred) {
-  _starred[starred.id] = starred
+  _starred[starred.adventure_id] = starred
   this.__emitChange();
 }
 
