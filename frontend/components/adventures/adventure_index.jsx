@@ -24,7 +24,7 @@ var AdventureIndex = React.createClass({
           lat={adventure.lat}
           lng={adventure.lng}
           tagging={adventure.activities}
-          imageUrl={adventure.images[0].url} />
+          imageUrl={adventure.images[0].path} />
       );
     });
 

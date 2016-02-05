@@ -1,1 +1,1 @@
-json.extract! @image, :url
+json.extract! @image, :path

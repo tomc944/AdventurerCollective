@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
   belongs_to :adventure
 
-  validates :url, presence: true
+  validates :path, presence: true
 end

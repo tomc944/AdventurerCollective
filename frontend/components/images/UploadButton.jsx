@@ -26,7 +26,10 @@ var UploadButton = React.createClass({
     }.bind(this));
   },
   checkUserCredentials: function() {
-    if (this.props.adventures[Object.keys(this.props.adventures)[0]].author_id === this.state.user.id) {
+    var adventure = this.props.adventures;
+    var adventureKey = Object.keys(adventure)[0];
+
+    if (adventure[adventureKey].author_id === this.state.user.id) {
       return (<button onClick={this.upload}>Upload new image!</button>);
     } else {
       return (<div></div>)

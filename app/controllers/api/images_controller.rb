@@ -7,7 +7,6 @@ class Api::ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
-
       render json: @image
     else
       render json: @image.errors.full_messages, status: 422
@@ -21,6 +20,6 @@ class Api::ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:image).permit(:url, :adventure_id)
+    params.require(:image).permit(:path, :adventure_id)
   end
 end

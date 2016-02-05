@@ -31,6 +31,8 @@ gem 'bootstrap-sass'
 
 gem 'figaro'
 
+gem 'lol_dba'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
