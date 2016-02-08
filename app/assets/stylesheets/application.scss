@@ -45,6 +45,18 @@ body {font-family: 'Gentium Basic', serif;
   background-color: rgba(0,0,0,0.6);
 }
 
+.main-div-2 {
+  display: block;
+  background: #ffffff;
+  width: 80%;
+  overflow: auto;
+  height: 765px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.6);
+}
+
 .adventure-title {
   text-align: center;
   padding-top: 20px;
@@ -57,7 +69,6 @@ body {font-family: 'Gentium Basic', serif;
   overflow: auto;
   margin: 0 auto;
   margin-top: 20px;
-
 }
 
 .adventure-index-item {

@@ -47,18 +47,21 @@ var User = React.createClass({
         }
       }.bind(this));
     }
-    
+
     return (
       <div>
         <Navbar />
-        <div className="starred_adventures">
+        <div className="main-div-2">
+          <div className="starred-adventures">
           <h2>Starred Adventures</h2>
           <h3 className="completed">Completed</h3>
           {this.completed}
           <h3 className="in_progress">In progress</h3>
           {this.inProgress}
+          </div>
+          <Map adventures={this.state.user.starred_adventures}
+            mapClassName='map-form'/>
         </div>
-        <Map adventures={this.state.user.starred_adventures}/>
       </div>
     );
   }

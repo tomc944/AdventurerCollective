@@ -14,7 +14,7 @@ var Navbar = React.createClass({
   },
 
   render: function() {
-    var src = "assets/logo.png"
+    var src = "http://res.cloudinary.com/dpdxfgx58/image/upload/v1454700577/logo_hs5wtl.png"
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container">
