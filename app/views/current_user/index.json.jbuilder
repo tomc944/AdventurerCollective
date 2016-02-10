@@ -9,6 +9,7 @@ end
 
 json.starred_adventures do
   json.array! @user.starred_adventures do |starred_adventure|
+    json.id starred_adventure.id
     json.title starred_adventure.title
     json.taggings starred_adventure.activities
     json.lat starred_adventure.lat

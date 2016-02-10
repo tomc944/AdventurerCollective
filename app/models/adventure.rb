@@ -19,7 +19,9 @@ class Adventure < ActiveRecord::Base
     if !(UserAdventure.where(completed: true,
                          adventure_id: self.id,
                          adventuree_id: user_id).empty?)
-      return self
+      return true
+    else
+      return false
     end
   end
 

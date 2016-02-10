@@ -19,6 +19,12 @@ var StarActions = {
       actionType: StarConstants.DELETE_STARRED,
       starred: starred
     })
+  },
+  editStarred: function(starred) {
+    AppDispatcher.dispatch({
+      actionType: StarConstants.EDIT_STARRED,
+      starred: starred
+    })
   }
 };
 

@@ -1,21 +1,15 @@
 var React = require('react');
+var starAdventureUtil = require('../../util/star_adventure_util');
 
 var StarredAdventures = React.createClass({
-  onClick: function(e) {
-    e.preventDefault();
-    this.toggleCompletion();
-  },
-  toggleCompletion: function() {
-    if (this.props.completed !== null) {
-      this.props.completed = null;
-    } else {
-      this.props.completed = true;
-    }
+  toggleCompleted: function() {
+    starAdventureUtil.editStarred(this.props.id, this.props.completed)
   },
   render: function() {
     return (
-      <div onClick={this.onClick}>
+      <div>
         {this.props.title}
+        <button onClick={this.toggleCompleted}></button>
       </div>
     );
   }

@@ -26,7 +26,7 @@ var User = React.createClass({
 
     if (this.state.user.starred_adventures) {
       this.state.user.starred_adventures.forEach(function (adventure){
-        if (adventure.completed !== null) {
+        if (adventure.completed === true) {
           this.completed.push(
             <StarredAdventures
               key={adventure.id}

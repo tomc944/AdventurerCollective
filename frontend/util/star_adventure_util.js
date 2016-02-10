@@ -11,6 +11,19 @@ var starAdventureUtil = {
       }
     });
   },
+  editStarred: function(id, completed) {
+    debugger
+    // stock input right now
+    $.ajax({
+      method: 'PATCH',
+      url: 'api/user_adventures/' + id,
+      data: {adventure_id: id, completed: completed},
+      success: function(editStarred) {
+        debugger
+        StarActions.editStarred(editStarred)
+      }
+    })
+  },
   fetchStarAdventures: function() {
     $.ajax({
       method: "GET",

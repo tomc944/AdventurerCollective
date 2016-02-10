@@ -14,7 +14,8 @@ var Map = React.createClass({
 
     adventureKeys.map(function(adventureId) {
       var adventure = that.props.adventures[parseInt(adventureId)];
-      if (adventure.completed !== null) {
+
+      if (adventure.completed === true || adventure.completed === undefined) {
         that._placeCompletedAdventure(adventure);
       } else {
         that._placeTodoAdventure(adventure);
@@ -71,10 +72,30 @@ var Map = React.createClass({
     if (this.props.check){this.listenForClick();}
 
   },
+  clearMarkers: function() {
+    if (this.tempMarker) {
+      this.tempMarker.setMap(null)
+    }
+  },
+  addTempMarker: function(location) {
+    this.tempMarker = new google.maps.Marker({
+      position: location,
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      icon: {
+        path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+        strokeColor: "green",
+        scale: 5
+      }
+    });
+  },
   listenForClick: function() {
 
-    this.map.addListener('click', function(e) {
+    var that = this;
 
+    this.map.addListener('click', function(e) {
+      that.clearMarkers();
+      that.addTempMarker(e.latLng)
       this.attrs ={
         "lat": e.latLng.lat(),
         "lng": e.latLng.lng()
