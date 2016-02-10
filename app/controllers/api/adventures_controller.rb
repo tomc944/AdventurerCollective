@@ -12,6 +12,7 @@ class Api::AdventuresController < ApplicationController
     @adventure[:author_id] = current_user.id
 
     if @adventure.save
+      Image.create!(adventure_id: @adventure.id, path: params['adventure']['path'])
       render json: @adventure
     else
       render json: @adventure.errors.full_messages, status: 422

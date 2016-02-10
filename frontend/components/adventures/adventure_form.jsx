@@ -12,9 +12,9 @@ var AdventureForm = React.createClass({
   blankAttrs: {
     title: '',
     description: '',
-    author_id: '',
     lat: '',
     lng: '',
+    path: '',
     activity_ids: []
   },
 
@@ -23,6 +23,7 @@ var AdventureForm = React.createClass({
   },
 
   createAdventure: function(event) {
+
     event.preventDefault();
     var adventure = {};
 
@@ -43,13 +44,22 @@ var AdventureForm = React.createClass({
   },
   _onChange: function() {
     var newAttrs = AttrStore.all();
-    this.setState({"lat": newAttrs.lat, "lng": newAttrs.lng });
+    this.setState({ "lat": newAttrs.lat, "lng": newAttrs.lng });
   },
   componentDidMount: function() {
     this.adventureToken = AttrStore.addListener(this._onChange);
   },
   componentWillUnmount: function() {
     this.adventureToken.remove();
+  },
+  uploadImage: function(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget({ cloud_name: "dpdxfgx58", upload_preset: "lp8jhmdl"},
+                                  function(error, results) {
+      if (!error) {
+        this.setState({ path: results[0].public_id });
+      }
+    }.bind(this));
   },
   render: function() {
     var activities = ['Hiking', 'Biking', 'Running', 'Swimming','Backpacking',
@@ -89,7 +99,7 @@ var AdventureForm = React.createClass({
             </fieldset>
 
             <fieldset className="form-group">
-              <label>Lat:</label>
+              <label>Latitude:</label>
               <input
                 type="text"
                 className="form-control"
@@ -98,7 +108,7 @@ var AdventureForm = React.createClass({
             </fieldset>
 
             <fieldset className="form-group">
-              <label>Lng:</label>
+              <label>Longitude:</label>
               <input
                 type="text"
                 readOnly='true'
@@ -110,6 +120,12 @@ var AdventureForm = React.createClass({
               <label>Type of Adventure:</label>
               {checkboxes}
             </div>
+
+            <fieldset className="form-group">
+              <label>Optional Photo:</label>
+              <br/>
+              <button onClick={this.uploadImage}>Add photo!</button>
+            </fieldset>
 
             <br />
             <button className="btn btn-primary">Create an Adventure!</button>
