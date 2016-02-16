@@ -9,7 +9,9 @@ var StarredAdventures = React.createClass({
     return (
       <div>
         {this.props.title}
-        <button onClick={this.toggleCompleted}></button>
+        <button onClick={this.toggleCompleted} className="btn btn-primary btn2">
+          {this.props.marked}
+        </button>
       </div>
     );
   }

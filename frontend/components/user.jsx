@@ -34,6 +34,7 @@ var User = React.createClass({
               title={adventure.title}
               taggings={adventure.taggings}
               completed={adventure.completed}
+              marked="Mark as Uncompleted"
               />)
         } else {
           this.inProgress.push(
@@ -43,6 +44,7 @@ var User = React.createClass({
               title={adventure.title}
               taggings={adventure.taggings}
               completed={adventure.completed}
+              marked="Mark as Completed"
               />)
         }
       }.bind(this));
