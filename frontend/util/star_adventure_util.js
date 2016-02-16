@@ -1,4 +1,6 @@
-var StarActions = require('../actions/star_actions.js')
+var StarActions = require('../actions/star_actions.js');
+var UserActions = require('../actions/user_actions');
+var userUtil = require('./user_api_util');
 
 var starAdventureUtil = {
   createStarred: function(user_adventure) {
@@ -12,15 +14,13 @@ var starAdventureUtil = {
     });
   },
   editStarred: function(id, completed) {
-    debugger
-    // stock input right now
     $.ajax({
       method: 'PATCH',
       url: 'api/user_adventures/' + id,
       data: {adventure_id: id, completed: completed},
       success: function(editStarred) {
-        debugger
         StarActions.editStarred(editStarred)
+        userUtil.fetchUser();
       }
     })
   },

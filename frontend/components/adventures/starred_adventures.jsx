@@ -3,7 +3,7 @@ var starAdventureUtil = require('../../util/star_adventure_util');
 
 var StarredAdventures = React.createClass({
   toggleCompleted: function() {
-    starAdventureUtil.editStarred(this.props.id, this.props.completed)
+    starAdventureUtil.editStarred(this.props.id, !this.props.completed)
   },
   render: function() {
     return (
