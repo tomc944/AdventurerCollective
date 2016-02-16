@@ -4,7 +4,6 @@ class Api::ImagesController < ApplicationController
   end
 
   def create
-    debugger
     @image = Image.new(image_params)
 
     if @image.save

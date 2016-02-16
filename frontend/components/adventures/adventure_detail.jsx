@@ -45,7 +45,6 @@ var AdventureDetail = React.createClass({
       var adventureObject = {};
       adventureObject[id] = this.state.adventure;
 
-      debugger
       return (
         <div>
           <Navbar />

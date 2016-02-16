@@ -28,7 +28,6 @@ var AdventureForm = React.createClass({
     var adventure = {};
 
     Object.keys(this.state).forEach(function(key) {
-      debugger
       if (key === 'path' && this.state[key] === "") {
         adventure[key] = defaultPath
       } else {
