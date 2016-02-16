@@ -23,12 +23,18 @@ var AdventureForm = React.createClass({
   },
 
   createAdventure: function(event) {
-
     event.preventDefault();
+    var defaultPath = "sample.jpg"
     var adventure = {};
 
     Object.keys(this.state).forEach(function(key) {
-      adventure[key] = this.state[key];
+      debugger
+      if (key === 'path' && this.state[key] === "") {
+        adventure[key] = defaultPath
+      } else {
+        adventure[key] = this.state[key];
+      }
+
     }.bind(this));
 
     ApiUtil.createAdventure(adventure, function(id) {
