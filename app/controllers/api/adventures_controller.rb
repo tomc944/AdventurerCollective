@@ -15,6 +15,8 @@ class Api::AdventuresController < ApplicationController
       Image.create!(adventure_id: @adventure.id, path: params['adventure']['path'])
       render json: @adventure
     else
+      debugger
+      redirect_to new_api_adventure_url
       render json: @adventure.errors.full_messages, status: 422
     end
   end

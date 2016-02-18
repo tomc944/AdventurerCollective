@@ -107,6 +107,7 @@ var AdventureForm = React.createClass({
               <label>Latitude:</label>
               <input
                 type="text"
+                placeholder="Click Map to Set..."
                 className="form-control"
                 readOnly='true'
                 valueLink={this.linkState('lat')} />
@@ -116,6 +117,7 @@ var AdventureForm = React.createClass({
               <label>Longitude:</label>
               <input
                 type="text"
+                placeholder="Click Map to Set..."
                 readOnly='true'
                 className="form-control"
                 valueLink={this.linkState('lng')} />

@@ -13,10 +13,10 @@ var App = require('./components/app');
 var routes = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Search} />
-      <Route path="adventures/new" component={AdventureForm} />
-      <Route path="adventures/:adventureId" component={AdventureDetail} />
-      <Route path="current_user" component={User} />
+      <IndexRoute component={Search}/>
+      <Route path="adventures/new" component={AdventureForm}/>
+      <Route path="adventures/:adventureId" component={AdventureDetail}/>
+      <Route path="current_user" component={User}/>
     </Route>
   </Router>
 );
