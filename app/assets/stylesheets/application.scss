@@ -37,7 +37,7 @@ body {font-family: 'Gentium Basic', serif;
 .main-div {
   display: block;
   background: #ffffff;
-  width: 80%;
+  width: 95%;
   height: 80%;
   margin: 0 auto;
   margin-bottom: 40px;
@@ -65,8 +65,6 @@ body {font-family: 'Gentium Basic', serif;
 }
 
 .adventure-index-items-container {
-  width: 90%;
-  overflow: auto;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -74,15 +72,14 @@ body {font-family: 'Gentium Basic', serif;
 .adventure-index-item {
   position: relative;
   margin: 0px 0px;
-  border: 1px solid white;
+  margin-right: 5px;
   box-shadow: 1px 1px 1px #888888;
   display: inline-block;
   height: 300px;
   width: 300px;
   border: 1px solid white;
   border-radius: 3px;
-  padding: 5px 0px;
-  // border-radius: 3px 10px;
+  padding: 5px 5px;
   overflow: hidden;
 }
 

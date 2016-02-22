@@ -46,15 +46,9 @@ var AdventureIndexItem = React.createClass({
       backgroundImage: "url(" + photoUrl + ")"
     }
 
-    if (this.state.showTitle) {
-      var adventureClass = "adventure-index-item-title"
-    } else {
-      adventureClass = "adventure-index-item"
-    }
-
     return (
       <li style={backgroundImage}
-        className={adventureClass}
+        className="adventure-index-item"
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
         onClick={this.showAdventure}>
