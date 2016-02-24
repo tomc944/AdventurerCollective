@@ -34,11 +34,27 @@ body {font-family: 'Gentium Basic', serif;
   text-align: center;
 }
 
+.adventure-detail {
+  margin-top: 5vh;
+}
+
+.tags {
+  margin-right: 3px;
+}
+
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 30px;
   color: inherit;
+}
+
+.adventure-description {
+  text-decoration: underline;
+}
+
+.activity-title {
+  margin-top: 15vh;
 }
 
 .main-div {
@@ -89,6 +105,21 @@ body {font-family: 'Gentium Basic', serif;
   border-radius: 3px;
   padding: 5px 5px;
   overflow: hidden;
+}
+
+.adventure-index-item:hover {
+  position: relative;
+  margin: 0px 0px;
+  margin-right: 5px;
+  box-shadow: 1px 1px 1px #888888;
+  display: inline-block;
+  height: 300px;
+  width: 300px;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px 5px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .adventure-index-item-title {
@@ -183,4 +214,8 @@ body {font-family: 'Gentium Basic', serif;
   -moz-osx-font-smoothing: grayscale;
   transition-duration: 0.3s;
   transition-property: transform;
+}
+
+.searchbar-list:hover {
+  cursor: pointer;
 }

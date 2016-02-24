@@ -32,7 +32,7 @@ var AdventureDetail = React.createClass({
     var activities = this.state.adventure.activities;
 
     var pursuits = activities.map(function(activity, i){
-      return (<li key={i}>{activity.pursuit}</li>);
+      return (<span key={i} className="label label-primary tags">{activity.pursuit}</span>);
     });
 
     return (pursuits);
@@ -60,11 +60,11 @@ var AdventureDetail = React.createClass({
 
               <Images adventureId={this.props.params.adventureId}
                       adventures={adventureObject}/>
-              {this.state.adventure.description}
-              <ul>
-                <h4>Activites:</h4>
-                {this.allActivities()}
-              </ul>
+
+              <p className='adventure-detail'>{this.state.adventure.description}</p>
+
+              <h4 className='activity-title'>Activites</h4>
+              {this.allActivities()}
             </div>
           </div>
         </div>
