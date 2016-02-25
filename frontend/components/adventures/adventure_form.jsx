@@ -36,12 +36,11 @@ var AdventureForm = React.createClass({
 
     }.bind(this));
 
-    ApiUtil.createAdventure(adventure, function(id) {
-      this.history.pushState(null, '/adventure/' + id, {});
+    ApiUtil.createAdventure(adventure, function() {
+      this.history.pushState(null, '/', {});
     }.bind(this));
 
     this.setState(this.blankAttrs);
-    this.history.pushState(null, '/', {});
   },
   checkBox: function(id, e) {
     var boxIds = this.state.activity_ids;
@@ -131,7 +130,7 @@ var AdventureForm = React.createClass({
             <fieldset className="form-group">
               <label>Optional Photo:</label>
               <br/>
-              <button onClick={this.uploadImage}>Add photo!</button>
+              <button className="universal-button" onClick={this.uploadImage}>Add photo!</button>
             </fieldset>
 
             <br />

@@ -33,13 +33,17 @@ var apiUtil = {
       }
     });
   },
-  createAdventure: function(adventure) {
+  createAdventure: function(adventure, callback) {
     $.ajax({
       method: 'POST',
       url: 'api/adventures',
       data: {adventure: adventure},
       success: function(newAdventure) {
         ApiActions.receiveAdventure(newAdventure);
+        callback && callback();
+      },
+      error: function(message) {
+        alert("All required fields must be complete!")
       }
     });
   },
