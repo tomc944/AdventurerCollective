@@ -7,7 +7,16 @@
 }
 
 .btn2 {
+  display: inline-block;
   margin-left: 25px;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+#completed-button:hover {
+  background-color: green;
+}
+
+#inprogress-button:hover {
+  background-color: red;
 }

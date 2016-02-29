@@ -6,10 +6,19 @@ var StarredAdventures = React.createClass({
     starAdventureUtil.editStarred(this.props.id, !this.props.completed)
   },
   render: function() {
+    var starredAdventureClass = 'btn btn-primary btn2'
+
+    if (this.props.completed) {
+      var starredAdventureId = "inprogress-button"
+    } else {
+      starredAdventureId = "completed-button"
+    }
+
     return (
       <div>
         {this.props.title}
-        <button onClick={this.toggleCompleted} className="btn btn-primary btn2">
+        <button onClick={this.toggleCompleted} className={starredAdventureClass}
+                id={starredAdventureId}>
           {this.props.marked}
         </button>
       </div>

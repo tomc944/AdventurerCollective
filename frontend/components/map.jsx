@@ -16,9 +16,9 @@ var Map = React.createClass({
       var adventure = that.props.adventures[parseInt(adventureId)];
 
       if (adventure.completed === true || adventure.completed === undefined) {
-        that._placeCompletedAdventure(adventure);
+        that._createAdventure(adventure, "green");
       } else {
-        that._placeTodoAdventure(adventure);
+        that._createAdventure(adventure, "red");
       }
 
       that.attachDescription(newadventure);
@@ -26,24 +26,13 @@ var Map = React.createClass({
     });
 
   },
-  _placeCompletedAdventure: function(adventure) {
+  _createAdventure: function(adventure, color) {
     newadventure = new google.maps.Marker({
       position: {lat: adventure.lat, lng: adventure.lng},
       description: adventure.title,
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        strokeColor: "green",
-        scale: 5
-      },
-    });
-  },
-  _placeTodoAdventure: function(adventure) {
-    newadventure = new google.maps.Marker({
-      position: {lat: adventure.lat, lng: adventure.lng},
-      description: adventure.title,
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        strokeColor: "red",
+        strokeColor: color,
         scale: 5
       },
     });
@@ -67,9 +56,9 @@ var Map = React.createClass({
 
     this.map = new google.maps.Map(map, mapOptions);
 
-    if (this.props.adventures) {this._placeAdventures();}
-    if (this.props.onIndex){this.listenForMove();}
-    if (this.props.check){this.listenForClick();}
+    if (this.props.adventures) { this._placeAdventures(); }
+    if (this.props.onIndex) { this.listenForMove(); }
+    if (this.props.check) { this.listenForClick(); }
 
   },
   clearMarkers: function() {

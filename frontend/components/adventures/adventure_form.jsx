@@ -80,6 +80,14 @@ var AdventureForm = React.createClass({
       </div>);
     });
 
+    if (this.state.path === '') {
+      var imageUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/w_100,h_100/v1456775261/no-image.png"
+      var imageClass = 'form-no-image'
+    } else {
+      imageUrl = "http://res.cloudinary.com/dpdxfgx58/image/upload/w_100,h_100/" + this.state.path;
+      imageClass = 'uploaded-form-image'
+    }
+
     return (
       <div>
         <Navbar />
@@ -132,6 +140,11 @@ var AdventureForm = React.createClass({
               <br/>
               <button className="universal-button" onClick={this.uploadImage}>Add photo!</button>
             </fieldset>
+
+            <div className={imageClass}>
+            <img src={imageUrl}></img>
+            </div>
+
 
             <br />
             <button className="btn btn-primary">Create an Adventure!</button>
