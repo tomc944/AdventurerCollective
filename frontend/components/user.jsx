@@ -62,7 +62,7 @@ var User = React.createClass({
           {this.inProgress}
           </div>
           <Map adventures={this.state.user.starred_adventures}
-            mapClassName='map-form'/>
+            mapClassName='map-starred'/>
         </div>
       </div>
     );

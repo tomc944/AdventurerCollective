@@ -1,6 +1,7 @@
 var React = require('react');
 var Map = require('./map');
 var Navbar = require("./navbar");
+var FloatingBanner = require("./floating_banner")
 var AdventureIndex = require('./adventures/adventure_index');
 var AdventureStore = require('../stores/adventure');
 
@@ -21,6 +22,7 @@ var Search = React.createClass({
     return (
       <div className="main-div">
         <Navbar />
+        <FloatingBanner/>
         <h2 className="adventure-title">Adventures Near You!</h2>
         <Map mapClassName='map'
           adventures={this.state.adventures}

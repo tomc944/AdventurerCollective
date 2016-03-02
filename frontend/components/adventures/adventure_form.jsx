@@ -92,6 +92,7 @@ var AdventureForm = React.createClass({
       <div>
         <Navbar />
         <div className="form-container">
+          <h3 className="create-adventure">Create an Adventure!</h3>
           <form onSubmit={this.createAdventure} className="outerForm">
             <fieldset className="form-group">
               <label>Title:</label>
@@ -136,15 +137,11 @@ var AdventureForm = React.createClass({
             </div>
 
             <fieldset className="form-group">
-              <label>Optional Photo:</label>
               <br/>
-              <button className="universal-button" onClick={this.uploadImage}>Add photo!</button>
+              <button className="universal-button" onClick={this.uploadImage}>Add optional photo!</button>
             </fieldset>
 
-            <div className={imageClass}>
-            <img src={imageUrl}></img>
-            </div>
-
+            <img className={imageClass} src={imageUrl}></img>
 
             <br />
             <button className="btn btn-primary">Create an Adventure!</button>
