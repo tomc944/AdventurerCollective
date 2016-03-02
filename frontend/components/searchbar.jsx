@@ -41,8 +41,7 @@ var SearchBar = React.createClass({
 
     adventureKeys.forEach(function(adventureKey) {
       var adventure = that.state.adventures[adventureKey];
-      var sub = adventure.title.slice(0, that.state.inputVal.length);
-      if (sub.toLowerCase() === that.state.inputVal.toLowerCase()) {
+      if (adventure.title.toLowerCase().includes(that.state.inputVal.toLowerCase())) {
         matches.push(adventure);
       }
     });
