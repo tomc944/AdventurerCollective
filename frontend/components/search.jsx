@@ -22,7 +22,7 @@ var Search = React.createClass({
     return (
       <div className="main-div">
         <Navbar />
-        <FloatingBanner/>
+        <FloatingBanner />
         <h2 className="adventure-title">Adventures Near You!</h2>
         <Map mapClassName='map'
           adventures={this.state.adventures}

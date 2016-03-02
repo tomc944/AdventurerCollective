@@ -34,6 +34,10 @@ body {font-family: 'Gentium Basic', serif;
   text-align: center;
 }
 
+.banner {
+  margin: 0 auto;
+}
+
 .form-no-image {
   background-color: white;
   border-color: black;
@@ -261,10 +265,10 @@ body {font-family: 'Gentium Basic', serif;
   color: white;
   width: 60vw;
   min-width: 580px;
-  display: inline;
   margin-bottom: 50px;
   margin-top: 40px;
-  margin-left: 4%;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 24px;
 }
 
