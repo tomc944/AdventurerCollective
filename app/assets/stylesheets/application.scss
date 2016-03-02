@@ -161,6 +161,7 @@ body {font-family: 'Gentium Basic', serif;
   background-color: rgba(0,0,0,0.9);
 }
 
+
 .adventure-index-item-starred {
   position: absolute;
   float: right;
@@ -254,4 +255,70 @@ body {font-family: 'Gentium Basic', serif;
   background-color: #337ab7;
   color: #fff;
   border-radius: 3px;
+}
+
+.index-features {
+  color: white;
+  width: 60vw;
+  min-width: 580px;
+  display: inline;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-left: 4%;
+  font-size: 24px;
+}
+
+.index-features-visible {
+  // float:left;
+  min-width: 580px;
+  display: inline-block;
+  font-weight:600;
+  overflow:hidden;
+  height:40px;
+}
+
+.index-features-perm-text {
+  display:inline;
+  float:left;
+  margin-right: 5px;
+}
+
+.index-features-list {
+  margin-top:0;
+  padding-left:110px;
+  text-align:left;
+  list-style:none;
+  animation:10s linear 0s normal none infinite change;
+  -webkit-animation:10s linear 0s normal none infinite change;
+  -moz-animation:10s linear 0s normal none infinite change;
+  -o-animation:10s linear 0s normal none infinite change;
+}
+
+.index-features-list .index-features-list-item {
+  // line-height:40px;
+  margin-left: 143px;
+  height: 40px;
+}
+
+@-webkit-keyframes change {
+  0%   {margin-top:0;}
+  15%  {margin-top:0;}
+  25%  {margin-top:-40px;}
+  40%  {margin-top:-40px;}
+  50%  {margin-top:-80px;}
+  65%  {margin-top:-80px;}
+  75%  {margin-top:-40px;}
+  85%  {margin-top:-40px;}
+  100% {margin-top:0;}
+}
+@keyframes change {
+  0%   {margin-top:0;}
+  15%  {margin-top:0;}
+  25%  {margin-top:-40px;}
+  40%  {margin-top:-40px;}
+  50%  {margin-top:-80px;}
+  65%  {margin-top:-80px;}
+  75%  {margin-top:-40px;}
+  85%  {margin-top:-40px;}
+  100% {margin-top:0;}
 }
