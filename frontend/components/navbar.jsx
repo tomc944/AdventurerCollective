@@ -14,7 +14,7 @@ var Navbar = React.createClass({
   },
 
   render: function() {
-    var src = "http://res.cloudinary.com/dpdxfgx58/image/upload/v1454700577/logo_hs5wtl.png"
+    var src = "http://res.cloudinary.com/dpdxfgx58/image/upload/v1454700577/logo_hs5wtl.png";
     return (
       <nav className="navbar navbar-default navbar-fixed-top" id="navbar-overwrite">
           <div className="container">
@@ -35,7 +35,7 @@ var Navbar = React.createClass({
               <ul className="nav navbar-nav navbar-right">
                 <li className="dropdown">
                   <a href="#" className="dropdown-toggle" id='dropdown-t' data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span className="caret"></span></a>
-                  <ul className="dropdown-menu">
+                  <ul className="dropdown-menu" id='dropdown-m'>
                     <li><a href="#current_user">Starred Adventures</a></li>
                     <li><a className='logout' onClick={this.signOut}>Sign Out</a></li>
                   </ul>

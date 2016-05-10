@@ -29,6 +29,10 @@ body {font-family: 'Gentium Basic', serif;
       left: 0px;
       position: absolute;}
 
+#dropdown-m {
+  background-color: #c08c64;
+}
+
 #navbar-overwrite {
   background-color: #c08c64;
   border-color: black;
@@ -41,6 +45,14 @@ body {font-family: 'Gentium Basic', serif;
 
 #dropdown-t {
   color: black;
+}
+
+.big-logo {
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  display: block;
+  margin: auto;
 }
 
 .adventure-index-items-list {

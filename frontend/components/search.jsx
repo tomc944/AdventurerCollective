@@ -19,16 +19,19 @@ var Search = React.createClass({
     this.adventureToken.remove();
   },
   render: function() {
+    var src = "http://res.cloudinary.com/dpdxfgx58/image/upload/v1454700577/logo_hs5wtl.png";
     return (
-      <div className="main-div">
-        <Navbar />
-        <FloatingBanner />
-        <h2 className="adventure-title">Adventures Near You!</h2>
-        <Map mapClassName='map'
-          adventures={this.state.adventures}
-          onIndex={true}/>
-        <AdventureIndex
-          adventures={this.state.adventures}/>
+      <div>
+        <img src={src} className='big-logo'></img>
+        <div className="main-div">
+          <Navbar />
+          <FloatingBanner />
+          <Map mapClassName='map'
+            adventures={this.state.adventures}
+            onIndex={true}/>
+          <AdventureIndex
+            adventures={this.state.adventures}/>
+        </div>
       </div>
     );
   }
