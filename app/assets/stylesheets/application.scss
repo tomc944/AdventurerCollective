@@ -18,7 +18,7 @@
 @import 'bootstrap';
 
 body {font-family: 'Gentium Basic', serif;
-      background: url('http://res.cloudinary.com/dpdxfgx58/image/upload/v1454653712/mountains2.jpg') no-repeat center center fixed;
+      background: url('http://res.cloudinary.com/dpdxfgx58/image/upload/v1454653712/mountains_dzmi3i.jpg') no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -29,6 +29,20 @@ body {font-family: 'Gentium Basic', serif;
       left: 0px;
       position: absolute;}
 
+#navbar-overwrite {
+  background-color: #c08c64;
+  border-color: black;
+  padding: 0;
+}
+
+#navbar-c {
+  color: black;
+}
+
+#dropdown-t {
+  color: black;
+}
+
 .adventure-index-items-list {
   padding: 0%;
   text-align: center;
@@ -36,10 +50,6 @@ body {font-family: 'Gentium Basic', serif;
 
 .banner {
   margin: 0 auto;
-}
-
-#navbar-overwrite {
-  padding: 0;
 }
 
 .form-no-image {
