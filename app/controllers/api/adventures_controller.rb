@@ -13,8 +13,6 @@ class Api::AdventuresController < ApplicationController
 
     if @adventure.save
       Image.create!(adventure_id: @adventure.id, path: params['adventure']['path'])
-      # @adventure[:images] = @adventure.images
-      # @adventure[:activities] = @adventure.activities
       response = { :adventure => @adventure, :images => @adventure.images,
                    :activities => @adventure.activities }
       respond_to do |format|

@@ -33,7 +33,7 @@ var apiUtil = {
       }
     });
   },
-  createAdventure: function(adventure, callback) {
+  createAdventure: function(adventure, reroute) {
     $.ajax({
       method: 'POST',
       url: 'api/adventures',
@@ -43,8 +43,7 @@ var apiUtil = {
         packagedAdventure['images'] = newAdventure['images']
         packagedAdventure['activities'] = newAdventure['activities']
         ApiActions.receiveAdventure(packagedAdventure);
-        debugger
-        callback(packagedAdventure);
+        reroute(packagedAdventure);
       },
       error: function(message) {
         alert("All required fields must be complete!")
