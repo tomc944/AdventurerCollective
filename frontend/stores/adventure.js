@@ -49,11 +49,6 @@ AdventureStore._receiveAdventure = function(adventure) {
   this.__emitChange();
 };
 
-AdventureStore._setAttrs = function(attrs) {
-  _blankAttrs["lat"] = attrs["lat"];
-  _blankAttrs["lng"] = attrs["lng"];
-};
-
 AdventureStore._receiveUnbounded = function(adventures) {
   _adventureAll = {};
   adventures.forEach(function(adventure) {

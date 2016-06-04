@@ -15,7 +15,8 @@ var AdventureForm = React.createClass({
     lat: '',
     lng: '',
     path: '',
-    activity_ids: []
+    activity_ids: [],
+    image_ids: []
   },
 
   getInitialState: function() {
@@ -36,8 +37,10 @@ var AdventureForm = React.createClass({
 
     }.bind(this));
 
-    ApiUtil.createAdventure(adventure, function() {
-      this.history.pushState(null, '/', {});
+    ApiUtil.createAdventure(adventure, function(packagedAdventure) {
+      debugger
+      var url = '/adventures/' + packagedAdventure.id
+      this.history.pushState({adventures: packagedAdventure}, url, {});
     }.bind(this));
 
     this.setState(this.blankAttrs);

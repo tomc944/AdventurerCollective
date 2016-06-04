@@ -39,8 +39,12 @@ var apiUtil = {
       url: 'api/adventures',
       data: {adventure: adventure},
       success: function(newAdventure) {
-        ApiActions.receiveAdventure(newAdventure);
-        callback && callback();
+        var packagedAdventure = newAdventure['adventure']
+        packagedAdventure['images'] = newAdventure['images']
+        packagedAdventure['activities'] = newAdventure['activities']
+        ApiActions.receiveAdventure(packagedAdventure);
+        debugger
+        callback(packagedAdventure);
       },
       error: function(message) {
         alert("All required fields must be complete!")
