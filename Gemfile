@@ -33,6 +33,10 @@ gem 'figaro'
 
 gem 'lol_dba'
 
+group :production do
+  gem 'thin'
+end
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
